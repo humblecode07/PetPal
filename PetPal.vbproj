@@ -180,6 +180,7 @@
     </Compile>
     <Compile Include="StaffConfig.vb" />
     <Compile Include="UserModule.vb" />
+    <Compile Include="UserModule2.vb" />
     <Compile Include="UserPanel.Designer.vb">
       <DependentUpon>UserPanel.vb</DependentUpon>
     </Compile>

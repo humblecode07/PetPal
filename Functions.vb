@@ -3,6 +3,7 @@ Imports System.Text
 Imports System.Text.RegularExpressions
 Imports System.Drawing.Text
 Imports System.Drawing.Drawing2D
+Imports System.IO
 
 Module Functions
     Public Function GetSaltedHash(pw As String, salt As String) As String
@@ -234,4 +235,22 @@ Module Functions
 
         Return True
     End Function
+
+    Public Function ConvertImageToByteArray(image As Image) As Byte()
+        Try
+            If image IsNot Nothing Then
+                Using ms As New MemoryStream()
+                    ' Specify the image format as JPEG (you can change it based on your requirement)
+                    Appointment.pcbDisplay.Image.Save(ms, Appointment.pcbDisplay.Image.RawFormat)
+                    ' Return the byte array
+                    Return ms.ToArray()
+                End Using
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return New Byte() {}
+    End Function
+
 End Module

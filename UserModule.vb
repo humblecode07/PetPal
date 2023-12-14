@@ -1,5 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.IO
+Imports System.Globalization
+Imports System.Text.RegularExpressions
 
 Module UserModule
     Dim con As New MySqlConnection
@@ -11,8 +13,14 @@ Module UserModule
     Dim adapter As New MySqlDataAdapter
 
     Dim petName, species, gender, breed, birthday, bio, currFood, currMed, weight As String
-    Dim petId As Integer
-    Dim behaveNotes, appointmentType, preferredDate, reason As String
+    Dim petId, appointmentId As Integer
+    Dim behaveNotes, appointmentType, reason As String
+    Dim profileImage As Byte()
+    Dim preferredDateTime As String
+    Dim dateObj As DateTime
+
+    Dim firstName, lastName, contact, homeAddress, city, province,
+        userName, password, securityQuestion As String
 
     Public Sub ConnectDbase()
         host = "192.168.56.1"
@@ -56,7 +64,7 @@ Module UserModule
     End Sub
 
     Public Sub LoadProfilePicture(petID As Integer, pictureBox As PictureBox)
-        Dim sqlQuery As String = "SELECT profileImage FROM pet_info WHERE pet_id = @petID"
+        sqlQuery = "SELECT profileImage FROM pet_info WHERE pet_id = @petID"
 
         Try
             ' Open the connection before using it
@@ -84,7 +92,6 @@ Module UserModule
                     Else
                         ' Handle the case where the profileImage column is null
                         ' Set a default image or do other handling
-                        MsgBox("b")
                         pictureBox.Image = Nothing
                     End If
                 End If
@@ -261,6 +268,121 @@ Module UserModule
         End Try
     End Sub
 
+    Public Sub LoadUserInfo(id As Integer)
+
+        '1st Query
+        sqlQuery = "
+            SELECT user_name, security_question FROM user_credentials WHERE user_number = @userNum;
+        "
+        mysqlcmd = New MySqlCommand(sqlQuery, con)
+        mysqlcmd.Parameters.AddWithValue("@userNum", id)
+
+        Try
+            If con.State = ConnectionState.Closed Then
+                con.Open()
+            End If
+
+            reader = mysqlcmd.ExecuteReader()
+
+            If reader.Read Then
+                UserPanel.lblUserName.Text = reader("user_name").ToString()
+                UserPanel.lblQuestion.Text = reader("security_question").ToString()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            reader.Close()
+        End Try
+
+        '2nd Query
+        sqlQuery = "
+            SELECT * FROM user_info WHERE user_number = @userNum;
+        "
+        mysqlcmd = New MySqlCommand(sqlQuery, con)
+        mysqlcmd.Parameters.AddWithValue("@userNum", id)
+
+        Try
+            If con.State = ConnectionState.Closed Then
+                con.Open()
+            End If
+
+            reader = mysqlcmd.ExecuteReader()
+
+            If reader.Read Then
+                UserPanel.lblFName.Text = reader("fName").ToString()
+                UserPanel.lblLName.Text = reader("lName").ToString()
+                UserPanel.lblBirthdate.Text = reader("birthDate").ToString()
+                UserPanel.lblContact.Text = reader("contact").ToString()
+                UserPanel.lblHomeAdd.Text = reader("home_address").ToString()
+                UserPanel.lblEmail.Text = reader("email").ToString()
+                UserPanel.lblCity.Text = reader("city").ToString()
+                UserPanel.lblProvince.Text = reader("province").ToString()
+
+                If Not reader.IsDBNull(reader.GetOrdinal("profileImage")) Then
+                    Dim imageData As Byte() = DirectCast(reader("profileImage"), Byte())
+
+                    Dim imageStream As New MemoryStream(imageData)
+                    Dim profileImage As Image = Image.FromStream(imageStream)
+
+                    UserPanel.pcbUserProfile.Image = profileImage
+                End If
+            Else
+                MsgBox("No Record")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            reader.Close()
+        End Try
+    End Sub
+
+    Public Sub DeleteProfile()
+        sqlQuery = "DELETE from user_info WHERE user_number = @userNum"
+
+        Try
+            Using cmd As New MySqlCommand(sqlQuery, con)
+                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        End Try
+
+        sqlQuery = "DELETE from pet_info WHERE user_number = @userNum"
+        Try
+            Using cmd As New MySqlCommand(sqlQuery, con)
+                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        End Try
+
+        sqlQuery = "DELETE from appointment_info WHERE user_number = @userNum"
+        Try
+            Using cmd As New MySqlCommand(sqlQuery, con)
+                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        End Try
+
+        sqlQuery = "DELETE from user_credentials WHERE user_number = @userNum"
+        Try
+            Using cmd As New MySqlCommand(sqlQuery, con)
+                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        End Try
+    End Sub
+
     Public Sub LoadPetName(id As Integer)
         sqlQuery = "SELECT pet_name FROM pet_info WHERE user_number = @userNum"
 
@@ -274,62 +396,268 @@ Module UserModule
                     While reader.Read()
                         Appointment.cmbPets.Items.Add(reader("pet_name").ToString())
                     End While
+
+                    ' Close the DataReader after reading the data
+                    reader.Close()
                 End Using
             End Using
         Catch ex As Exception
             MessageBox.Show("Error loading data: " & ex.Message)
+        Finally
+            ' Check if the reader is not null before attempting to close it
+            If reader IsNot Nothing AndAlso Not reader.IsClosed Then
+                reader.Close()
+            End If
         End Try
     End Sub
 
     Public Sub LoadPetInfo(pet As String, id As String)
-        sqlQuery = "SELECT species, breed, gender, birthday, profileImage FROM pet_info 
-                WHERE pet_name = @petName AND user_number = @userNum
-        "
+        sqlQuery = "SELECT pet_id, species, breed, gender, birthday, profileImage FROM pet_info 
+                WHERE pet_name = @petName AND user_number = @userNum"
 
-        Using mysqlcmd As New MySqlCommand(sqlQuery, con)
-            mysqlcmd.Parameters.AddWithValue("@petName", pet)
-            mysqlcmd.Parameters.AddWithValue("@userNum", id)
+        Try
+            Using mysqlcmd As New MySqlCommand(sqlQuery, con)
+                mysqlcmd.Parameters.AddWithValue("@petName", pet)
+                mysqlcmd.Parameters.AddWithValue("@userNum", id)
 
-            Try
-                ' Execute the SQL command and read the data
-                Using reader As MySqlDataReader = mysqlcmd.ExecuteReader()
-                    If reader.Read() Then
-                        ' Populate TextBoxes with data from the database
-                        Appointment.txtSpecies.Text = reader("species").ToString()
-                        Appointment.txtBreed.Text = reader("breed").ToString()
-                        Appointment.txtGender.Text = reader("gender").ToString()
-                        Appointment.txtBirth.Text = reader("birthday").ToString()
-                    End If
+                Try
+                    ' Execute the SQL command and read the data
+                    Using reader As MySqlDataReader = mysqlcmd.ExecuteReader()
 
-                    If Not reader.IsDBNull(reader.GetOrdinal("profileImage")) Then
-                        Dim imageData As Byte() = DirectCast(reader("profileImage"), Byte())
-                        If imageData IsNot Nothing AndAlso imageData.Length > 0 Then
-                            ' Convert binary data to an Image
-                            Using ms As New MemoryStream(imageData)
-                                Appointment.pcbDisplay.Image = Image.FromStream(ms)
-                            End Using
+                        If reader.Read() Then
+                            ' Populate TextBoxes with data from the database
+                            Appointment.txtPetID.Text = reader("pet_id").ToString()
+                            Appointment.txtSpecies.Text = reader("species").ToString()
+                            Appointment.txtBreed.Text = reader("breed").ToString()
+                            Appointment.txtGender.Text = reader("gender").ToString()
+                            Appointment.txtBirth.Text = Convert.ToDateTime(reader("birthday")).ToString("MM/dd/yyyy")
                         End If
-                    Else
-                        ' Handle the case when "profileImage" is NULL
-                        ' You might want to set a default image or clear the PictureBox
-                        Appointment.pcbDisplay.Image = Nothing
+
+                        If Not reader.IsDBNull(reader.GetOrdinal("profileImage")) Then
+                            Dim imageData As Byte() = DirectCast(reader("profileImage"), Byte())
+                            If imageData IsNot Nothing AndAlso imageData.Length > 0 Then
+                                ' Convert binary data to an Image
+                                Using ms As New MemoryStream(imageData)
+                                    Appointment.pcbDisplay.Image = Image.FromStream(ms)
+                                End Using
+                            End If
+                        Else
+                            Appointment.pcbDisplay.Image = Nothing
+                        End If
+                    End Using
+                Catch ex As Exception
+                    MessageBox.Show("Error loading data from database: " & ex.Message)
+                Finally
+                    ' Check if the reader is not null before attempting to close it
+                    If reader IsNot Nothing Then
+                        MsgBox("a")
+                        reader.Close()
                     End If
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("Error loading data from database: " & ex.Message)
-            End Try
-        End Using
+                End Try
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error executing SQL command: " & ex.Message)
+        End Try
     End Sub
 
     Public Sub SubmitAppointment()
+        petId = Appointment.txtPetID.Text
         petName = Appointment.cmbPets.Text
         species = Appointment.txtSpecies.Text
         breed = Appointment.txtBreed.Text
         gender = Appointment.txtGender.Text
-        birthday = Appointment.txtBirth.Text
+        behaveNotes = Appointment.txtNotes.Text
+
+        appointmentType = Appointment.cmbAppointment.Text
+        preferredDateTime = Appointment.dtpDateAppo.Value.ToString("yyyy-MM-dd") & " " &
+            Appointment.dtpTimeAppo.Value.ToString("HH:mm:ss")
+        reason = Appointment.txtReason.Text
+
+        dateObj = DateTime.ParseExact(Appointment.txtBirth.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture)
+        birthday = dateObj.ToString("yyyy-MM-dd")
+
+
+        '1st Query : Get the max appointment count
+        sqlQuery = "
+            SELECT MAX(appointment_id) FROM appointment_info WHERE user_number = @userNum
+        "
+        mysqlcmd = New MySqlCommand(sqlQuery, con)
+        mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+
+        Try
+            reader = mysqlcmd.ExecuteReader()
+
+            If reader.Read() Then
+                If Not reader.IsDBNull(0) Then
+                    appointmentId = reader.GetInt32(0) + 1
+                Else
+                    appointmentId = 1
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            reader.Close()
+        End Try
+
+        '2nd Query
+        sqlQuery = "
+            SELECT profileImage FROM pet_info WHERE user_number = @userNum AND pet_id = @petId
+        "
+        mysqlcmd = New MySqlCommand(sqlQuery, con)
+        mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+        mysqlcmd.Parameters.AddWithValue("@petId", petId)
+
+        Try
+            ' Use ExecuteScalar to retrieve a single value
+            Dim result As Object = mysqlcmd.ExecuteScalar()
+
+            If result IsNot DBNull.Value AndAlso result IsNot Nothing Then
+                ' Successfully retrieved the BLOB, assuming profileImage is a Byte() data type
+                profileImage = DirectCast(result, Byte())
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        '3rd Query
+        sqlQuery = "
+            INSERT INTO appointment_info (
+            appointment_id, pet_name, species, breed, gender, birthDate, behavioral_notes, pet_image, 
+            appointment_type, preferredDate, appointment_reason, appointment_status, pet_id, user_number )
+            VALUES (@appId, @petName, @species, @breed, @gender, @birthday, @behavioralNotes, 
+            @petImage, @appointmentType, @preferredDate, @appointmentReason, @appointmentStatus, 
+            @petId, @userNum)
+        "
+        Using mysqlcmd As New MySqlCommand(sqlQuery, con)
+            mysqlcmd.Parameters.AddWithValue("@appId", appointmentId)
+            mysqlcmd.Parameters.AddWithValue("@petName", petName)
+            mysqlcmd.Parameters.AddWithValue("@species", species)
+            mysqlcmd.Parameters.AddWithValue("@breed", breed)
+            mysqlcmd.Parameters.AddWithValue("@gender", gender)
+            mysqlcmd.Parameters.AddWithValue("@birthday", birthday)
+            mysqlcmd.Parameters.AddWithValue("@behavioralNotes", behaveNotes)
+            mysqlcmd.Parameters.AddWithValue("@petImage", profileImage)
+            mysqlcmd.Parameters.AddWithValue("@appointmentType", appointmentType)
+            mysqlcmd.Parameters.AddWithValue("@preferredDate", preferredDateTime)
+            mysqlcmd.Parameters.AddWithValue("@appointmentReason", reason)
+            mysqlcmd.Parameters.AddWithValue("@appointmentStatus", "Pending")
+            mysqlcmd.Parameters.AddWithValue("@petId", petId)
+            mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+
+            Try
+                mysqlcmd.ExecuteNonQuery()
+                MsgBox("Added!")
+            Catch ex As Exception
+                MsgBox("Error adding data to database: " & ex.Message)
+            Finally
+                con.Close()
+            End Try
+        End Using
+
+    End Sub
+
+    Public Sub GetAppointmentInfo()
+        Dim appoId = Appointment.txtAppointmentId.Text
+        Dim userNum = UserPanel.lblId.Text
+        Dim wholeDate As String
+
+        sqlQuery = "
+            SELECT pet_name, species, breed, gender, birthDate, behavioral_notes, pet_image, appointment_type,
+            preferredDate, appointment_reason, pet_id
+            FROM appointment_info WHERE appointment_id = @appoId AND user_number = @userNum;
+        "
+
+        mysqlcmd = New MySqlCommand(sqlQuery, con)
+
+        Try
+            mysqlcmd.Parameters.AddWithValue("@appoId", appoId)
+            mysqlcmd.Parameters.AddWithValue("@userNum", userNum)
+
+            Using reader As MySqlDataReader = mysqlcmd.ExecuteReader()
+                If reader.Read() Then
+                    wholeDate = reader("preferredDate").ToString
+                    Dim newDate = DateTime.ParseExact(wholeDate, "MM/dd/yyyy h:mm:ss tt",
+               Globalization.CultureInfo.InvariantCulture)
+
+                    Dim datePart As String = newDate.ToString("MM/dd/yyyy")
+                    Dim timePart As String = newDate.ToString("HH:mm:ss")
+
+                    Appointment.cmbPets.Text = reader("pet_name").ToString
+                    Appointment.txtPetID.Text = reader("pet_id").ToString
+                    Appointment.txtBreed.Text = reader("breed").ToString
+                    Appointment.txtSpecies.Text = reader("species").ToString
+                    Appointment.txtBirth.Text = reader("birthDate").ToString
+                    Appointment.txtGender.Text = reader("gender").ToString
+                    Appointment.txtNotes.Text = reader("behavioral_notes").ToString
+                    Appointment.cmbAppointment.Text = reader("appointment_type").ToString
+                    Appointment.dtpDateAppo.Text = datePart
+                    Appointment.dtpTimeAppo.Text = timePart
+                    Appointment.txtReason.Text = reader("appointment_reason").ToString
+
+                    MsgBox("Appointment.cmbPets.Text: " & Appointment.cmbPets.Text)
+                    MsgBox("reader: " & reader("pet_name").ToString)
+                Else
+                    ' Handle the case where no records are found for the given pet_id
+                    MessageBox.Show("Scheduled Appointment not found.")
+                End If
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message)
+        Finally
+            ' Check if the reader is not null before attempting to close it
+            If reader IsNot Nothing Then
+                MsgBox("a")
+                reader.Close()
+            End If
+        End Try
+    End Sub
+
+    Public Sub UpdateAppointment()
         behaveNotes = Appointment.txtNotes.Text
         appointmentType = Appointment.cmbAppointment.Text
-        preferredDate = Appointment.dtpDateAppointment.Value.ToString("yyyy-MM-dd")
+        preferredDateTime = Appointment.dtpDateAppo.Value.ToString("yyyy-MM-dd") & " " &
+            Appointment.dtpTimeAppo.Value.ToString("HH:mm:ss")
         reason = Appointment.txtReason.Text
+
+        'dateObj = DateTime.ParseExact(Appointment.txtBirth.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture)
+        'birthday = dateObj.ToString("yyyy-MM-dd")
+
+        sqlQuery = "
+            UPDATE appointment_info SET 
+            behavioral_notes = @notes, appointment_type = @appoType, preferredDate = @preferredDate, 
+            appointment_reason = @reason
+            WHERE appointment_id = @appointment_id AND user_number = @userNum
+        "
+        mysqlcmd = New MySqlCommand(sqlQuery, con)
+
+        If con.State <> ConnectionState.Open Then
+            con.Open()
+        End If
+
+        Try
+            Using mysqlcmd As New MySqlCommand(sqlQuery, con)
+                mysqlcmd.Parameters.AddWithValue("@appointment_id", Appointment.txtAppointmentId.Text)
+                mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                mysqlcmd.Parameters.AddWithValue("@notes", behaveNotes)
+                mysqlcmd.Parameters.AddWithValue("@appoType", appointmentType)
+                mysqlcmd.Parameters.AddWithValue("@preferredDate", preferredDateTime)
+                mysqlcmd.Parameters.AddWithValue("@reason", reason)
+                mysqlcmd.ExecuteNonQuery()
+                MsgBox("Update Successfully")
+            End Using
+        Catch ex As Exception
+            MsgBox("MySQL Error: " & ex.Message)
+        End Try
+
+    End Sub
+    Public Sub CancelAppointment()
+        sqlQuery = "
+            INSERT INTO staff_notification(client_name, email, notif_message, user_number) VALUES(
+            @email, @message, @userNum
+            );
+        "
+
+
     End Sub
 End Module

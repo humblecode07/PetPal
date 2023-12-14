@@ -37,7 +37,7 @@ Partial Class Account
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnCreate = New System.Windows.Forms.Button()
+        Me.btnOkay = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtFName = New System.Windows.Forms.TextBox()
         Me.txtLName = New System.Windows.Forms.TextBox()
@@ -69,6 +69,7 @@ Partial Class Account
         Me.pbxProfile.Location = New System.Drawing.Point(114, 101)
         Me.pbxProfile.Name = "pbxProfile"
         Me.pbxProfile.Size = New System.Drawing.Size(107, 107)
+        Me.pbxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbxProfile.TabIndex = 1
         Me.pbxProfile.TabStop = False
         '
@@ -211,19 +212,19 @@ Partial Class Account
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
-        'btnCreate
+        'btnOkay
         '
-        Me.btnCreate.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.btnCreate.FlatAppearance.BorderSize = 0
-        Me.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCreate.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnCreate.ForeColor = System.Drawing.Color.White
-        Me.btnCreate.Location = New System.Drawing.Point(661, 804)
-        Me.btnCreate.Name = "btnCreate"
-        Me.btnCreate.Size = New System.Drawing.Size(131, 43)
-        Me.btnCreate.TabIndex = 16
-        Me.btnCreate.Text = "Sign up"
-        Me.btnCreate.UseVisualStyleBackColor = False
+        Me.btnOkay.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.btnOkay.FlatAppearance.BorderSize = 0
+        Me.btnOkay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOkay.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnOkay.ForeColor = System.Drawing.Color.White
+        Me.btnOkay.Location = New System.Drawing.Point(661, 804)
+        Me.btnOkay.Name = "btnOkay"
+        Me.btnOkay.Size = New System.Drawing.Size(131, 43)
+        Me.btnOkay.TabIndex = 16
+        Me.btnOkay.Text = "Sign up"
+        Me.btnOkay.UseVisualStyleBackColor = False
         '
         'Label12
         '
@@ -362,7 +363,7 @@ Partial Class Account
         Me.StatusLabel.TabIndex = 35
         Me.StatusLabel.Text = "StatusStrip1"
         '
-        'CreateAccount
+        'Account
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -384,7 +385,7 @@ Partial Class Account
         Me.Controls.Add(Me.txtFName)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnCreate)
+        Me.Controls.Add(Me.btnOkay)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -398,7 +399,7 @@ Partial Class Account
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnUpload)
         Me.Controls.Add(Me.pbxProfile)
-        Me.Name = "CreateAccount"
+        Me.Name = "Account"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CreateAccount"
         CType(Me.pbxProfile, System.ComponentModel.ISupportInitialize).EndInit()
@@ -423,7 +424,7 @@ Partial Class Account
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents btnCancel As Button
-    Friend WithEvents btnCreate As Button
+    Friend WithEvents btnOkay As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents txtFName As TextBox
     Friend WithEvents txtLName As TextBox

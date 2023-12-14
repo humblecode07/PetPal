@@ -56,4 +56,8 @@ Public Class FrontPage
     Private Sub btnAbout_MouseLeave(sender As Object, e As EventArgs) Handles btnAbout.MouseLeave
         btnAbout.ForeColor = Color.White
     End Sub
+
+    Private Sub btnGetStart_Click_1(sender As Object, e As EventArgs) Handles btnGetStart.Click
+        ClientLogin.Show()
+    End Sub
 End Class

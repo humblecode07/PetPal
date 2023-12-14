@@ -34,7 +34,6 @@ Public Class Pet
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Dispose()
         UserPanel.Show()
-
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -42,6 +41,8 @@ Public Class Pet
         If type = "Add" Then
             AddPet(user_number, imageData)
             LoadPets(UserPanel.lblId.Text)
+            Me.Dispose()
+            UserPanel.Show()
         ElseIf type = "Edit" Then
             UpdatePetInfo(user_number, imageData)
             LoadPets(UserPanel.lblId.Text)

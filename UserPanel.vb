@@ -3,6 +3,8 @@
     Private Sub UserPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UserModule.ConnectDbase()
         roundCorners(Me)
+        CreateRoundedPictureBox(pcbProfile)
+        CreateRoundedPictureBox(pcbUserProfile)
         Dim fontFileName As String = "cBomb.ttf"
         Dim fontFilePath As String = System.IO.Path.Combine(Application.StartupPath, fontFileName)
 
@@ -17,11 +19,14 @@
             btnLogOut.Font = customFontTwo
             lblMyPets.Font = customFont
             lblAppointment.Font = customFont
+
+            lblUserName.Font = customFont
         Else
             MessageBox.Show($"Font file not found at: {fontFilePath}")
         End If
         Panel2.Hide()
         LoadPets(id)
+        LoadUserInfo(id)
     End Sub
 
     Public Sub ReceiveValue(ByVal value As String)
@@ -67,20 +72,64 @@
     Private Sub btnPets_Click(sender As Object, e As EventArgs) Handles btnPets.Click
         Panel2.Show()
         Panel3.Hide()
+        Panel4.Hide()
     End Sub
 
     'Appointment
     Private Sub btnAppointment_Click(sender As Object, e As EventArgs) Handles btnAppointment.Click
         Panel3.Show()
+        Panel4.Hide()
+        Panel2.Hide()
+    End Sub
+    Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
+        Panel4.Show()
+        Panel3.Hide()
         Panel2.Hide()
     End Sub
 
     Private Sub btnCreateAppointment_Click(sender As Object, e As EventArgs) Handles btnCreateAppointment.Click
+        Appointment.ReceiveValue("Create")
         Appointment.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+    Private Sub btnUpdateAppointment_Click(sender As Object, e As EventArgs) Handles btnUpdateAppointment.Click
+        Appointment.ReceiveValue("Edit")
+        Appointment.Show()
+        Me.Hide()
+    End Sub
+
+    'Profile
+    Private Sub btnEditProfile_Click(sender As Object, e As EventArgs) Handles btnEditProfile.Click
+        Account.ReceiveValue("Edit")
+        Account.Show()
+        Me.Hide()
+    End Sub
+    Private Sub btnDeleteProfile_Click(sender As Object, e As EventArgs) Handles btnDeleteProfile.Click
+        Dim result As DialogResult = MessageBox.Show("Do you want to delete your account?", "Confirmation",
+                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            DeleteProfile()
+            Me.Dispose()
+            ClientLogin.Show()
+        End If
+    End Sub
+    Public Sub LoadInfo()
+        LoadPets(id)
+        LoadUserInfo(id)
+    End Sub
+
+    'Log out
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        Dim result As DialogResult = MessageBox.Show("Do you want to sign out?", "Confirmation",
+                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            Me.Dispose()
+            ClientLogin.Show()
+        End If
+    End Sub
+
+    Private Sub btnCancelAppointment_Click(sender As Object, e As EventArgs) Handles btnCancelAppointment.Click
 
     End Sub
 End Class

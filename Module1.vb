@@ -17,7 +17,7 @@ Module Module1
 
         If Not con Is Nothing Then
             con.Close()
-            con.ConnectionString = "server = " & host & "; user id = " & uname & "; password = " & pwd & "; database = " & dbname & ""
+            con.ConnectionString = "server = " & host & "; user id = " & uname & "; password = " & pwd & "; database = " & dbname & ";"
             Try
                 con.Open()
                 MessageBox.Show("Connected!")

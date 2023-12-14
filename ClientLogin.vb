@@ -5,6 +5,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
+        Account.ReceiveValue("Add")
         Me.Hide()
         Account.Show()
     End Sub
@@ -16,6 +17,7 @@
 
         If entry = True Then
             MsgBox("Login Successfully!")
+            FrontPage.Hide()
             Me.Hide()
             UserPanel.Show()
         Else
