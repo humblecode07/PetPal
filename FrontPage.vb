@@ -1,17 +1,21 @@
 ﻿Imports System.Drawing.Text
 
 Public Class FrontPage
+    Dim customFont As Font
+    Dim customFontTwo As Font
+    Dim customFontThree As Font
     Private Sub FrontPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         roundCorners(Me)
+        Me.KeyPreview = True
         Dim fontFileName As String = "cBomb.ttf"
         Dim fontFileNameTwo As String = "quickSand.ttf"
         Dim fontFilePath As String = System.IO.Path.Combine(Application.StartupPath, fontFileName)
         Dim fontFilePathTwo As String = System.IO.Path.Combine(Application.StartupPath, fontFileNameTwo)
 
         If System.IO.File.Exists(fontFilePath) Then
-            Dim customFont As Font = Functions.LoadCustomFont(fontFilePath, 22.0F)
-            Dim customFontTwo As Font = Functions.LoadCustomFont(fontFilePath, 18.0F)
-            Dim customFontThree As Font = Functions.LoadCustomFont(fontFilePathTwo, 32.0F)
+            customFont = Functions.LoadCustomFont(fontFilePath, 22.0F)
+            customFontTwo = Functions.LoadCustomFont(fontFilePath, 18.0F)
+            customFontThree = Functions.LoadCustomFont(fontFilePathTwo, 32.0F)
 
             Label1.Font = customFont
             btnHome.Font = customFontTwo
@@ -59,5 +63,12 @@ Public Class FrontPage
 
     Private Sub btnGetStart_Click_1(sender As Object, e As EventArgs) Handles btnGetStart.Click
         ClientLogin.Show()
+    End Sub
+
+    Private Sub btnHome_KeyDown(sender As Object, e As KeyEventArgs) Handles btnHome.KeyDown
+        If e.Alt Then
+            ' Prevent the default action
+            e.SuppressKeyPress = True
+        End If
     End Sub
 End Class

@@ -541,9 +541,9 @@ Partial Class UserPanel
         Me.lblUserName.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUserName.Location = New System.Drawing.Point(40, 44)
         Me.lblUserName.Name = "lblUserName"
-        Me.lblUserName.Size = New System.Drawing.Size(75, 16)
+        Me.lblUserName.Size = New System.Drawing.Size(76, 16)
         Me.lblUserName.TabIndex = 13
-        Me.lblUserName.Text = "First Name"
+        Me.lblUserName.Text = "User Name"
         '
         'Label11
         '
@@ -646,9 +646,9 @@ Partial Class UserPanel
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(202, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(956, 688)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "UserPanel"
         Me.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)

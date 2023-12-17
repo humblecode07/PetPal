@@ -64,34 +64,30 @@ Module UserModule
     End Sub
 
     Public Sub LoadProfilePicture(petID As Integer, pictureBox As PictureBox)
-        sqlQuery = "SELECT profileImage FROM pet_info WHERE pet_id = @petID"
+        sqlQuery = "SELECT profileImage FROM pet_info WHERE pet_id = @petID AND user_number = @userNum;"
 
         Try
-            ' Open the connection before using it
             If con.State = ConnectionState.Closed Then
                 con.Open()
             End If
 
             Using mysqlcmd As New MySqlCommand(sqlQuery, con)
+                MsgBox(petID)
                 mysqlcmd.Parameters.AddWithValue("@petID", petID)
+                mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
 
                 Dim reader As MySqlDataReader = mysqlcmd.ExecuteReader()
 
                 If reader.Read() Then
-                    ' Check if the profileImage column is not null
+
                     If Not reader.IsDBNull(reader.GetOrdinal("profileImage")) Then
-                        ' Get the BLOB data as a byte array
                         Dim imageData As Byte() = DirectCast(reader("profileImage"), Byte())
 
-                        ' Convert the byte array to an Image
-                        Dim imageStream As New MemoryStream(imageData)
-                        Dim profileImage As Image = Image.FromStream(imageStream)
-
-                        ' Set the image to the PictureBox control
-                        pictureBox.Image = profileImage
+                        Using imageStream As New MemoryStream(imageData)
+                            Dim profileImage As Image = Image.FromStream(imageStream)
+                            pictureBox.Image = profileImage
+                        End Using
                     Else
-                        ' Handle the case where the profileImage column is null
-                        ' Set a default image or do other handling
                         pictureBox.Image = Nothing
                     End If
                 End If
@@ -99,7 +95,6 @@ Module UserModule
         Catch ex As Exception
             MsgBox("An error occurred while loading the profile picture: " & ex.Message)
         Finally
-            ' Close the connection in the Finally block
             If con.State = ConnectionState.Open Then
                 con.Close()
             End If

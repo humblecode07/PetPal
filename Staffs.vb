@@ -2,7 +2,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim key As String = GetSaltedHash(txtPassword.Text, txtUName.Text)
         Dim entry As Boolean = False
-        LoginClient(key, entry)
+        LoginStaff(key, entry)
 
         If entry = True Then
             MsgBox("Login Successfully!")

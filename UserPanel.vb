@@ -5,28 +5,11 @@
         roundCorners(Me)
         CreateRoundedPictureBox(pcbProfile)
         CreateRoundedPictureBox(pcbUserProfile)
-        Dim fontFileName As String = "cBomb.ttf"
-        Dim fontFilePath As String = System.IO.Path.Combine(Application.StartupPath, fontFileName)
 
-        If System.IO.File.Exists(fontFilePath) Then
-            Dim customFont As Font = Functions.LoadCustomFont(fontFilePath, 21.0F)
-            Dim customFontTwo As Font = Functions.LoadCustomFont(fontFilePath, 15.0F)
-
-            btnPets.Font = customFont
-            btnAppointment.Font = customFontTwo
-            btnProfile.Font = customFontTwo
-            btnNotif.Font = customFontTwo
-            btnLogOut.Font = customFontTwo
-            lblMyPets.Font = customFont
-            lblAppointment.Font = customFont
-
-            lblUserName.Font = customFont
-        Else
-            MessageBox.Show($"Font file not found at: {fontFilePath}")
-        End If
         Panel2.Hide()
         LoadPets(id)
         LoadUserInfo(id)
+
     End Sub
 
     Public Sub ReceiveValue(ByVal value As String)

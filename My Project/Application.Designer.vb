@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PetPal.FrontPage
+            Me.MainForm = Global.PetPal.AdminPanel
         End Sub
     End Class
 End Namespace
