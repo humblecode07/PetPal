@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Pet
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Pet
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pet))
         Me.pbxProfile = New System.Windows.Forms.PictureBox()
@@ -50,8 +50,18 @@ Partial Class Pet
         Me.txtPetId = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.dtpTimeMedication = New System.Windows.Forms.DateTimePicker()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtAUserNumber = New System.Windows.Forms.TextBox()
+        Me.txtAPetID = New System.Windows.Forms.TextBox()
+        Me.btnAdminSearch = New System.Windows.Forms.Button()
         CType(Me.pbxProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'pbxProfile
@@ -118,7 +128,7 @@ Partial Class Pet
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(343, 185)
+        Me.Label4.Location = New System.Drawing.Point(343, 170)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(62, 16)
         Me.Label4.TabIndex = 5
@@ -129,7 +139,7 @@ Partial Class Pet
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(591, 185)
+        Me.Label5.Location = New System.Drawing.Point(591, 170)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(54, 16)
         Me.Label5.TabIndex = 6
@@ -140,7 +150,7 @@ Partial Class Pet
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(343, 268)
+        Me.Label6.Location = New System.Drawing.Point(343, 241)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(71, 16)
         Me.Label6.TabIndex = 7
@@ -151,7 +161,7 @@ Partial Class Pet
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(343, 349)
+        Me.Label7.Location = New System.Drawing.Point(343, 315)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(27, 16)
         Me.Label7.TabIndex = 8
@@ -162,7 +172,7 @@ Partial Class Pet
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(343, 484)
+        Me.Label8.Location = New System.Drawing.Point(343, 427)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(100, 16)
         Me.Label8.TabIndex = 9
@@ -173,7 +183,7 @@ Partial Class Pet
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(591, 484)
+        Me.Label9.Location = New System.Drawing.Point(343, 497)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(132, 16)
         Me.Label9.TabIndex = 10
@@ -184,7 +194,7 @@ Partial Class Pet
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(343, 573)
+        Me.Label10.Location = New System.Drawing.Point(591, 241)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(115, 16)
         Me.Label10.TabIndex = 11
@@ -197,7 +207,7 @@ Partial Class Pet
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(580, 678)
+        Me.btnAdd.Location = New System.Drawing.Point(594, 624)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(117, 43)
         Me.btnAdd.TabIndex = 12
@@ -212,7 +222,7 @@ Partial Class Pet
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(725, 678)
+        Me.btnCancel.Location = New System.Drawing.Point(739, 624)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(117, 43)
         Me.btnCancel.TabIndex = 13
@@ -230,7 +240,7 @@ Partial Class Pet
         '
         'txtBio
         '
-        Me.txtBio.Location = New System.Drawing.Point(346, 374)
+        Me.txtBio.Location = New System.Drawing.Point(346, 340)
         Me.txtBio.Multiline = True
         Me.txtBio.Name = "txtBio"
         Me.txtBio.Size = New System.Drawing.Size(432, 69)
@@ -238,21 +248,22 @@ Partial Class Pet
         '
         'txtCurrFood
         '
-        Me.txtCurrFood.Location = New System.Drawing.Point(346, 514)
+        Me.txtCurrFood.Location = New System.Drawing.Point(346, 457)
         Me.txtCurrFood.Name = "txtCurrFood"
         Me.txtCurrFood.Size = New System.Drawing.Size(184, 20)
         Me.txtCurrFood.TabIndex = 18
         '
         'txtCurrMed
         '
-        Me.txtCurrMed.Location = New System.Drawing.Point(594, 514)
+        Me.txtCurrMed.Location = New System.Drawing.Point(346, 527)
+        Me.txtCurrMed.Multiline = True
         Me.txtCurrMed.Name = "txtCurrMed"
-        Me.txtCurrMed.Size = New System.Drawing.Size(184, 20)
+        Me.txtCurrMed.Size = New System.Drawing.Size(184, 164)
         Me.txtCurrMed.TabIndex = 19
         '
         'txtWeight
         '
-        Me.txtWeight.Location = New System.Drawing.Point(346, 603)
+        Me.txtWeight.Location = New System.Drawing.Point(594, 271)
         Me.txtWeight.Name = "txtWeight"
         Me.txtWeight.Size = New System.Drawing.Size(184, 20)
         Me.txtWeight.TabIndex = 20
@@ -269,7 +280,7 @@ Partial Class Pet
         '
         'txtBreed
         '
-        Me.txtBreed.Location = New System.Drawing.Point(594, 213)
+        Me.txtBreed.Location = New System.Drawing.Point(594, 198)
         Me.txtBreed.Name = "txtBreed"
         Me.txtBreed.Size = New System.Drawing.Size(184, 20)
         Me.txtBreed.TabIndex = 23
@@ -277,7 +288,7 @@ Partial Class Pet
         'dtpBirthday
         '
         Me.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpBirthday.Location = New System.Drawing.Point(346, 297)
+        Me.dtpBirthday.Location = New System.Drawing.Point(346, 270)
         Me.dtpBirthday.Name = "dtpBirthday"
         Me.dtpBirthday.Size = New System.Drawing.Size(200, 20)
         Me.dtpBirthday.TabIndex = 24
@@ -287,7 +298,7 @@ Partial Class Pet
         Me.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbGender.FormattingEnabled = True
         Me.cmbGender.Items.AddRange(New Object() {"Male", "Female"})
-        Me.cmbGender.Location = New System.Drawing.Point(346, 213)
+        Me.cmbGender.Location = New System.Drawing.Point(346, 198)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Size = New System.Drawing.Size(184, 21)
         Me.cmbGender.TabIndex = 25
@@ -331,13 +342,108 @@ Partial Class Pet
         Me.Panel1.Size = New System.Drawing.Size(288, 54)
         Me.Panel1.TabIndex = 29
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Label12.Location = New System.Drawing.Point(591, 497)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(237, 16)
+        Me.Label12.TabIndex = 30
+        Me.Label12.Text = "Date and Time of Medication Intake"
+        '
+        'dtpTimeMedication
+        '
+        Me.dtpTimeMedication.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpTimeMedication.Location = New System.Drawing.Point(594, 527)
+        Me.dtpTimeMedication.Name = "dtpTimeMedication"
+        Me.dtpTimeMedication.Size = New System.Drawing.Size(184, 20)
+        Me.dtpTimeMedication.TabIndex = 31
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.Controls.Add(Me.btnAdminSearch)
+        Me.Panel2.Controls.Add(Me.txtAPetID)
+        Me.Panel2.Controls.Add(Me.txtAUserNumber)
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Controls.Add(Me.Label14)
+        Me.Panel2.Controls.Add(Me.Label13)
+        Me.Panel2.Location = New System.Drawing.Point(21, 350)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(262, 274)
+        Me.Panel2.TabIndex = 32
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.White
+        Me.Label13.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(12, 15)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(139, 19)
+        Me.Label13.TabIndex = 0
+        Me.Label13.Text = "Search User Pet"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.White
+        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Label14.Location = New System.Drawing.Point(29, 56)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(90, 16)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "User Number"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.White
+        Me.Label15.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Label15.Location = New System.Drawing.Point(29, 131)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(48, 16)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "Pet ID"
+        '
+        'txtAUserNumber
+        '
+        Me.txtAUserNumber.Location = New System.Drawing.Point(32, 88)
+        Me.txtAUserNumber.Name = "txtAUserNumber"
+        Me.txtAUserNumber.Size = New System.Drawing.Size(186, 20)
+        Me.txtAUserNumber.TabIndex = 3
+        '
+        'txtAPetID
+        '
+        Me.txtAPetID.Location = New System.Drawing.Point(32, 160)
+        Me.txtAPetID.Name = "txtAPetID"
+        Me.txtAPetID.Size = New System.Drawing.Size(186, 20)
+        Me.txtAPetID.TabIndex = 4
+        '
+        'btnAdminSearch
+        '
+        Me.btnAdminSearch.Location = New System.Drawing.Point(62, 206)
+        Me.btnAdminSearch.Name = "btnAdminSearch"
+        Me.btnAdminSearch.Size = New System.Drawing.Size(126, 34)
+        Me.btnAdminSearch.TabIndex = 5
+        Me.btnAdminSearch.Text = "Search"
+        Me.btnAdminSearch.UseVisualStyleBackColor = True
+        '
         'Pet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(897, 767)
+        Me.ClientSize = New System.Drawing.Size(897, 720)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.dtpTimeMedication)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.cmbGender)
         Me.Controls.Add(Me.dtpBirthday)
@@ -368,6 +474,8 @@ Partial Class Pet
         CType(Me.pbxProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -400,4 +508,13 @@ Partial Class Pet
     Friend WithEvents txtPetId As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label12 As Label
+    Friend WithEvents dtpTimeMedication As DateTimePicker
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents btnAdminSearch As Button
+    Friend WithEvents txtAPetID As TextBox
+    Friend WithEvents txtAUserNumber As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
 End Class

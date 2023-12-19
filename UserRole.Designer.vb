@@ -27,6 +27,16 @@ Partial Class UserRole
         Me.StatusLabel = New System.Windows.Forms.StatusStrip()
         Me.StatusInfo = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlEdit = New System.Windows.Forms.Panel()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.lblEdit = New System.Windows.Forms.Label()
+        Me.pnlAdd = New System.Windows.Forms.Panel()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.lblAdd = New System.Windows.Forms.Label()
+        Me.pnlDelete = New System.Windows.Forms.Panel()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.lblRemove = New System.Windows.Forms.Label()
         Me.pnlUserCredentials = New System.Windows.Forms.Panel()
         Me.btnChange = New System.Windows.Forms.Button()
         Me.lblUserCred = New System.Windows.Forms.Label()
@@ -34,21 +44,12 @@ Partial Class UserRole
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.pnlDelete = New System.Windows.Forms.Panel()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.lblRemove = New System.Windows.Forms.Label()
-        Me.pnlEdit = New System.Windows.Forms.Panel()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.lblEdit = New System.Windows.Forms.Label()
-        Me.pnlAdd = New System.Windows.Forms.Panel()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.lblAdd = New System.Windows.Forms.Label()
         Me.pnlSearch = New System.Windows.Forms.Panel()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.lblnfo = New System.Windows.Forms.Label()
         Me.txtFinalHour = New System.Windows.Forms.TextBox()
         Me.cmbFinalAnte = New System.Windows.Forms.ComboBox()
@@ -89,10 +90,11 @@ Partial Class UserRole
         Me.txtInitialHour = New System.Windows.Forms.TextBox()
         Me.StatusLabel.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.pnlUserCredentials.SuspendLayout()
-        Me.pnlDelete.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.pnlEdit.SuspendLayout()
         Me.pnlAdd.SuspendLayout()
+        Me.pnlDelete.SuspendLayout()
+        Me.pnlUserCredentials.SuspendLayout()
         Me.pnlSearch.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -118,13 +120,11 @@ Partial Class UserRole
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.pnlUserCredentials)
-        Me.Panel1.Controls.Add(Me.pnlDelete)
-        Me.Panel1.Controls.Add(Me.pnlEdit)
-        Me.Panel1.Controls.Add(Me.pnlAdd)
         Me.Panel1.Controls.Add(Me.pnlSearch)
-        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.btnBack)
         Me.Panel1.Controls.Add(Me.lblnfo)
         Me.Panel1.Controls.Add(Me.txtFinalHour)
         Me.Panel1.Controls.Add(Me.cmbFinalAnte)
@@ -166,8 +166,135 @@ Partial Class UserRole
         Me.Panel1.ForeColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1101, 714)
+        Me.Panel1.Size = New System.Drawing.Size(1104, 714)
         Me.Panel1.TabIndex = 39
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.pnlEdit)
+        Me.Panel2.Controls.Add(Me.pnlAdd)
+        Me.Panel2.Controls.Add(Me.pnlDelete)
+        Me.Panel2.Location = New System.Drawing.Point(121, 12)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(753, 99)
+        Me.Panel2.TabIndex = 59
+        '
+        'pnlEdit
+        '
+        Me.pnlEdit.Controls.Add(Me.btnEdit)
+        Me.pnlEdit.Controls.Add(Me.lblEdit)
+        Me.pnlEdit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pnlEdit.Location = New System.Drawing.Point(243, 10)
+        Me.pnlEdit.Name = "pnlEdit"
+        Me.pnlEdit.Size = New System.Drawing.Size(223, 81)
+        Me.pnlEdit.TabIndex = 56
+        '
+        'btnEdit
+        '
+        Me.btnEdit.BackColor = System.Drawing.Color.Transparent
+        Me.btnEdit.BackgroundImage = CType(resources.GetObject("btnEdit.BackgroundImage"), System.Drawing.Image)
+        Me.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEdit.FlatAppearance.BorderSize = 0
+        Me.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEdit.ForeColor = System.Drawing.Color.Transparent
+        Me.btnEdit.Location = New System.Drawing.Point(14, 3)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(70, 70)
+        Me.btnEdit.TabIndex = 49
+        Me.btnEdit.UseVisualStyleBackColor = False
+        '
+        'lblEdit
+        '
+        Me.lblEdit.AutoSize = True
+        Me.lblEdit.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lblEdit.Font = New System.Drawing.Font("Comic Sans MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEdit.ForeColor = System.Drawing.Color.White
+        Me.lblEdit.Location = New System.Drawing.Point(97, 25)
+        Me.lblEdit.Name = "lblEdit"
+        Me.lblEdit.Size = New System.Drawing.Size(76, 33)
+        Me.lblEdit.TabIndex = 50
+        Me.lblEdit.Text = "EDIT"
+        '
+        'pnlAdd
+        '
+        Me.pnlAdd.Controls.Add(Me.btnAdd)
+        Me.pnlAdd.Controls.Add(Me.lblAdd)
+        Me.pnlAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pnlAdd.Location = New System.Drawing.Point(27, 10)
+        Me.pnlAdd.Name = "pnlAdd"
+        Me.pnlAdd.Size = New System.Drawing.Size(200, 74)
+        Me.pnlAdd.TabIndex = 55
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.Transparent
+        Me.btnAdd.BackgroundImage = CType(resources.GetObject("btnAdd.BackgroundImage"), System.Drawing.Image)
+        Me.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAdd.FlatAppearance.BorderSize = 0
+        Me.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.ForeColor = System.Drawing.Color.Transparent
+        Me.btnAdd.Location = New System.Drawing.Point(5, 0)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(70, 70)
+        Me.btnAdd.TabIndex = 47
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'lblAdd
+        '
+        Me.lblAdd.AutoSize = True
+        Me.lblAdd.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lblAdd.Font = New System.Drawing.Font("Comic Sans MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAdd.ForeColor = System.Drawing.Color.White
+        Me.lblAdd.Location = New System.Drawing.Point(84, 22)
+        Me.lblAdd.Name = "lblAdd"
+        Me.lblAdd.Size = New System.Drawing.Size(66, 33)
+        Me.lblAdd.TabIndex = 48
+        Me.lblAdd.Text = "ADD"
+        '
+        'pnlDelete
+        '
+        Me.pnlDelete.Controls.Add(Me.btnDelete)
+        Me.pnlDelete.Controls.Add(Me.lblRemove)
+        Me.pnlDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pnlDelete.Location = New System.Drawing.Point(487, 10)
+        Me.pnlDelete.Name = "pnlDelete"
+        Me.pnlDelete.Size = New System.Drawing.Size(233, 77)
+        Me.pnlDelete.TabIndex = 57
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.BackgroundImage = CType(resources.GetObject("btnDelete.BackgroundImage"), System.Drawing.Image)
+        Me.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelete.FlatAppearance.BorderSize = 0
+        Me.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.ForeColor = System.Drawing.Color.Transparent
+        Me.btnDelete.Location = New System.Drawing.Point(15, 0)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(70, 70)
+        Me.btnDelete.TabIndex = 51
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'lblRemove
+        '
+        Me.lblRemove.AutoSize = True
+        Me.lblRemove.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lblRemove.Font = New System.Drawing.Font("Comic Sans MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRemove.ForeColor = System.Drawing.Color.DarkRed
+        Me.lblRemove.Location = New System.Drawing.Point(91, 22)
+        Me.lblRemove.Name = "lblRemove"
+        Me.lblRemove.Size = New System.Drawing.Size(116, 33)
+        Me.lblRemove.TabIndex = 52
+        Me.lblRemove.Text = "REMOVE"
         '
         'pnlUserCredentials
         '
@@ -240,123 +367,6 @@ Partial Class UserRole
         Me.Label15.TabIndex = 31
         Me.Label15.Text = "Password"
         '
-        'pnlDelete
-        '
-        Me.pnlDelete.Controls.Add(Me.btnDelete)
-        Me.pnlDelete.Controls.Add(Me.lblRemove)
-        Me.pnlDelete.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlDelete.Location = New System.Drawing.Point(641, 16)
-        Me.pnlDelete.Name = "pnlDelete"
-        Me.pnlDelete.Size = New System.Drawing.Size(233, 77)
-        Me.pnlDelete.TabIndex = 57
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
-        Me.btnDelete.BackgroundImage = CType(resources.GetObject("btnDelete.BackgroundImage"), System.Drawing.Image)
-        Me.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelete.FlatAppearance.BorderSize = 0
-        Me.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.ForeColor = System.Drawing.Color.Transparent
-        Me.btnDelete.Location = New System.Drawing.Point(15, 0)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(70, 70)
-        Me.btnDelete.TabIndex = 51
-        Me.btnDelete.UseVisualStyleBackColor = False
-        '
-        'lblRemove
-        '
-        Me.lblRemove.AutoSize = True
-        Me.lblRemove.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.lblRemove.Font = New System.Drawing.Font("Comic Sans MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRemove.ForeColor = System.Drawing.Color.DarkRed
-        Me.lblRemove.Location = New System.Drawing.Point(91, 22)
-        Me.lblRemove.Name = "lblRemove"
-        Me.lblRemove.Size = New System.Drawing.Size(116, 33)
-        Me.lblRemove.TabIndex = 52
-        Me.lblRemove.Text = "REMOVE"
-        '
-        'pnlEdit
-        '
-        Me.pnlEdit.Controls.Add(Me.btnEdit)
-        Me.pnlEdit.Controls.Add(Me.lblEdit)
-        Me.pnlEdit.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlEdit.Location = New System.Drawing.Point(397, 16)
-        Me.pnlEdit.Name = "pnlEdit"
-        Me.pnlEdit.Size = New System.Drawing.Size(223, 81)
-        Me.pnlEdit.TabIndex = 56
-        '
-        'btnEdit
-        '
-        Me.btnEdit.BackColor = System.Drawing.Color.Transparent
-        Me.btnEdit.BackgroundImage = CType(resources.GetObject("btnEdit.BackgroundImage"), System.Drawing.Image)
-        Me.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEdit.FlatAppearance.BorderSize = 0
-        Me.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEdit.ForeColor = System.Drawing.Color.Transparent
-        Me.btnEdit.Location = New System.Drawing.Point(14, 3)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(70, 70)
-        Me.btnEdit.TabIndex = 49
-        Me.btnEdit.UseVisualStyleBackColor = False
-        '
-        'lblEdit
-        '
-        Me.lblEdit.AutoSize = True
-        Me.lblEdit.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.lblEdit.Font = New System.Drawing.Font("Comic Sans MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEdit.ForeColor = System.Drawing.Color.White
-        Me.lblEdit.Location = New System.Drawing.Point(97, 25)
-        Me.lblEdit.Name = "lblEdit"
-        Me.lblEdit.Size = New System.Drawing.Size(76, 33)
-        Me.lblEdit.TabIndex = 50
-        Me.lblEdit.Text = "EDIT"
-        '
-        'pnlAdd
-        '
-        Me.pnlAdd.Controls.Add(Me.btnAdd)
-        Me.pnlAdd.Controls.Add(Me.lblAdd)
-        Me.pnlAdd.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlAdd.Location = New System.Drawing.Point(181, 16)
-        Me.pnlAdd.Name = "pnlAdd"
-        Me.pnlAdd.Size = New System.Drawing.Size(200, 74)
-        Me.pnlAdd.TabIndex = 55
-        '
-        'btnAdd
-        '
-        Me.btnAdd.BackColor = System.Drawing.Color.Transparent
-        Me.btnAdd.BackgroundImage = CType(resources.GetObject("btnAdd.BackgroundImage"), System.Drawing.Image)
-        Me.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAdd.FlatAppearance.BorderSize = 0
-        Me.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.ForeColor = System.Drawing.Color.Transparent
-        Me.btnAdd.Location = New System.Drawing.Point(5, 0)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(70, 70)
-        Me.btnAdd.TabIndex = 47
-        Me.btnAdd.UseVisualStyleBackColor = False
-        '
-        'lblAdd
-        '
-        Me.lblAdd.AutoSize = True
-        Me.lblAdd.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.lblAdd.Font = New System.Drawing.Font("Comic Sans MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAdd.ForeColor = System.Drawing.Color.White
-        Me.lblAdd.Location = New System.Drawing.Point(84, 22)
-        Me.lblAdd.Name = "lblAdd"
-        Me.lblAdd.Size = New System.Drawing.Size(66, 33)
-        Me.lblAdd.TabIndex = 48
-        Me.lblAdd.Text = "ADD"
-        '
         'pnlSearch
         '
         Me.pnlSearch.Controls.Add(Me.btnSearch)
@@ -408,22 +418,22 @@ Partial Class UserRole
         Me.Label23.TabIndex = 55
         Me.Label23.Text = "Search User"
         '
-        'Button4
+        'btnBack
         '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.Color.Transparent
-        Me.Button4.Location = New System.Drawing.Point(999, 23)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(70, 70)
-        Me.Button4.TabIndex = 53
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btnBack.BackColor = System.Drawing.Color.Transparent
+        Me.btnBack.BackgroundImage = CType(resources.GetObject("btnBack.BackgroundImage"), System.Drawing.Image)
+        Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnBack.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBack.FlatAppearance.BorderSize = 0
+        Me.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.ForeColor = System.Drawing.Color.Transparent
+        Me.btnBack.Location = New System.Drawing.Point(999, 23)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(70, 70)
+        Me.btnBack.TabIndex = 53
+        Me.btnBack.UseVisualStyleBackColor = False
         '
         'lblnfo
         '
@@ -774,7 +784,7 @@ Partial Class UserRole
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1104, 757)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusLabel)
@@ -785,14 +795,15 @@ Partial Class UserRole
         Me.StatusLabel.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.pnlUserCredentials.ResumeLayout(False)
-        Me.pnlUserCredentials.PerformLayout()
-        Me.pnlDelete.ResumeLayout(False)
-        Me.pnlDelete.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.pnlEdit.ResumeLayout(False)
         Me.pnlEdit.PerformLayout()
         Me.pnlAdd.ResumeLayout(False)
         Me.pnlAdd.PerformLayout()
+        Me.pnlDelete.ResumeLayout(False)
+        Me.pnlDelete.PerformLayout()
+        Me.pnlUserCredentials.ResumeLayout(False)
+        Me.pnlUserCredentials.PerformLayout()
         Me.pnlSearch.ResumeLayout(False)
         Me.pnlSearch.PerformLayout()
         Me.ResumeLayout(False)
@@ -851,7 +862,7 @@ Partial Class UserRole
     Friend WithEvents lblEdit As Label
     Friend WithEvents btnEdit As Button
     Friend WithEvents lblAdd As Label
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnBack As Button
     Friend WithEvents pnlSearch As Panel
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Label24 As Label
@@ -862,4 +873,5 @@ Partial Class UserRole
     Friend WithEvents pnlAdd As Panel
     Friend WithEvents pnlUserCredentials As Panel
     Friend WithEvents btnChange As Button
+    Friend WithEvents Panel2 As Panel
 End Class

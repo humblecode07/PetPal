@@ -35,14 +35,14 @@ Partial Class Vaccination
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtVaccineName = New System.Windows.Forms.TextBox()
+        Me.txtManufacturer = New System.Windows.Forms.TextBox()
+        Me.txtRecSpecies = New System.Windows.Forms.TextBox()
+        Me.txtCost = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtpExpiryDate = New System.Windows.Forms.DateTimePicker()
+        Me.cmbVaccineType = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -170,47 +170,40 @@ Partial Class Vaccination
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(72, 200)
+        Me.Button3.Location = New System.Drawing.Point(60, 199)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(126, 43)
+        Me.Button3.Size = New System.Drawing.Size(145, 43)
         Me.Button3.TabIndex = 12
         Me.Button3.Text = "Upload Vaccine"
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'txtVaccineName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(334, 68)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(184, 20)
-        Me.TextBox1.TabIndex = 13
+        Me.txtVaccineName.Location = New System.Drawing.Point(334, 68)
+        Me.txtVaccineName.Name = "txtVaccineName"
+        Me.txtVaccineName.Size = New System.Drawing.Size(184, 20)
+        Me.txtVaccineName.TabIndex = 13
         '
-        'TextBox2
+        'txtManufacturer
         '
-        Me.TextBox2.Location = New System.Drawing.Point(624, 68)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(184, 20)
-        Me.TextBox2.TabIndex = 14
+        Me.txtManufacturer.Location = New System.Drawing.Point(334, 151)
+        Me.txtManufacturer.Name = "txtManufacturer"
+        Me.txtManufacturer.Size = New System.Drawing.Size(184, 20)
+        Me.txtManufacturer.TabIndex = 15
         '
-        'TextBox3
+        'txtRecSpecies
         '
-        Me.TextBox3.Location = New System.Drawing.Point(334, 151)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(184, 20)
-        Me.TextBox3.TabIndex = 15
+        Me.txtRecSpecies.Location = New System.Drawing.Point(334, 227)
+        Me.txtRecSpecies.Name = "txtRecSpecies"
+        Me.txtRecSpecies.Size = New System.Drawing.Size(184, 20)
+        Me.txtRecSpecies.TabIndex = 17
         '
-        'TextBox5
+        'txtCost
         '
-        Me.TextBox5.Location = New System.Drawing.Point(334, 227)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(184, 20)
-        Me.TextBox5.TabIndex = 17
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(624, 227)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(184, 20)
-        Me.TextBox6.TabIndex = 18
+        Me.txtCost.Location = New System.Drawing.Point(624, 227)
+        Me.txtCost.Name = "txtCost"
+        Me.txtCost.Size = New System.Drawing.Size(184, 20)
+        Me.txtCost.TabIndex = 18
         '
         'TextBox7
         '
@@ -228,26 +221,35 @@ Partial Class Vaccination
         Me.TextBox8.Size = New System.Drawing.Size(474, 65)
         Me.TextBox8.TabIndex = 20
         '
-        'DateTimePicker1
+        'dtpExpiryDate
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(624, 150)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 21
+        Me.dtpExpiryDate.Location = New System.Drawing.Point(624, 150)
+        Me.dtpExpiryDate.Name = "dtpExpiryDate"
+        Me.dtpExpiryDate.Size = New System.Drawing.Size(200, 20)
+        Me.dtpExpiryDate.TabIndex = 21
+        '
+        'cmbVaccineType
+        '
+        Me.cmbVaccineType.FormattingEnabled = True
+        Me.cmbVaccineType.Location = New System.Drawing.Point(624, 68)
+        Me.cmbVaccineType.Name = "cmbVaccineType"
+        Me.cmbVaccineType.Size = New System.Drawing.Size(200, 21)
+        Me.cmbVaccineType.TabIndex = 22
         '
         'Vaccination
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Tan
         Me.ClientSize = New System.Drawing.Size(906, 627)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.cmbVaccineType)
+        Me.Controls.Add(Me.dtpExpiryDate)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtCost)
+        Me.Controls.Add(Me.txtRecSpecies)
+        Me.Controls.Add(Me.txtManufacturer)
+        Me.Controls.Add(Me.txtVaccineName)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button2)
@@ -281,12 +283,12 @@ Partial Class Vaccination
     Friend WithEvents Button2 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button3 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents txtVaccineName As TextBox
+    Friend WithEvents txtManufacturer As TextBox
+    Friend WithEvents txtRecSpecies As TextBox
+    Friend WithEvents txtCost As TextBox
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtpExpiryDate As DateTimePicker
+    Friend WithEvents cmbVaccineType As ComboBox
 End Class

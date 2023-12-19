@@ -15,10 +15,10 @@ Module StaffConfig
     Dim proceed As Boolean
 
     Public Sub ConnectDbase()
-        host = "192.168.56.1"
-        dbname = "staff_credentials"
-        uname = "frieren"
-        pwd = "pass"
+        host = "127.0.0.1"
+        dbname = "petpal"
+        uname = "root"
+        pwd = ""
 
         If Not con Is Nothing Then
             con.Close()
@@ -68,7 +68,7 @@ Module StaffConfig
                     userNum = reader.GetInt32(0) + 1
                 Else
                     ' Handle the case when the result is NULL
-                    userNum = "No records"
+                    userNum = 1
                 End If
             End If
         Catch ex As Exception

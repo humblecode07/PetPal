@@ -9,11 +9,11 @@ Module Module1
     Dim dtTable As New DataTable
     Dim adapter As New MySqlDataAdapter
 
-    Public Sub ConnectDbaseOne()
-        host = "192.168.56.1"
-        dbname = "staff_credentials"
+    Public Sub ConnectDbase()
+        host = "127.0.0.1"
+        dbname = "petpal"
         uname = "frieren"
-        pwd = "pass"
+        pwd = ""
 
         If Not con Is Nothing Then
             con.Close()

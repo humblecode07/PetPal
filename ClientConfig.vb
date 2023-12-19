@@ -15,10 +15,10 @@ Module ClientConfig
     Dim existence As Boolean
 
     Public Sub ConnectDbase()
-        host = "192.168.56.1"
-        dbname = "client_credentials"
-        uname = "frieren"
-        pwd = "pass"
+        host = "127.0.0.1"
+        dbname = "petpal"
+        uname = "root"
+        pwd = ""
 
         If Not con Is Nothing Then
             con.Close()
@@ -248,7 +248,12 @@ Module ClientConfig
             SELECT user_name, security_question FROM user_credentials WHERE user_number = @userNum;
         "
         mysqlcmd = New MySqlCommand(sqlQuery, con)
-        mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+
+        If Not String.IsNullOrEmpty(Account.txtUserID.Text) Then
+            mysqlcmd.Parameters.AddWithValue("@userNum", Account.txtUserID.Text)
+        Else
+            mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+        End If
 
         Try
             reader = mysqlcmd.ExecuteReader()
@@ -267,7 +272,12 @@ Module ClientConfig
             SELECT * FROM user_info WHERE user_number = @userNum;
         "
         mysqlcmd = New MySqlCommand(sqlQuery, con)
-        mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+
+        If Not String.IsNullOrEmpty(Account.txtUserID.Text) Then
+            mysqlcmd.Parameters.AddWithValue("@userNum", Account.txtUserID.Text)
+        Else
+            mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+        End If
 
         Try
             reader = mysqlcmd.ExecuteReader()
@@ -360,9 +370,19 @@ Module ClientConfig
             WHERE user_number = @userNum;
         "
 
+
+        'QUICK FIX: CREATING DIM IF ADMIN WANTS TO UPDATE
+        Dim userNum As Integer
+
+        If Not String.IsNullOrEmpty(Account.txtUserID.Text) Then
+            userNum = Account.txtUserID.Text
+        Else
+            userNum = UserPanel.lblId.Text
+        End If
+
         Try
             Using cmd As New MySqlCommand(sqlQuery, con)
-                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.Parameters.AddWithValue("@userNum", userNum)
                 cmd.Parameters.AddWithValue("@userName", userName)
                 cmd.Parameters.AddWithValue("@password", password)
                 cmd.Parameters.AddWithValue("@question", securityQuestion)
@@ -387,4 +407,52 @@ Module ClientConfig
         End Try
     End Sub
 
+    Public Sub DeleteProfile(id As String)
+
+
+        sqlQuery = "DELETE from user_info WHERE user_number = @userNum"
+
+        Try
+            Using cmd As New MySqlCommand(sqlQuery, con)
+                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        End Try
+
+        sqlQuery = "DELETE from pet_info WHERE user_number = @userNum"
+        Try
+            Using cmd As New MySqlCommand(sqlQuery, con)
+                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        End Try
+
+        sqlQuery = "DELETE from appointment_info WHERE user_number = @userNum"
+        Try
+            Using cmd As New MySqlCommand(sqlQuery, con)
+                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        End Try
+
+        sqlQuery = "DELETE from user_credentials WHERE user_number = @userNum"
+        Try
+            Using cmd As New MySqlCommand(sqlQuery, con)
+                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
+                cmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
+        End Try
+    End Sub
 End Module

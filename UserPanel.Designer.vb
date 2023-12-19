@@ -646,9 +646,9 @@ Partial Class UserPanel
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(211, Byte), Integer), CType(CType(202, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(956, 688)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "UserPanel"
         Me.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)

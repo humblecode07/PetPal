@@ -15,6 +15,6 @@
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         roundCorners(Me)
-        Module1.ConnectDbaseOne()
+        Module1.ConnectDbase()
     End Sub
 End Class

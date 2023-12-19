@@ -23,6 +23,7 @@
         Pet.Show()
     End Sub
 
+    'LOADING PARTICULAR PET IMAGE IN THE TABLE WHEN A ROW IS SELECTED
     Private Sub dgvPets_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPets.CellClick
         If e.ColumnIndex >= 0 AndAlso e.RowIndex >= 0 Then
             ' Get the pet ID from the clicked row
@@ -32,7 +33,7 @@
                 Dim petID As Integer = Convert.ToInt32(petIDValue)
 
                 ' Load and display the profile picture for the selected pet
-                LoadProfilePicture(petID, pcbProfile)
+                UserModule.LoadProfilePicture(petID, pcbProfile)
             Else
                 ' Handle DBNull value, for example, show a message or take appropriate action
                 MessageBox.Show("null.")
@@ -88,15 +89,7 @@
         Account.Show()
         Me.Hide()
     End Sub
-    Private Sub btnDeleteProfile_Click(sender As Object, e As EventArgs) Handles btnDeleteProfile.Click
-        Dim result As DialogResult = MessageBox.Show("Do you want to delete your account?", "Confirmation",
-                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.Yes Then
-            DeleteProfile()
-            Me.Dispose()
-            ClientLogin.Show()
-        End If
-    End Sub
+
     Public Sub LoadInfo()
         LoadPets(id)
         LoadUserInfo(id)

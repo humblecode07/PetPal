@@ -1,5 +1,7 @@
 ﻿Public Class UserRole
     Dim mode As Integer
+    Dim type As String
+    Dim role As String
     Private Sub AddUserRole_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         roundCorners(Me)
         StaffConfig.ConnectDbase()
@@ -13,10 +15,16 @@
     Private Sub btnAddRole_Click(sender As Object, e As EventArgs) Handles btnOkay.Click
         If mode = 1 Then
             StaffConfig.AddRole()
+            AdminModule.LoadStaffs()
+            AdminModule.GetTotal("clinic_personnel_info")
         ElseIf mode = 2 Then
             StaffConfig.UpdateUser()
+            AdminModule.LoadStaffs()
+            AdminModule.GetTotal("clinic_personnel_info")
         ElseIf mode = 3 Then
             MsgBox("3")
+            AdminModule.LoadStaffs()
+            AdminModule.GetTotal("clinic_personnel_info")
         End If
 
     End Sub
@@ -66,7 +74,19 @@
         ChangeCredentials()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Public Sub ReceiveValue(mode As String)
+        type = mode
+    End Sub
+    Public Sub ReceiveRole(authority As String)
+        role = authority
+    End Sub
 
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        If role = "Admin" Then
+            Me.Dispose()
+            AdminPanel.Show()
+        Else
+
+        End If
     End Sub
 End Class

@@ -23,7 +23,6 @@ Partial Class Account
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Account))
-        Me.pbxProfile = New System.Windows.Forms.PictureBox()
         Me.btnUpload = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -55,23 +54,17 @@ Partial Class Account
         Me.dtpBirthDate = New System.Windows.Forms.DateTimePicker()
         Me.StatusInfo = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusLabel = New System.Windows.Forms.StatusStrip()
-        CType(Me.pbxProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pbxProfile = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.label = New System.Windows.Forms.Label()
+        Me.txtUserID = New System.Windows.Forms.TextBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.StatusLabel.SuspendLayout()
+        CType(Me.pbxProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'pbxProfile
-        '
-        Me.pbxProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pbxProfile.BackColor = System.Drawing.Color.Transparent
-        Me.pbxProfile.BackgroundImage = CType(resources.GetObject("pbxProfile.BackgroundImage"), System.Drawing.Image)
-        Me.pbxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pbxProfile.Location = New System.Drawing.Point(114, 101)
-        Me.pbxProfile.Name = "pbxProfile"
-        Me.pbxProfile.Size = New System.Drawing.Size(107, 107)
-        Me.pbxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbxProfile.TabIndex = 1
-        Me.pbxProfile.TabStop = False
         '
         'btnUpload
         '
@@ -205,7 +198,7 @@ Partial Class Account
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(820, 804)
+        Me.btnCancel.Location = New System.Drawing.Point(820, 779)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(117, 43)
         Me.btnCancel.TabIndex = 17
@@ -219,18 +212,18 @@ Partial Class Account
         Me.btnOkay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOkay.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnOkay.ForeColor = System.Drawing.Color.White
-        Me.btnOkay.Location = New System.Drawing.Point(661, 804)
+        Me.btnOkay.Location = New System.Drawing.Point(661, 779)
         Me.btnOkay.Name = "btnOkay"
         Me.btnOkay.Size = New System.Drawing.Size(131, 43)
         Me.btnOkay.TabIndex = 16
-        Me.btnOkay.Text = "Sign up"
+        Me.btnOkay.Text = "Create User"
         Me.btnOkay.UseVisualStyleBackColor = False
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label12.Location = New System.Drawing.Point(386, 599)
+        Me.Label12.Location = New System.Drawing.Point(3, 12)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(177, 16)
         Me.Label12.TabIndex = 18
@@ -303,7 +296,7 @@ Partial Class Account
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label13.Location = New System.Drawing.Point(386, 674)
+        Me.Label13.Location = New System.Drawing.Point(3, 87)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(58, 16)
         Me.Label13.TabIndex = 30
@@ -311,7 +304,7 @@ Partial Class Account
         '
         'txtAnswer
         '
-        Me.txtAnswer.Location = New System.Drawing.Point(389, 708)
+        Me.txtAnswer.Location = New System.Drawing.Point(6, 121)
         Me.txtAnswer.Name = "txtAnswer"
         Me.txtAnswer.Size = New System.Drawing.Size(232, 20)
         Me.txtAnswer.TabIndex = 31
@@ -321,7 +314,7 @@ Partial Class Account
         Me.cmbSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSecurity.FormattingEnabled = True
         Me.cmbSecurity.Items.AddRange(New Object() {"What is your favorite pet's name?", "Where were you born?", "What is your mother's maiden name?", "What is the name of your first school?", "In what city or town did your parents meet?", "What is your favorite color?", "What is the name of your best childhood friend?", "What is the make and model of your first car?", "What is the name of your favorite teacher?", "What is your favorite book?", "What is your favorite movie?", "What is your favorite food?", "What is the name of your favorite sports team?", "What is your favorite vacation spot?", "What was your childhood nickname?"})
-        Me.cmbSecurity.Location = New System.Drawing.Point(389, 629)
+        Me.cmbSecurity.Location = New System.Drawing.Point(6, 42)
         Me.cmbSecurity.Name = "cmbSecurity"
         Me.cmbSecurity.Size = New System.Drawing.Size(537, 21)
         Me.cmbSecurity.TabIndex = 32
@@ -363,17 +356,77 @@ Partial Class Account
         Me.StatusLabel.TabIndex = 35
         Me.StatusLabel.Text = "StatusStrip1"
         '
+        'pbxProfile
+        '
+        Me.pbxProfile.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pbxProfile.BackColor = System.Drawing.Color.Transparent
+        Me.pbxProfile.BackgroundImage = CType(resources.GetObject("pbxProfile.BackgroundImage"), System.Drawing.Image)
+        Me.pbxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pbxProfile.Location = New System.Drawing.Point(114, 101)
+        Me.pbxProfile.Name = "pbxProfile"
+        Me.pbxProfile.Size = New System.Drawing.Size(107, 107)
+        Me.pbxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbxProfile.TabIndex = 1
+        Me.pbxProfile.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.txtAnswer)
+        Me.Panel1.Controls.Add(Me.cmbSecurity)
+        Me.Panel1.Location = New System.Drawing.Point(382, 593)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(555, 148)
+        Me.Panel1.TabIndex = 36
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.btnSearch)
+        Me.Panel2.Controls.Add(Me.txtUserID)
+        Me.Panel2.Controls.Add(Me.label)
+        Me.Panel2.Location = New System.Drawing.Point(24, 318)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(276, 89)
+        Me.Panel2.TabIndex = 37
+        '
+        'label
+        '
+        Me.label.AutoSize = True
+        Me.label.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.label.Location = New System.Drawing.Point(3, 37)
+        Me.label.Name = "label"
+        Me.label.Size = New System.Drawing.Size(27, 16)
+        Me.label.TabIndex = 38
+        Me.label.Text = "ID:"
+        '
+        'txtUserID
+        '
+        Me.txtUserID.Location = New System.Drawing.Point(36, 36)
+        Me.txtUserID.Name = "txtUserID"
+        Me.txtUserID.Size = New System.Drawing.Size(139, 20)
+        Me.txtUserID.TabIndex = 39
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Location = New System.Drawing.Point(181, 34)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch.TabIndex = 40
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
         'Account
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(985, 895)
+        Me.ClientSize = New System.Drawing.Size(985, 850)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusLabel)
         Me.Controls.Add(Me.dtpBirthDate)
         Me.Controls.Add(Me.txtCity)
-        Me.Controls.Add(Me.cmbSecurity)
-        Me.Controls.Add(Me.txtAnswer)
-        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtConfirmPass)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsername)
@@ -383,7 +436,6 @@ Partial Class Account
         Me.Controls.Add(Me.txtContact)
         Me.Controls.Add(Me.txtLName)
         Me.Controls.Add(Me.txtFName)
-        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnOkay)
         Me.Controls.Add(Me.Label11)
@@ -402,9 +454,13 @@ Partial Class Account
         Me.Name = "Account"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CreateAccount"
-        CType(Me.pbxProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusLabel.ResumeLayout(False)
         Me.StatusLabel.PerformLayout()
+        CType(Me.pbxProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -442,4 +498,9 @@ Partial Class Account
     Friend WithEvents dtpBirthDate As DateTimePicker
     Friend WithEvents StatusInfo As ToolStripStatusLabel
     Friend WithEvents StatusLabel As StatusStrip
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents txtUserID As TextBox
+    Friend WithEvents label As Label
 End Class

@@ -12,7 +12,7 @@ Module UserModule
     Dim dtTable As New DataTable
     Dim adapter As New MySqlDataAdapter
 
-    Dim petName, species, gender, breed, birthday, bio, currFood, currMed, weight As String
+    Dim petName, species, gender, breed, birthday, bio, currFood, currMed, currMedTake, weight As String
     Dim petId, appointmentId As Integer
     Dim behaveNotes, appointmentType, reason As String
     Dim profileImage As Byte()
@@ -23,10 +23,10 @@ Module UserModule
         userName, password, securityQuestion As String
 
     Public Sub ConnectDbase()
-        host = "192.168.56.1"
-        dbname = "client_credentials"
-        uname = "frieren"
-        pwd = "pass"
+        host = "127.0.0.1"
+        dbname = "petpal"
+        uname = "root"
+        pwd = ""
 
         If Not con Is Nothing Then
             con.Close()
@@ -72,7 +72,6 @@ Module UserModule
             End If
 
             Using mysqlcmd As New MySqlCommand(sqlQuery, con)
-                MsgBox(petID)
                 mysqlcmd.Parameters.AddWithValue("@petID", petID)
                 mysqlcmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
 
@@ -102,6 +101,8 @@ Module UserModule
     End Sub
 
     Public Sub AddPet(id As Integer, profile As Byte())
+        Dim selectedDate As DateTime = Pet.dtpTimeMedication.Value
+
         petName = Pet.txtPetName.Text
         species = Pet.cmbSpecies.Text
         gender = Pet.cmbGender.Text
@@ -110,6 +111,7 @@ Module UserModule
         bio = Pet.txtBio.Text
         currFood = Pet.txtCurrFood.Text
         currMed = Pet.txtCurrMed.Text
+        currMedTake = selectedDate.ToString("yyyy-MM-dd hh:mm:ss")
         weight = Pet.txtWeight.Text
 
         '1st Query
@@ -138,9 +140,9 @@ Module UserModule
         '2nd Query
         sqlQuery = "
             INSERT INTO pet_info(pet_id, pet_name, species, 
-            gender, breed, birthday, bio, current_food, current_med, weight, profileImage, user_number)
-            VALUES (@id, @petName, @species, @gender, @breed, @birthday, @bio, @currFood, @currMed, @weight,
-            @profile, @userNum)
+            gender, breed, birthday, bio, current_food, current_med, current_med_take, weight, profileImage, user_number)
+            VALUES (@id, @petName, @species, @gender, @breed, @birthday, @bio, @currFood, @currMed, @currMedTake, 
+            @weight, @profile, @userNum)
         "
 
         mysqlcmd = New MySqlCommand(sqlQuery, con)
@@ -153,6 +155,7 @@ Module UserModule
         mysqlcmd.Parameters.AddWithValue("@bio", bio)
         mysqlcmd.Parameters.AddWithValue("@currFood", currFood)
         mysqlcmd.Parameters.AddWithValue("@currMed", currMed)
+        mysqlcmd.Parameters.AddWithValue("@currMedTake", currMedTake)
         mysqlcmd.Parameters.AddWithValue("@weight", weight)
         mysqlcmd.Parameters.AddWithValue("@profile", profile)
         mysqlcmd.Parameters.AddWithValue("@userNum", id)
@@ -167,9 +170,9 @@ Module UserModule
         End Try
     End Sub
 
-    Public Sub GetPetInfo()
-        Dim id As String = Pet.txtPetId.Text
-        Dim userNum As String = UserPanel.lblId.Text
+    Public Sub GetPetInfo(uid As String, pid As String)
+        Dim id As String = pid
+        Dim userNum As String = uid
 
 
         sqlQuery = "
@@ -204,8 +207,13 @@ Module UserModule
 
     End Sub
 
-    Public Sub UpdatePetInfo(id As Integer, profile As Byte())
-        petId = Pet.txtPetId.Text
+    'QUICK FIX: ERROR ON PET ID WHEN UPDATING PET INFO AS ADMIN
+    Public Sub UpdatePetInfo(id As Integer, profile As Byte(), role As String)
+        If role = "Admin" Then
+            petId = Pet.txtAPetID.Text
+        ElseIf role = "User" Then
+            petId = Pet.txtPetId.Text
+        End If
         petName = Pet.txtPetName.Text
         species = Pet.cmbSpecies.Text
         gender = Pet.cmbGender.Text
@@ -246,8 +254,12 @@ Module UserModule
         End Try
     End Sub
 
-    Public Sub DeletePetInfo(id As Integer)
-        petId = Pet.txtPetId.Text
+    Public Sub DeletePetInfo(id As Integer, role As String)
+        If role = "Admin" Then
+            petId = Pet.txtAPetID.Text
+        ElseIf role = "User" Then
+            petId = Pet.txtPetId.Text
+        End If
 
         sqlQuery = "DELETE from pet_info WHERE pet_id = @petID AND user_number = @userNum"
 
@@ -328,53 +340,6 @@ Module UserModule
             MsgBox(ex.Message)
         Finally
             reader.Close()
-        End Try
-    End Sub
-
-    Public Sub DeleteProfile()
-        sqlQuery = "DELETE from user_info WHERE user_number = @userNum"
-
-        Try
-            Using cmd As New MySqlCommand(sqlQuery, con)
-                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
-                cmd.ExecuteNonQuery()
-            End Using
-            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
-        Catch ex As Exception
-            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
-        End Try
-
-        sqlQuery = "DELETE from pet_info WHERE user_number = @userNum"
-        Try
-            Using cmd As New MySqlCommand(sqlQuery, con)
-                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
-                cmd.ExecuteNonQuery()
-            End Using
-            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
-        Catch ex As Exception
-            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
-        End Try
-
-        sqlQuery = "DELETE from appointment_info WHERE user_number = @userNum"
-        Try
-            Using cmd As New MySqlCommand(sqlQuery, con)
-                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
-                cmd.ExecuteNonQuery()
-            End Using
-            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
-        Catch ex As Exception
-            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
-        End Try
-
-        sqlQuery = "DELETE from user_credentials WHERE user_number = @userNum"
-        Try
-            Using cmd As New MySqlCommand(sqlQuery, con)
-                cmd.Parameters.AddWithValue("@userNum", UserPanel.lblId.Text)
-                cmd.ExecuteNonQuery()
-            End Using
-            MsgBox("Deletion Successful!", vbInformation, "Delete Message")
-        Catch ex As Exception
-            MsgBox("Error: " & ex.Message, vbInformation, "Error Message")
         End Try
     End Sub
 
