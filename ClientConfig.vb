@@ -95,8 +95,6 @@ Module ClientConfig
 
                 ' Execute the query
                 mysqlcmd.ExecuteNonQuery()
-
-                MsgBox("Added!")
             End Using ' MySqlCommand is automatically disposed when this block is exited
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -153,7 +151,6 @@ Module ClientConfig
         mysqlcmd.Parameters.AddWithValue("@province", province)
         mysqlcmd.Parameters.AddWithValue("@profile", profile)
         mysqlcmd.Parameters.AddWithValue("@usernumber", userNum)
-
         Try
             mysqlcmd.ExecuteNonQuery()
             MsgBox("Added!")

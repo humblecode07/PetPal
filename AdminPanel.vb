@@ -2,6 +2,9 @@
     Dim userId As Integer
     Dim petId As Integer
     Dim staffID As Integer
+    Dim userAppointmentID As Integer
+    Dim vaccineID As Integer
+    Dim medicineID As Integer
     Private Sub btnUsers_Click(sender As Object, e As EventArgs) Handles btnUsers.Click
         pnlStaffCashier.Visible = True
         pnlUser.Visible = True
@@ -306,10 +309,17 @@
         AdminModule.LoadUserPets()
         AdminModule.GetTotal("pet_info")
         'USER APPOINTMENT PANEL
-
+        AdminModule.LoadUserAppointments()
+        AdminModule.GetTotal("user_appointment")
         'STAFF PANEL
         AdminModule.LoadStaffs()
         AdminModule.GetTotal("clinic_personnel_info")
+        'VACCINE PANEL
+        AdminModule.LoadVaccines()
+        AdminModule.GetTotal("vaccine_info")
+        'MEDICINE PANEL
+        AdminModule.LoadMedicines()
+        AdminModule.GetTotal("medicine_info")
     End Sub
 
     'USER PANEL USER PANEL USER PANEL USER PANEL USER PANEL USER PANEL USER PANEL USER PANEL USER PANEL
@@ -469,8 +479,120 @@
     End Sub
 
     'USER APPOINTMENT PANEL USER APPOINTMENT PANEL USER APPOINTMENT PANEL
+    Private Sub btnScheduleAppointment_Click(sender As Object, e As EventArgs) Handles btnScheduleAppointment.Click
+        Me.Hide()
+        Appointment.ReceiveValue("Create")
+        Appointment.ReceiveRole("Admin")
+        Appointment.Show()
+    End Sub
+    Private Sub btnUpdateAppointment_Click(sender As Object, e As EventArgs) Handles btnUpdateAppointment.Click
+        Me.Hide()
+        Appointment.ReceiveValue("Edit")
+        Appointment.ReceiveRole("Admin")
+        Appointment.Show()
+    End Sub
+    Private Sub btnCancelAppointment_Click(sender As Object, e As EventArgs) Handles btnCancelAppointment.Click
+        Me.Hide()
+        Appointment.ReceiveValue("Cancel")
+        Appointment.ReceiveRole("Admin")
+        Appointment.Show()
+    End Sub
+    Private Sub btnAppointmentView_Click(sender As Object, e As EventArgs) Handles btnAppointmentView.Click
+        Me.Hide()
+        Appointment.ReceiveValue("View")
+        Appointment.ReceiveRole("Admin")
+        Appointment.Show()
+    End Sub
 
+    'USER APPOINTMENT PROFILE
+    Private Sub dgvUserAppointment_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUserAppointment.CellClick
+        If e.ColumnIndex >= 0 AndAlso e.RowIndex >= 0 Then
+            ' Get the pet ID from the clicked row
+            Dim idValue As Object = dgvUserAppointment.Rows(e.RowIndex).Cells("user_number").Value
+            Dim dynamicIdValue As Object = dgvUserAppointment.Rows(e.RowIndex).Cells("PetID").Value
 
+            If Not Convert.IsDBNull(idValue) Then
+                Dim id As Integer = Convert.ToInt32(idValue)
+                Dim petID As Integer = Convert.ToInt32(dynamicIdValue)
+                AdminModule.LoadProfilePicture(id, petID, pcbUserAppointmentProfile, "user_appointment")
+            Else
+                MessageBox.Show("null.")
+            End If
+        End If
+    End Sub
+
+    'USER APPOINTMENT FILTER
+    Private Sub txtAppointmentID_TextChanged(sender As Object, e As EventArgs) Handles txtAppointmentID.TextChanged
+        If Integer.TryParse(txtAppointmentID.Text, userAppointmentID) Then
+            AdminModule.UserAppointmentFilter(userAppointmentID, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        Else
+            AdminModule.UserAppointmentFilter(0, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        End If
+    End Sub
+
+    Private Sub txtUAClientName_TextChanged(sender As Object, e As EventArgs) Handles txtUAClientName.TextChanged
+        If Integer.TryParse(txtAppointmentID.Text, userAppointmentID) Then
+            AdminModule.UserAppointmentFilter(userAppointmentID, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        Else
+            AdminModule.UserAppointmentFilter(0, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        End If
+    End Sub
+
+    Private Sub txtUAPetName_TextChanged(sender As Object, e As EventArgs) Handles txtUAPetName.TextChanged
+        If Integer.TryParse(txtAppointmentID.Text, userAppointmentID) Then
+            AdminModule.UserAppointmentFilter(userAppointmentID, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        Else
+            AdminModule.UserAppointmentFilter(0, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        End If
+    End Sub
+
+    Private Sub txtUAppointmentType_TextChanged(sender As Object, e As EventArgs) Handles txtUAppointmentType.TextChanged
+        If Integer.TryParse(txtAppointmentID.Text, userAppointmentID) Then
+            AdminModule.UserAppointmentFilter(userAppointmentID, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        Else
+            AdminModule.UserAppointmentFilter(0, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        End If
+    End Sub
+
+    Private Sub txtUAStatus_TextChanged(sender As Object, e As EventArgs) Handles txtUAStatus.TextChanged
+        If Integer.TryParse(txtAppointmentID.Text, userAppointmentID) Then
+            AdminModule.UserAppointmentFilter(userAppointmentID, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        Else
+            AdminModule.UserAppointmentFilter(0, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        End If
+    End Sub
+
+    Private Sub txtUAppointmentDate_TextChanged(sender As Object, e As EventArgs) Handles txtUAppointmentDate.TextChanged
+        If Integer.TryParse(txtAppointmentID.Text, userAppointmentID) Then
+            AdminModule.UserAppointmentFilter(userAppointmentID, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        Else
+            AdminModule.UserAppointmentFilter(0, txtUAClientName.Text,
+                                    txtUAPetName.Text, txtUAppointmentType.Text,
+                                    txtUAStatus.Text, txtUAppointmentDate.Text)
+        End If
+    End Sub
 
     'STAFF PANEL STAFF PANEL STAFF PANEL
     Private Sub btnStaffGoTo_Click(sender As Object, e As EventArgs) Handles btnStaffGoTo.Click
@@ -508,6 +630,259 @@
             AdminModule.StaffFilter(0, txtStaffName.Text, txtStaffPosition.Text, txtStaffSpecialization.Text)
         End If
     End Sub
+
+    'VACCINE PANEL VACCINE PANEL VACCINE PANEL VACCINE PANEL VACCINE PANEL VACCINE PANEL
+    Private Sub btnAddVaccine_Click(sender As Object, e As EventArgs) Handles btnAddVaccine.Click
+        Me.Hide()
+        Vaccination.ReceiveValue("Add")
+        Vaccination.ReceiveRole("Admin")
+        Vaccination.Show()
+    End Sub
+    Private Sub btnUpdateVaccine_Click(sender As Object, e As EventArgs) Handles btnUpdateVaccine.Click
+        Me.Hide()
+        Vaccination.ReceiveValue("Edit")
+        Vaccination.ReceiveRole("Admin")
+        Vaccination.Show()
+    End Sub
+    Private Sub btnDeleteVaccine_Click(sender As Object, e As EventArgs) Handles btnDeleteVaccine.Click
+        Me.Hide()
+        Vaccination.ReceiveValue("Delete")
+        Vaccination.ReceiveRole("Admin")
+        Vaccination.Show()
+    End Sub
+
+    'VACCINE PROFILE
+    Private Sub dgvVaccineTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVaccineTable.CellClick
+        If e.ColumnIndex >= 0 AndAlso e.RowIndex >= 0 Then
+            ' Get the pet ID from the clicked row
+            Dim idValue As Object = dgvVaccineTable.Rows(e.RowIndex).Cells("Vaccine_ID").Value
+
+            If Not Convert.IsDBNull(idValue) Then
+                Dim id As Integer = Convert.ToInt32(idValue)
+                ' Load and display the profile picture for the selected pet
+                AdminModule.LoadProfilePicture(id, vbEmpty, pcbStaffVaccine, "vaccine_info")
+            Else
+                ' Handle DBNull value, for example, show a message or take appropriate action
+                MessageBox.Show("null.")
+            End If
+        End If
+    End Sub
+
+    'VACCINE FILTER
+    Private Sub txtVaccineID_TextChanged(sender As Object, e As EventArgs) Handles txtVaccineID.TextChanged
+        If Integer.TryParse(txtVaccineID.Text, vaccineID) Then
+            AdminModule.VaccineFilter(vaccineID, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        Else
+            AdminModule.VaccineFilter(0, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        End If
+    End Sub
+    Private Sub txtVaccineName_TextChanged(sender As Object, e As EventArgs) Handles txtVaccineName.TextChanged
+        If Integer.TryParse(txtVaccineID.Text, vaccineID) Then
+            AdminModule.VaccineFilter(vaccineID, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        Else
+            AdminModule.VaccineFilter(0, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        End If
+    End Sub
+    Private Sub txtVaccineType_TextChanged(sender As Object, e As EventArgs) Handles txtVaccineType.TextChanged
+        If Integer.TryParse(txtVaccineID.Text, vaccineID) Then
+            AdminModule.VaccineFilter(vaccineID, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        Else
+            AdminModule.VaccineFilter(0, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        End If
+    End Sub
+    Private Sub txtVRecSpecies_TextChanged(sender As Object, e As EventArgs) Handles txtVRecSpecies.TextChanged
+        If Integer.TryParse(txtVaccineID.Text, vaccineID) Then
+            AdminModule.VaccineFilter(vaccineID, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        Else
+            AdminModule.VaccineFilter(0, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        End If
+    End Sub
+    Private Sub txtVManufacturer_TextChanged(sender As Object, e As EventArgs) Handles txtVManufacturer.TextChanged
+        If Integer.TryParse(txtVaccineID.Text, vaccineID) Then
+            AdminModule.VaccineFilter(vaccineID, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        Else
+            AdminModule.VaccineFilter(0, txtVaccineName.Text, txtVaccineType.Text,
+                                      txtVRecSpecies.Text, txtVManufacturer.Text)
+        End If
+    End Sub
+
+    'STAFF APPOINTMENT PANEL
+
+    'PENDING APPOINTMENT
+    Private Sub rbtnPending_MouseClick(sender As Object, e As MouseEventArgs) Handles rbtnPending.MouseClick
+        AdminModule.LoadPendingAppointments()
+    End Sub
+
+    'ONGOING APPOINTMENT
+    Private Sub rbtnOngoing_MouseClick(sender As Object, e As MouseEventArgs) Handles rbtnOngoing.MouseClick
+        AdminModule.LoadOngoingAppointments()
+    End Sub
+
+    'FINISHED APPOINTMENT
+    Private Sub rbtnFinished_MouseClick(sender As Object, e As MouseEventArgs) Handles rbtnFinished.MouseClick
+        AdminModule.LoadFinishedAppointments()
+    End Sub
+
+    'ADMIN APPOINTMENT OPTIONS
+    Private Sub dgvStaffAppointmentTable_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStaffAppointmentTable.CellContentClick
+        Try
+            If dgvStaffAppointmentTable.Columns(e.ColumnIndex).Name = "Accept" Then
+                If e.ColumnIndex >= 0 AndAlso e.RowIndex >= 0 Then
+                    Dim appoID As Object = dgvStaffAppointmentTable.Rows(e.RowIndex).Cells("Appointment_ID").Value
+                    Dim userID As Object = dgvStaffAppointmentTable.Rows(e.RowIndex).Cells("user_number").Value
+
+                    If Not Convert.IsDBNull(appoID) Then
+                        Dim aid As Integer = Convert.ToInt32(appoID)
+                        Dim uid As Integer = Convert.ToInt32(userID)
+
+                        Me.Hide()
+                        Appointment.txtAppointmentId.Text = aid
+                        Appointment.txtUserID.Text = uid
+                        Appointment.ReceiveValue("Accept")
+                        Appointment.ReceiveRole("Admin")
+                        Appointment.Show()
+                    Else
+                        ' Handle DBNull value, for example, show a message or take appropriate action
+                        MessageBox.Show("null.")
+                    End If
+                End If
+            ElseIf dgvStaffAppointmentTable.Columns(e.ColumnIndex).Name = "Decline" Then
+                If e.ColumnIndex >= 0 AndAlso e.RowIndex >= 0 Then
+                    Dim appoID As Object = dgvStaffAppointmentTable.Rows(e.RowIndex).Cells("Appointment_ID").Value
+                    Dim userID As Object = dgvStaffAppointmentTable.Rows(e.RowIndex).Cells("user_number").Value
+
+                    If Not Convert.IsDBNull(appoID) Then
+                        Dim aid As Integer = Convert.ToInt32(appoID)
+                        Dim uid As Integer = Convert.ToInt32(userID)
+
+                        Me.Hide()
+                        Appointment.txtAppointmentId.Text = aid
+                        Appointment.txtUserID.Text = uid
+                        Appointment.ReceiveValue("Decline")
+                        Appointment.ReceiveRole("Admin")
+                        Appointment.Show()
+                    Else
+                        MessageBox.Show("null.")
+                    End If
+                End If
+            ElseIf dgvStaffAppointmentTable.Columns(e.ColumnIndex).Name = "Finish" Then
+                If e.ColumnIndex >= 0 AndAlso e.RowIndex >= 0 Then
+                    Dim appoID As Object = dgvStaffAppointmentTable.Rows(e.RowIndex).Cells("Appointment_ID").Value
+                    Dim userID As Object = dgvStaffAppointmentTable.Rows(e.RowIndex).Cells("user_number").Value
+                    Dim assignedStaff As Object = dgvStaffAppointmentTable.Rows(e.RowIndex).Cells("Assigned_Staff").Value
+
+                    If Not Convert.IsDBNull(appoID) Then
+                        Dim aid As Integer = Convert.ToInt32(appoID)
+                        Dim uid As Integer = Convert.ToInt32(userID)
+                        Dim aStaff As String = Convert.ToString(assignedStaff)
+
+                        Me.Hide()
+                        Appointment.txtAppointmentId.Text = aid
+                        Appointment.txtUserID.Text = uid
+                        Appointment.txtAssignedStaff.Text = aStaff
+                        Appointment.ReceiveValue("Finish")
+                        Appointment.ReceiveRole("Admin")
+                        Appointment.Show()
+                    Else
+                        MessageBox.Show("null.")
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'MEDICINE PANEL MEDICINE PANEL MEDICINE PANEL MEDICINE PANEL MEDICINE PANEL
+    Private Sub btnAddMedicine_Click(sender As Object, e As EventArgs) Handles btnAddMedicine.Click
+        Me.Hide()
+        Medicine.ReceiveValue("Add")
+        Medicine.ReceiveRole("Admin")
+        Medicine.Show()
+    End Sub
+    Private Sub btnUpdateMedicine_Click(sender As Object, e As EventArgs) Handles btnUpdateMedicine.Click
+        Me.Hide()
+        Medicine.ReceiveValue("Edit")
+        Medicine.ReceiveRole("Admin")
+        Medicine.Show()
+    End Sub
+    Private Sub btnDeleteMedicine_Click(sender As Object, e As EventArgs) Handles btnDeleteMedicine.Click
+        Me.Hide()
+        Medicine.ReceiveValue("Delete")
+        Medicine.ReceiveRole("Admin")
+        Medicine.Show()
+    End Sub
+
+    'MEDICINE PROFILE
+    Private Sub dgvMedicineTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMedicineTable.CellClick
+        If e.ColumnIndex >= 0 AndAlso e.RowIndex >= 0 Then
+            Dim idValue As Object = dgvMedicineTable.Rows(e.RowIndex).Cells("Medicine_ID").Value
+
+            If Not Convert.IsDBNull(idValue) Then
+                Dim id As Integer = Convert.ToInt32(idValue)
+                AdminModule.LoadProfilePicture(id, vbEmpty, pcbMedicineProfile, "medicine_info")
+            Else
+                MessageBox.Show("null.")
+            End If
+        End If
+    End Sub
+
+    'MEDICINE FILTER
+    Private Sub txtMedicineID_TextChanged(sender As Object, e As EventArgs) Handles txtMedicineID.TextChanged
+        If Integer.TryParse(txtMedicineID.Text, medicineID) Then
+            AdminModule.MedicineFilter(medicineID, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        Else
+            AdminModule.MedicineFilter(0, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        End If
+    End Sub
+    Private Sub txtMedicineName_TextChanged(sender As Object, e As EventArgs) Handles txtMedicineName.TextChanged
+        If Integer.TryParse(txtMedicineID.Text, medicineID) Then
+            AdminModule.MedicineFilter(medicineID, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        Else
+            AdminModule.MedicineFilter(0, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        End If
+    End Sub
+    Private Sub txtGenericName_TextChanged(sender As Object, e As EventArgs) Handles txtGenericName.TextChanged
+        If Integer.TryParse(txtMedicineID.Text, medicineID) Then
+            AdminModule.MedicineFilter(medicineID, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        Else
+            AdminModule.MedicineFilter(0, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        End If
+    End Sub
+    Private Sub txtBrandName_TextChanged(sender As Object, e As EventArgs) Handles txtBrandName.TextChanged
+        If Integer.TryParse(txtMedicineID.Text, medicineID) Then
+            AdminModule.MedicineFilter(medicineID, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        Else
+            AdminModule.MedicineFilter(0, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        End If
+    End Sub
+    Private Sub txtMedicineManufacturer_TextChanged(sender As Object, e As EventArgs) Handles txtMedicineManufacturer.TextChanged
+        If Integer.TryParse(txtMedicineID.Text, medicineID) Then
+            AdminModule.MedicineFilter(medicineID, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        Else
+            AdminModule.MedicineFilter(0, txtMedicineName.Text, txtBrandName.Text,
+                                      txtGenericName.Text, txtMedicineManufacturer.Text)
+        End If
+    End Sub
+
     'LOAD DATA 
     Public Sub LoadInfoAdmin()
         'USER PANEL
@@ -517,14 +892,25 @@
         AdminModule.LoadUserPets()
         AdminModule.GetTotal("pet_info")
         'USER APPOINTMENT PANEL
-
+        AdminModule.LoadUserAppointments()
+        AdminModule.GetTotal("user_appointment")
         'STAFF PANEL
         AdminModule.LoadStaffs()
         AdminModule.GetTotal("clinic_personnel_info")
+        'VACCINE PANEL
+        AdminModule.LoadVaccines()
+        AdminModule.GetTotal("vaccine_info")
+        'MEDICINE PANEL
+        AdminModule.LoadMedicines()
+        AdminModule.GetTotal("medicine_info")
     End Sub
 
     Private Sub btnUserLoadReports_Click(sender As Object, e As EventArgs) Handles btnUserLoadReports.Click
         CrystalReport.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btnAddPetMonitoring_Click(sender As Object, e As EventArgs) Handles btnAddPetMonitoring.Click
+
     End Sub
 End Class

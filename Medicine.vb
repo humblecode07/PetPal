@@ -1,26 +1,24 @@
 ﻿Imports System.IO
-
-Public Class Vaccination
+Public Class Medicine
     Dim imageData As Byte()
     Dim type As String
     Dim role As String
-    Private Sub Vaccination_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Medicine_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         StaffConfig.ConnectDbase()
         roundCorners(Me)
 
         If type = "Add" Then
-            btnConfirm.Text = "Add Vaccine"
-            Panel1.Hide()
+            btnConfirm.Text = "Add Medicine"
+            Panel3.Hide()
         ElseIf type = "Edit" Then
-            btnConfirm.Text = "Update Vaccine Info"
-            Panel1.Show()
+            btnConfirm.Text = "Update Medicine Info"
+            Panel3.Show()
         ElseIf type = "Delete" Then
-            btnConfirm.Text = "Delete Vaccine"
-            Panel1.Show()
+            btnConfirm.Text = "Delete Medicine"
+            Panel3.Show()
         End If
-
     End Sub
-    Private Sub btnUploadVaccine_Click(sender As Object, e As EventArgs) Handles btnUploadVaccine.Click
+    Private Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.Click
         Dim OpenFileDialog As New OpenFileDialog()
         OpenFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp"
         If OpenFileDialog.ShowDialog() = DialogResult.OK Then
@@ -31,7 +29,7 @@ Public Class Vaccination
                 ' Update the PictureBox with the new image
                 Using stream As New MemoryStream(imageData)
                     Dim newImage As Image = Image.FromStream(stream)
-                    pcbVaccineProfile.Image = newImage
+                    pcbMedicineProfile.Image = newImage
                 End Using
             Catch ex As Exception
                 MessageBox.Show("Error updating image: " & ex.Message)
@@ -40,17 +38,17 @@ Public Class Vaccination
     End Sub
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         If type = "Add" Then
-            StaffConfig.AddVaccine(imageData)
-            AdminModule.LoadVaccines()
-            AdminModule.GetTotal("vaccine_info")
+            StaffConfig.AddMedicine(imageData)
+            AdminModule.LoadMedicines()
+            AdminModule.GetTotal("medicine_info")
         ElseIf type = "Edit" Then
-            StaffConfig.UpdateVaccineInfo(imageData)
-            AdminModule.LoadVaccines()
-            AdminModule.GetTotal("vaccine_info")
+            StaffConfig.UpdateMedicineInfo(imageData)
+            AdminModule.LoadMedicines()
+            AdminModule.GetTotal("medicine_info")
         ElseIf type = "Delete" Then
-            StaffConfig.DeleteVaccine()
-            AdminModule.LoadVaccines()
-            AdminModule.GetTotal("vaccine_info")
+            StaffConfig.DeleteMedicine()
+            AdminModule.LoadMedicines()
+            AdminModule.GetTotal("medicine_info")
         End If
     End Sub
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -62,14 +60,12 @@ Public Class Vaccination
         End If
     End Sub
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        StaffConfig.ReadVaccineInfo()
+        StaffConfig.ReadMedicineInfo()
     End Sub
-
     Public Sub ReceiveValue(mode As String)
         type = mode
     End Sub
     Public Sub ReceiveRole(authority As String)
         role = authority
     End Sub
-
 End Class

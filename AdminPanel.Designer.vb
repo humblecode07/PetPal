@@ -106,31 +106,29 @@ Partial Class AdminPanel
         Me.Label29 = New System.Windows.Forms.Label()
         Me.lblPetCount = New System.Windows.Forms.Label()
         Me.pnlUserAppointment = New System.Windows.Forms.Panel()
-        Me.Label37 = New System.Windows.Forms.Label()
+        Me.btnAppointmentView = New System.Windows.Forms.Button()
+        Me.lblUserAppointmentTotal = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.txtUAStatus = New System.Windows.Forms.TextBox()
+        Me.txtUAppointmentType = New System.Windows.Forms.TextBox()
+        Me.txtUAppointmentDate = New System.Windows.Forms.TextBox()
+        Me.txtUAClientName = New System.Windows.Forms.TextBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.txtUAPetName = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.Button36 = New System.Windows.Forms.Button()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
+        Me.txtAppointmentID = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.Button37 = New System.Windows.Forms.Button()
-        Me.Button38 = New System.Windows.Forms.Button()
-        Me.Button39 = New System.Windows.Forms.Button()
-        Me.Button40 = New System.Windows.Forms.Button()
-        Me.Button41 = New System.Windows.Forms.Button()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.btnCancelAppointment = New System.Windows.Forms.Button()
+        Me.btnUpdateAppointment = New System.Windows.Forms.Button()
+        Me.btnScheduleAppointment = New System.Windows.Forms.Button()
+        Me.txtULoadAppointment = New System.Windows.Forms.Button()
+        Me.pcbUserAppointmentProfile = New System.Windows.Forms.PictureBox()
+        Me.dgvUserAppointment = New System.Windows.Forms.DataGridView()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.pnlUserNotifications = New System.Windows.Forms.Panel()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -230,101 +228,89 @@ Partial Class AdminPanel
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Label87 = New System.Windows.Forms.Label()
         Me.Label89 = New System.Windows.Forms.Label()
-        Me.Label85 = New System.Windows.Forms.Label()
-        Me.TextBox43 = New System.Windows.Forms.TextBox()
         Me.Label86 = New System.Windows.Forms.Label()
-        Me.TextBox44 = New System.Windows.Forms.TextBox()
-        Me.TextBox45 = New System.Windows.Forms.TextBox()
-        Me.TextBox46 = New System.Windows.Forms.TextBox()
-        Me.TextBox47 = New System.Windows.Forms.TextBox()
+        Me.txtVManufacturer = New System.Windows.Forms.TextBox()
+        Me.txtVRecSpecies = New System.Windows.Forms.TextBox()
+        Me.txtVaccineName = New System.Windows.Forms.TextBox()
+        Me.txtVaccineType = New System.Windows.Forms.TextBox()
         Me.Label90 = New System.Windows.Forms.Label()
-        Me.Button10 = New System.Windows.Forms.Button()
         Me.Label91 = New System.Windows.Forms.Label()
         Me.Label92 = New System.Windows.Forms.Label()
-        Me.TextBox48 = New System.Windows.Forms.TextBox()
+        Me.txtVaccineID = New System.Windows.Forms.TextBox()
         Me.Label93 = New System.Windows.Forms.Label()
-        Me.Button56 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button54 = New System.Windows.Forms.Button()
-        Me.Label94 = New System.Windows.Forms.Label()
-        Me.Button55 = New System.Windows.Forms.Button()
+        Me.btnVaccineLoadReports = New System.Windows.Forms.Button()
+        Me.btnDeleteVaccine = New System.Windows.Forms.Button()
+        Me.btnUpdateVaccine = New System.Windows.Forms.Button()
+        Me.btnAddVaccine = New System.Windows.Forms.Button()
+        Me.lblVaccineTotal = New System.Windows.Forms.Label()
         Me.Label95 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView9 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView10 = New System.Windows.Forms.DataGridView()
+        Me.pcbStaffVaccine = New System.Windows.Forms.PictureBox()
+        Me.dgvVaccineTable = New System.Windows.Forms.DataGridView()
+        Me.dgvStaffAppointmentTable = New System.Windows.Forms.DataGridView()
         Me.Label103 = New System.Windows.Forms.Label()
-        Me.Button62 = New System.Windows.Forms.Button()
+        Me.btnSAReports = New System.Windows.Forms.Button()
         Me.Label102 = New System.Windows.Forms.Label()
         Me.pnlStaffAppointment = New System.Windows.Forms.Panel()
-        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.rbtnFinished = New System.Windows.Forms.RadioButton()
+        Me.rbtnOngoing = New System.Windows.Forms.RadioButton()
+        Me.rbtnPending = New System.Windows.Forms.RadioButton()
         Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.TextBox41 = New System.Windows.Forms.TextBox()
+        Me.txtSAPreferredAppo = New System.Windows.Forms.TextBox()
+        Me.txtSAAppoType = New System.Windows.Forms.TextBox()
+        Me.txtSAClientName = New System.Windows.Forms.TextBox()
         Me.Label81 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.TextBox49 = New System.Windows.Forms.TextBox()
+        Me.txtSAPetName = New System.Windows.Forms.TextBox()
         Me.Label96 = New System.Windows.Forms.Label()
-        Me.Button57 = New System.Windows.Forms.Button()
-        Me.DateTimePicker8 = New System.Windows.Forms.DateTimePicker()
         Me.Label97 = New System.Windows.Forms.Label()
         Me.Label98 = New System.Windows.Forms.Label()
         Me.Label99 = New System.Windows.Forms.Label()
         Me.Label100 = New System.Windows.Forms.Label()
-        Me.TextBox50 = New System.Windows.Forms.TextBox()
+        Me.txtStaffAppointmentID = New System.Windows.Forms.TextBox()
         Me.Label101 = New System.Windows.Forms.Label()
-        Me.Button61 = New System.Windows.Forms.Button()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.pcbStaffAppointmentProfile = New System.Windows.Forms.PictureBox()
         Me.pnlStaffMedicines = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.DateTimePicker10 = New System.Windows.Forms.DateTimePicker()
         Me.Label88 = New System.Windows.Forms.Label()
         Me.Label104 = New System.Windows.Forms.Label()
-        Me.Label105 = New System.Windows.Forms.Label()
         Me.Label106 = New System.Windows.Forms.Label()
-        Me.TextBox52 = New System.Windows.Forms.TextBox()
-        Me.TextBox53 = New System.Windows.Forms.TextBox()
-        Me.TextBox54 = New System.Windows.Forms.TextBox()
-        Me.TextBox55 = New System.Windows.Forms.TextBox()
+        Me.txtMedicineManufacturer = New System.Windows.Forms.TextBox()
+        Me.txtBrandName = New System.Windows.Forms.TextBox()
+        Me.txtMedicineName = New System.Windows.Forms.TextBox()
+        Me.txtGenericName = New System.Windows.Forms.TextBox()
         Me.Label107 = New System.Windows.Forms.Label()
-        Me.Button58 = New System.Windows.Forms.Button()
         Me.Label108 = New System.Windows.Forms.Label()
         Me.Label109 = New System.Windows.Forms.Label()
-        Me.TextBox56 = New System.Windows.Forms.TextBox()
+        Me.txtMedicineID = New System.Windows.Forms.TextBox()
         Me.Label110 = New System.Windows.Forms.Label()
-        Me.Button59 = New System.Windows.Forms.Button()
-        Me.Button60 = New System.Windows.Forms.Button()
-        Me.Button63 = New System.Windows.Forms.Button()
-        Me.Label111 = New System.Windows.Forms.Label()
-        Me.Button64 = New System.Windows.Forms.Button()
-        Me.Button65 = New System.Windows.Forms.Button()
+        Me.btnDeleteMedicine = New System.Windows.Forms.Button()
+        Me.btnUpdateMedicine = New System.Windows.Forms.Button()
+        Me.btnAddMedicine = New System.Windows.Forms.Button()
+        Me.lblMedicineTotal = New System.Windows.Forms.Label()
+        Me.btnMedineReports = New System.Windows.Forms.Button()
         Me.Label112 = New System.Windows.Forms.Label()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView11 = New System.Windows.Forms.DataGridView()
+        Me.pcbMedicineProfile = New System.Windows.Forms.PictureBox()
+        Me.dgvMedicineTable = New System.Windows.Forms.DataGridView()
         Me.pnlStaffPetMonitoring = New System.Windows.Forms.Panel()
         Me.Button72 = New System.Windows.Forms.Button()
-        Me.Button68 = New System.Windows.Forms.Button()
+        Me.btnUpdatePetMonitoring = New System.Windows.Forms.Button()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Label113 = New System.Windows.Forms.Label()
         Me.Label114 = New System.Windows.Forms.Label()
-        Me.TextBox57 = New System.Windows.Forms.TextBox()
-        Me.TextBox58 = New System.Windows.Forms.TextBox()
-        Me.TextBox59 = New System.Windows.Forms.TextBox()
+        Me.txtPMVetAssigned = New System.Windows.Forms.TextBox()
+        Me.txtPMPetName = New System.Windows.Forms.TextBox()
+        Me.txtPMOwner = New System.Windows.Forms.TextBox()
         Me.Label117 = New System.Windows.Forms.Label()
-        Me.Button66 = New System.Windows.Forms.Button()
         Me.Label118 = New System.Windows.Forms.Label()
         Me.Label119 = New System.Windows.Forms.Label()
-        Me.TextBox60 = New System.Windows.Forms.TextBox()
+        Me.txtPMID = New System.Windows.Forms.TextBox()
         Me.Label120 = New System.Windows.Forms.Label()
-        Me.Button67 = New System.Windows.Forms.Button()
-        Me.Button69 = New System.Windows.Forms.Button()
-        Me.Label121 = New System.Windows.Forms.Label()
-        Me.Button70 = New System.Windows.Forms.Button()
+        Me.btnDeletePetMonitoring = New System.Windows.Forms.Button()
+        Me.btnAddPetMonitoring = New System.Windows.Forms.Button()
+        Me.lblPetMonitoringTotal = New System.Windows.Forms.Label()
         Me.Button71 = New System.Windows.Forms.Button()
         Me.Label122 = New System.Windows.Forms.Label()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView12 = New System.Windows.Forms.DataGridView()
+        Me.pcbSPMProfile = New System.Windows.Forms.PictureBox()
+        Me.dgvPetMonitoringTable = New System.Windows.Forms.DataGridView()
         Me.pnlStaffPhysical = New System.Windows.Forms.Panel()
         Me.Button73 = New System.Windows.Forms.Button()
         Me.Button74 = New System.Windows.Forms.Button()
@@ -432,8 +418,8 @@ Partial Class AdminPanel
         CType(Me.dgvPetTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlUserAppointment.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbUserAppointmentProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvUserAppointment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlUserNotifications.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -452,20 +438,20 @@ Partial Class AdminPanel
         CType(Me.DataGridView8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStaffVaccine.SuspendLayout()
         Me.Panel13.SuspendLayout()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbStaffVaccine, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvVaccineTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvStaffAppointmentTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStaffAppointment.SuspendLayout()
         Me.Panel14.SuspendLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbStaffAppointmentProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStaffMedicines.SuspendLayout()
         Me.Panel16.SuspendLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbMedicineProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvMedicineTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStaffPetMonitoring.SuspendLayout()
         Me.Panel18.SuspendLayout()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbSPMProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvPetMonitoringTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStaffPhysical.SuspendLayout()
         Me.Panel20.SuspendLayout()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1443,61 +1429,89 @@ Partial Class AdminPanel
         'pnlUserAppointment
         '
         Me.pnlUserAppointment.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pnlUserAppointment.Controls.Add(Me.Label37)
+        Me.pnlUserAppointment.Controls.Add(Me.btnAppointmentView)
+        Me.pnlUserAppointment.Controls.Add(Me.lblUserAppointmentTotal)
         Me.pnlUserAppointment.Controls.Add(Me.Panel3)
-        Me.pnlUserAppointment.Controls.Add(Me.RadioButton4)
-        Me.pnlUserAppointment.Controls.Add(Me.Button37)
-        Me.pnlUserAppointment.Controls.Add(Me.Button38)
-        Me.pnlUserAppointment.Controls.Add(Me.Button39)
-        Me.pnlUserAppointment.Controls.Add(Me.Button40)
-        Me.pnlUserAppointment.Controls.Add(Me.Button41)
-        Me.pnlUserAppointment.Controls.Add(Me.PictureBox4)
-        Me.pnlUserAppointment.Controls.Add(Me.DataGridView4)
+        Me.pnlUserAppointment.Controls.Add(Me.btnCancelAppointment)
+        Me.pnlUserAppointment.Controls.Add(Me.btnUpdateAppointment)
+        Me.pnlUserAppointment.Controls.Add(Me.btnScheduleAppointment)
+        Me.pnlUserAppointment.Controls.Add(Me.txtULoadAppointment)
+        Me.pnlUserAppointment.Controls.Add(Me.pcbUserAppointmentProfile)
+        Me.pnlUserAppointment.Controls.Add(Me.dgvUserAppointment)
         Me.pnlUserAppointment.Controls.Add(Me.Label36)
         Me.pnlUserAppointment.Location = New System.Drawing.Point(0, 0)
         Me.pnlUserAppointment.Name = "pnlUserAppointment"
         Me.pnlUserAppointment.Size = New System.Drawing.Size(1004, 538)
         Me.pnlUserAppointment.TabIndex = 43
         '
-        'Label37
+        'btnAppointmentView
         '
-        Me.Label37.AutoSize = True
-        Me.Label37.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(168, 40)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(15, 16)
-        Me.Label37.TabIndex = 61
-        Me.Label37.Text = "0"
+        Me.btnAppointmentView.Location = New System.Drawing.Point(325, 24)
+        Me.btnAppointmentView.Name = "btnAppointmentView"
+        Me.btnAppointmentView.Size = New System.Drawing.Size(185, 51)
+        Me.btnAppointmentView.TabIndex = 62
+        Me.btnAppointmentView.Text = "View An Appointment"
+        Me.btnAppointmentView.UseVisualStyleBackColor = True
+        '
+        'lblUserAppointmentTotal
+        '
+        Me.lblUserAppointmentTotal.AutoSize = True
+        Me.lblUserAppointmentTotal.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUserAppointmentTotal.Location = New System.Drawing.Point(168, 40)
+        Me.lblUserAppointmentTotal.Name = "lblUserAppointmentTotal"
+        Me.lblUserAppointmentTotal.Size = New System.Drawing.Size(15, 16)
+        Me.lblUserAppointmentTotal.TabIndex = 61
+        Me.lblUserAppointmentTotal.Text = "0"
         '
         'Panel3
         '
         Me.Panel3.AutoScroll = True
-        Me.Panel3.Controls.Add(Me.TextBox17)
+        Me.Panel3.Controls.Add(Me.txtUAStatus)
+        Me.Panel3.Controls.Add(Me.txtUAppointmentType)
+        Me.Panel3.Controls.Add(Me.txtUAppointmentDate)
+        Me.Panel3.Controls.Add(Me.txtUAClientName)
         Me.Panel3.Controls.Add(Me.Label31)
         Me.Panel3.Controls.Add(Me.Label27)
-        Me.Panel3.Controls.Add(Me.ComboBox2)
-        Me.Panel3.Controls.Add(Me.ComboBox1)
-        Me.Panel3.Controls.Add(Me.TextBox16)
+        Me.Panel3.Controls.Add(Me.txtUAPetName)
         Me.Panel3.Controls.Add(Me.Label25)
-        Me.Panel3.Controls.Add(Me.Button36)
-        Me.Panel3.Controls.Add(Me.DateTimePicker3)
         Me.Panel3.Controls.Add(Me.Label26)
         Me.Panel3.Controls.Add(Me.Label32)
         Me.Panel3.Controls.Add(Me.Label33)
         Me.Panel3.Controls.Add(Me.Label34)
-        Me.Panel3.Controls.Add(Me.TextBox21)
+        Me.Panel3.Controls.Add(Me.txtAppointmentID)
         Me.Panel3.Controls.Add(Me.Label35)
         Me.Panel3.Location = New System.Drawing.Point(17, 280)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(295, 161)
         Me.Panel3.TabIndex = 60
         '
-        'TextBox17
+        'txtUAStatus
         '
-        Me.TextBox17.Location = New System.Drawing.Point(86, 87)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox17.TabIndex = 59
+        Me.txtUAStatus.Location = New System.Drawing.Point(86, 199)
+        Me.txtUAStatus.Name = "txtUAStatus"
+        Me.txtUAStatus.Size = New System.Drawing.Size(177, 20)
+        Me.txtUAStatus.TabIndex = 62
+        '
+        'txtUAppointmentType
+        '
+        Me.txtUAppointmentType.Location = New System.Drawing.Point(87, 159)
+        Me.txtUAppointmentType.Name = "txtUAppointmentType"
+        Me.txtUAppointmentType.Size = New System.Drawing.Size(177, 20)
+        Me.txtUAppointmentType.TabIndex = 61
+        '
+        'txtUAppointmentDate
+        '
+        Me.txtUAppointmentDate.Location = New System.Drawing.Point(85, 234)
+        Me.txtUAppointmentDate.Name = "txtUAppointmentDate"
+        Me.txtUAppointmentDate.Size = New System.Drawing.Size(177, 20)
+        Me.txtUAppointmentDate.TabIndex = 60
+        '
+        'txtUAClientName
+        '
+        Me.txtUAClientName.Location = New System.Drawing.Point(86, 87)
+        Me.txtUAClientName.Name = "txtUAClientName"
+        Me.txtUAClientName.Size = New System.Drawing.Size(177, 20)
+        Me.txtUAClientName.TabIndex = 59
         '
         'Label31
         '
@@ -1519,28 +1533,12 @@ Partial Class AdminPanel
         Me.Label27.TabIndex = 57
         Me.Label27.Text = "Status:"
         '
-        'ComboBox2
+        'txtUAPetName
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(86, 198)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(177, 21)
-        Me.ComboBox2.TabIndex = 56
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(86, 160)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(177, 21)
-        Me.ComboBox1.TabIndex = 55
-        '
-        'TextBox16
-        '
-        Me.TextBox16.Location = New System.Drawing.Point(87, 125)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox16.TabIndex = 54
+        Me.txtUAPetName.Location = New System.Drawing.Point(87, 125)
+        Me.txtUAPetName.Name = "txtUAPetName"
+        Me.txtUAPetName.Size = New System.Drawing.Size(177, 20)
+        Me.txtUAPetName.TabIndex = 54
         '
         'Label25
         '
@@ -1551,22 +1549,6 @@ Partial Class AdminPanel
         Me.Label25.Size = New System.Drawing.Size(68, 16)
         Me.Label25.TabIndex = 53
         Me.Label25.Text = "Pet Name:"
-        '
-        'Button36
-        '
-        Me.Button36.Location = New System.Drawing.Point(96, 298)
-        Me.Button36.Name = "Button36"
-        Me.Button36.Size = New System.Drawing.Size(94, 33)
-        Me.Button36.TabIndex = 52
-        Me.Button36.Text = "Search"
-        Me.Button36.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(88, 233)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(177, 20)
-        Me.DateTimePicker3.TabIndex = 51
         '
         'Label26
         '
@@ -1609,12 +1591,12 @@ Partial Class AdminPanel
         Me.Label34.Size = New System.Drawing.Size(0, 16)
         Me.Label34.TabIndex = 37
         '
-        'TextBox21
+        'txtAppointmentID
         '
-        Me.TextBox21.Location = New System.Drawing.Point(86, 48)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox21.TabIndex = 27
+        Me.txtAppointmentID.Location = New System.Drawing.Point(86, 48)
+        Me.txtAppointmentID.Name = "txtAppointmentID"
+        Me.txtAppointmentID.Size = New System.Drawing.Size(177, 20)
+        Me.txtAppointmentID.TabIndex = 27
         '
         'Label35
         '
@@ -1626,86 +1608,65 @@ Partial Class AdminPanel
         Me.Label35.TabIndex = 24
         Me.Label35.Text = "ID: "
         '
-        'RadioButton4
+        'btnCancelAppointment
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Font = New System.Drawing.Font("Tahoma", 9.75!)
-        Me.RadioButton4.Location = New System.Drawing.Point(111, 250)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(95, 20)
-        Me.RadioButton4.TabIndex = 59
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Alphabetical"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.btnCancelAppointment.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelAppointment.Location = New System.Drawing.Point(855, 24)
+        Me.btnCancelAppointment.Name = "btnCancelAppointment"
+        Me.btnCancelAppointment.Size = New System.Drawing.Size(105, 51)
+        Me.btnCancelAppointment.TabIndex = 56
+        Me.btnCancelAppointment.Text = "Cancel Appointment"
+        Me.btnCancelAppointment.UseVisualStyleBackColor = True
         '
-        'Button37
+        'btnUpdateAppointment
         '
-        Me.Button37.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button37.Location = New System.Drawing.Point(780, 24)
-        Me.Button37.Name = "Button37"
-        Me.Button37.Size = New System.Drawing.Size(180, 51)
-        Me.Button37.TabIndex = 56
-        Me.Button37.Text = "Cancel Appointment"
-        Me.Button37.UseVisualStyleBackColor = True
+        Me.btnUpdateAppointment.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnUpdateAppointment.Location = New System.Drawing.Point(717, 24)
+        Me.btnUpdateAppointment.Name = "btnUpdateAppointment"
+        Me.btnUpdateAppointment.Size = New System.Drawing.Size(114, 51)
+        Me.btnUpdateAppointment.TabIndex = 55
+        Me.btnUpdateAppointment.Text = "Update An Appointment"
+        Me.btnUpdateAppointment.UseVisualStyleBackColor = True
         '
-        'Button38
+        'btnScheduleAppointment
         '
-        Me.Button38.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button38.Location = New System.Drawing.Point(564, 24)
-        Me.Button38.Name = "Button38"
-        Me.Button38.Size = New System.Drawing.Size(180, 51)
-        Me.Button38.TabIndex = 55
-        Me.Button38.Text = "Update An Appointment"
-        Me.Button38.UseVisualStyleBackColor = True
+        Me.btnScheduleAppointment.Location = New System.Drawing.Point(571, 24)
+        Me.btnScheduleAppointment.Name = "btnScheduleAppointment"
+        Me.btnScheduleAppointment.Size = New System.Drawing.Size(120, 51)
+        Me.btnScheduleAppointment.TabIndex = 54
+        Me.btnScheduleAppointment.Text = "Schedule An Appointment"
+        Me.btnScheduleAppointment.UseVisualStyleBackColor = True
         '
-        'Button39
+        'txtULoadAppointment
         '
-        Me.Button39.Location = New System.Drawing.Point(339, 23)
-        Me.Button39.Name = "Button39"
-        Me.Button39.Size = New System.Drawing.Size(180, 51)
-        Me.Button39.TabIndex = 54
-        Me.Button39.Text = "Schedule An Appointment"
-        Me.Button39.UseVisualStyleBackColor = True
+        Me.txtULoadAppointment.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtULoadAppointment.Location = New System.Drawing.Point(73, 463)
+        Me.txtULoadAppointment.Name = "txtULoadAppointment"
+        Me.txtULoadAppointment.Size = New System.Drawing.Size(180, 51)
+        Me.txtULoadAppointment.TabIndex = 52
+        Me.txtULoadAppointment.Text = "Load Reports"
+        Me.txtULoadAppointment.UseVisualStyleBackColor = True
         '
-        'Button40
+        'pcbUserAppointmentProfile
         '
-        Me.Button40.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button40.Image = CType(resources.GetObject("Button40.Image"), System.Drawing.Image)
-        Me.Button40.Location = New System.Drawing.Point(34, 463)
-        Me.Button40.Name = "Button40"
-        Me.Button40.Size = New System.Drawing.Size(51, 51)
-        Me.Button40.TabIndex = 53
-        Me.Button40.UseVisualStyleBackColor = True
+        Me.pcbUserAppointmentProfile.BackColor = System.Drawing.Color.DimGray
+        Me.pcbUserAppointmentProfile.Location = New System.Drawing.Point(84, 91)
+        Me.pcbUserAppointmentProfile.Name = "pcbUserAppointmentProfile"
+        Me.pcbUserAppointmentProfile.Size = New System.Drawing.Size(151, 141)
+        Me.pcbUserAppointmentProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbUserAppointmentProfile.TabIndex = 51
+        Me.pcbUserAppointmentProfile.TabStop = False
         '
-        'Button41
+        'dgvUserAppointment
         '
-        Me.Button41.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button41.Location = New System.Drawing.Point(102, 463)
-        Me.Button41.Name = "Button41"
-        Me.Button41.Size = New System.Drawing.Size(180, 51)
-        Me.Button41.TabIndex = 52
-        Me.Button41.Text = "Load Reports"
-        Me.Button41.UseVisualStyleBackColor = True
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.DimGray
-        Me.PictureBox4.Location = New System.Drawing.Point(84, 91)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(151, 141)
-        Me.PictureBox4.TabIndex = 51
-        Me.PictureBox4.TabStop = False
-        '
-        'DataGridView4
-        '
-        Me.DataGridView4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.dgvUserAppointment.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Location = New System.Drawing.Point(325, 94)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.Size = New System.Drawing.Size(663, 421)
-        Me.DataGridView4.TabIndex = 50
+        Me.dgvUserAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUserAppointment.Location = New System.Drawing.Point(325, 94)
+        Me.dgvUserAppointment.Name = "dgvUserAppointment"
+        Me.dgvUserAppointment.Size = New System.Drawing.Size(663, 421)
+        Me.dgvUserAppointment.TabIndex = 50
         '
         'Label36
         '
@@ -2678,15 +2639,14 @@ Partial Class AdminPanel
         '
         Me.pnlStaffVaccine.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.pnlStaffVaccine.Controls.Add(Me.Panel13)
-        Me.pnlStaffVaccine.Controls.Add(Me.Button56)
-        Me.pnlStaffVaccine.Controls.Add(Me.Button11)
-        Me.pnlStaffVaccine.Controls.Add(Me.Button14)
-        Me.pnlStaffVaccine.Controls.Add(Me.Button54)
-        Me.pnlStaffVaccine.Controls.Add(Me.Label94)
-        Me.pnlStaffVaccine.Controls.Add(Me.Button55)
+        Me.pnlStaffVaccine.Controls.Add(Me.btnVaccineLoadReports)
+        Me.pnlStaffVaccine.Controls.Add(Me.btnDeleteVaccine)
+        Me.pnlStaffVaccine.Controls.Add(Me.btnUpdateVaccine)
+        Me.pnlStaffVaccine.Controls.Add(Me.btnAddVaccine)
+        Me.pnlStaffVaccine.Controls.Add(Me.lblVaccineTotal)
         Me.pnlStaffVaccine.Controls.Add(Me.Label95)
-        Me.pnlStaffVaccine.Controls.Add(Me.PictureBox9)
-        Me.pnlStaffVaccine.Controls.Add(Me.DataGridView9)
+        Me.pnlStaffVaccine.Controls.Add(Me.pcbStaffVaccine)
+        Me.pnlStaffVaccine.Controls.Add(Me.dgvVaccineTable)
         Me.pnlStaffVaccine.Location = New System.Drawing.Point(0, 0)
         Me.pnlStaffVaccine.Name = "pnlStaffVaccine"
         Me.pnlStaffVaccine.Size = New System.Drawing.Size(1004, 538)
@@ -2697,18 +2657,15 @@ Partial Class AdminPanel
         Me.Panel13.AutoScroll = True
         Me.Panel13.Controls.Add(Me.Label87)
         Me.Panel13.Controls.Add(Me.Label89)
-        Me.Panel13.Controls.Add(Me.Label85)
-        Me.Panel13.Controls.Add(Me.TextBox43)
         Me.Panel13.Controls.Add(Me.Label86)
-        Me.Panel13.Controls.Add(Me.TextBox44)
-        Me.Panel13.Controls.Add(Me.TextBox45)
-        Me.Panel13.Controls.Add(Me.TextBox46)
-        Me.Panel13.Controls.Add(Me.TextBox47)
+        Me.Panel13.Controls.Add(Me.txtVManufacturer)
+        Me.Panel13.Controls.Add(Me.txtVRecSpecies)
+        Me.Panel13.Controls.Add(Me.txtVaccineName)
+        Me.Panel13.Controls.Add(Me.txtVaccineType)
         Me.Panel13.Controls.Add(Me.Label90)
-        Me.Panel13.Controls.Add(Me.Button10)
         Me.Panel13.Controls.Add(Me.Label91)
         Me.Panel13.Controls.Add(Me.Label92)
-        Me.Panel13.Controls.Add(Me.TextBox48)
+        Me.Panel13.Controls.Add(Me.txtVaccineID)
         Me.Panel13.Controls.Add(Me.Label93)
         Me.Panel13.Location = New System.Drawing.Point(20, 273)
         Me.Panel13.Name = "Panel13"
@@ -2737,24 +2694,6 @@ Partial Class AdminPanel
         Me.Label89.Text = "Vaccine " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Name:"
         Me.Label89.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label85
-        '
-        Me.Label85.AutoSize = True
-        Me.Label85.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label85.Location = New System.Drawing.Point(23, 249)
-        Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(51, 32)
-        Me.Label85.TabIndex = 71
-        Me.Label85.Text = "Side " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Effects:"
-        Me.Label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox43
-        '
-        Me.TextBox43.Location = New System.Drawing.Point(89, 249)
-        Me.TextBox43.Name = "TextBox43"
-        Me.TextBox43.Size = New System.Drawing.Size(174, 20)
-        Me.TextBox43.TabIndex = 70
-        '
         'Label86
         '
         Me.Label86.AutoSize = True
@@ -2765,33 +2704,33 @@ Partial Class AdminPanel
         Me.Label86.TabIndex = 69
         Me.Label86.Text = "Manufacturer:"
         '
-        'TextBox44
+        'txtVManufacturer
         '
-        Me.TextBox44.Location = New System.Drawing.Point(97, 212)
-        Me.TextBox44.Name = "TextBox44"
-        Me.TextBox44.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox44.TabIndex = 67
+        Me.txtVManufacturer.Location = New System.Drawing.Point(97, 212)
+        Me.txtVManufacturer.Name = "txtVManufacturer"
+        Me.txtVManufacturer.Size = New System.Drawing.Size(166, 20)
+        Me.txtVManufacturer.TabIndex = 67
         '
-        'TextBox45
+        'txtVRecSpecies
         '
-        Me.TextBox45.Location = New System.Drawing.Point(97, 169)
-        Me.TextBox45.Name = "TextBox45"
-        Me.TextBox45.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox45.TabIndex = 66
+        Me.txtVRecSpecies.Location = New System.Drawing.Point(97, 169)
+        Me.txtVRecSpecies.Name = "txtVRecSpecies"
+        Me.txtVRecSpecies.Size = New System.Drawing.Size(166, 20)
+        Me.txtVRecSpecies.TabIndex = 66
         '
-        'TextBox46
+        'txtVaccineName
         '
-        Me.TextBox46.Location = New System.Drawing.Point(86, 85)
-        Me.TextBox46.Name = "TextBox46"
-        Me.TextBox46.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox46.TabIndex = 63
+        Me.txtVaccineName.Location = New System.Drawing.Point(86, 85)
+        Me.txtVaccineName.Name = "txtVaccineName"
+        Me.txtVaccineName.Size = New System.Drawing.Size(177, 20)
+        Me.txtVaccineName.TabIndex = 63
         '
-        'TextBox47
+        'txtVaccineType
         '
-        Me.TextBox47.Location = New System.Drawing.Point(97, 125)
-        Me.TextBox47.Name = "TextBox47"
-        Me.TextBox47.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox47.TabIndex = 61
+        Me.txtVaccineType.Location = New System.Drawing.Point(97, 125)
+        Me.txtVaccineType.Name = "txtVaccineType"
+        Me.txtVaccineType.Size = New System.Drawing.Size(166, 20)
+        Me.txtVaccineType.TabIndex = 61
         '
         'Label90
         '
@@ -2803,15 +2742,6 @@ Partial Class AdminPanel
         Me.Label90.TabIndex = 60
         Me.Label90.Text = "Recommended" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Species:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(93, 300)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(94, 33)
-        Me.Button10.TabIndex = 52
-        Me.Button10.Text = "Search"
-        Me.Button10.UseVisualStyleBackColor = True
         '
         'Label91
         '
@@ -2832,12 +2762,12 @@ Partial Class AdminPanel
         Me.Label92.Size = New System.Drawing.Size(0, 16)
         Me.Label92.TabIndex = 37
         '
-        'TextBox48
+        'txtVaccineID
         '
-        Me.TextBox48.Location = New System.Drawing.Point(86, 48)
-        Me.TextBox48.Name = "TextBox48"
-        Me.TextBox48.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox48.TabIndex = 27
+        Me.txtVaccineID.Location = New System.Drawing.Point(86, 48)
+        Me.txtVaccineID.Name = "txtVaccineID"
+        Me.txtVaccineID.Size = New System.Drawing.Size(177, 20)
+        Me.txtVaccineID.TabIndex = 27
         '
         'Label93
         '
@@ -2849,60 +2779,51 @@ Partial Class AdminPanel
         Me.Label93.TabIndex = 24
         Me.Label93.Text = "ID: "
         '
-        'Button56
+        'btnVaccineLoadReports
         '
-        Me.Button56.Location = New System.Drawing.Point(102, 468)
-        Me.Button56.Name = "Button56"
-        Me.Button56.Size = New System.Drawing.Size(180, 51)
-        Me.Button56.TabIndex = 115
-        Me.Button56.Text = "Load Reports"
-        Me.Button56.UseVisualStyleBackColor = True
+        Me.btnVaccineLoadReports.Location = New System.Drawing.Point(72, 463)
+        Me.btnVaccineLoadReports.Name = "btnVaccineLoadReports"
+        Me.btnVaccineLoadReports.Size = New System.Drawing.Size(180, 51)
+        Me.btnVaccineLoadReports.TabIndex = 115
+        Me.btnVaccineLoadReports.Text = "Load Reports"
+        Me.btnVaccineLoadReports.UseVisualStyleBackColor = True
         '
-        'Button11
+        'btnDeleteVaccine
         '
-        Me.Button11.Location = New System.Drawing.Point(777, 22)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(180, 51)
-        Me.Button11.TabIndex = 113
-        Me.Button11.Text = "Delete Vaccine"
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.btnDeleteVaccine.Location = New System.Drawing.Point(777, 22)
+        Me.btnDeleteVaccine.Name = "btnDeleteVaccine"
+        Me.btnDeleteVaccine.Size = New System.Drawing.Size(180, 51)
+        Me.btnDeleteVaccine.TabIndex = 113
+        Me.btnDeleteVaccine.Text = "Delete Vaccine"
+        Me.btnDeleteVaccine.UseVisualStyleBackColor = True
         '
-        'Button14
+        'btnUpdateVaccine
         '
-        Me.Button14.Location = New System.Drawing.Point(562, 22)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(180, 51)
-        Me.Button14.TabIndex = 112
-        Me.Button14.Text = "Update Vaccine Info"
-        Me.Button14.UseVisualStyleBackColor = True
+        Me.btnUpdateVaccine.Location = New System.Drawing.Point(562, 22)
+        Me.btnUpdateVaccine.Name = "btnUpdateVaccine"
+        Me.btnUpdateVaccine.Size = New System.Drawing.Size(180, 51)
+        Me.btnUpdateVaccine.TabIndex = 112
+        Me.btnUpdateVaccine.Text = "Update Vaccine Info"
+        Me.btnUpdateVaccine.UseVisualStyleBackColor = True
         '
-        'Button54
+        'btnAddVaccine
         '
-        Me.Button54.Location = New System.Drawing.Point(338, 22)
-        Me.Button54.Name = "Button54"
-        Me.Button54.Size = New System.Drawing.Size(180, 51)
-        Me.Button54.TabIndex = 111
-        Me.Button54.Text = "Add Vaccine"
-        Me.Button54.UseVisualStyleBackColor = True
+        Me.btnAddVaccine.Location = New System.Drawing.Point(338, 22)
+        Me.btnAddVaccine.Name = "btnAddVaccine"
+        Me.btnAddVaccine.Size = New System.Drawing.Size(180, 51)
+        Me.btnAddVaccine.TabIndex = 111
+        Me.btnAddVaccine.Text = "Add Vaccine"
+        Me.btnAddVaccine.UseVisualStyleBackColor = True
         '
-        'Label94
+        'lblVaccineTotal
         '
-        Me.Label94.AutoSize = True
-        Me.Label94.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label94.Location = New System.Drawing.Point(168, 43)
-        Me.Label94.Name = "Label94"
-        Me.Label94.Size = New System.Drawing.Size(15, 16)
-        Me.Label94.TabIndex = 110
-        Me.Label94.Text = "0"
-        '
-        'Button55
-        '
-        Me.Button55.Image = CType(resources.GetObject("Button55.Image"), System.Drawing.Image)
-        Me.Button55.Location = New System.Drawing.Point(33, 466)
-        Me.Button55.Name = "Button55"
-        Me.Button55.Size = New System.Drawing.Size(51, 51)
-        Me.Button55.TabIndex = 109
-        Me.Button55.UseVisualStyleBackColor = True
+        Me.lblVaccineTotal.AutoSize = True
+        Me.lblVaccineTotal.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVaccineTotal.Location = New System.Drawing.Point(168, 43)
+        Me.lblVaccineTotal.Name = "lblVaccineTotal"
+        Me.lblVaccineTotal.Size = New System.Drawing.Size(15, 16)
+        Me.lblVaccineTotal.TabIndex = 110
+        Me.lblVaccineTotal.Text = "0"
         '
         'Label95
         '
@@ -2914,30 +2835,31 @@ Partial Class AdminPanel
         Me.Label95.TabIndex = 107
         Me.Label95.Text = "No. of Vaccines: "
         '
-        'PictureBox9
+        'pcbStaffVaccine
         '
-        Me.PictureBox9.BackColor = System.Drawing.Color.DimGray
-        Me.PictureBox9.Location = New System.Drawing.Point(83, 92)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(151, 141)
-        Me.PictureBox9.TabIndex = 106
-        Me.PictureBox9.TabStop = False
+        Me.pcbStaffVaccine.BackColor = System.Drawing.Color.DimGray
+        Me.pcbStaffVaccine.Location = New System.Drawing.Point(83, 92)
+        Me.pcbStaffVaccine.Name = "pcbStaffVaccine"
+        Me.pcbStaffVaccine.Size = New System.Drawing.Size(151, 141)
+        Me.pcbStaffVaccine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbStaffVaccine.TabIndex = 106
+        Me.pcbStaffVaccine.TabStop = False
         '
-        'DataGridView9
+        'dgvVaccineTable
         '
-        Me.DataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView9.Location = New System.Drawing.Point(325, 92)
-        Me.DataGridView9.Name = "DataGridView9"
-        Me.DataGridView9.Size = New System.Drawing.Size(660, 425)
-        Me.DataGridView9.TabIndex = 105
+        Me.dgvVaccineTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVaccineTable.Location = New System.Drawing.Point(325, 92)
+        Me.dgvVaccineTable.Name = "dgvVaccineTable"
+        Me.dgvVaccineTable.Size = New System.Drawing.Size(660, 425)
+        Me.dgvVaccineTable.TabIndex = 105
         '
-        'DataGridView10
+        'dgvStaffAppointmentTable
         '
-        Me.DataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView10.Location = New System.Drawing.Point(325, 92)
-        Me.DataGridView10.Name = "DataGridView10"
-        Me.DataGridView10.Size = New System.Drawing.Size(660, 425)
-        Me.DataGridView10.TabIndex = 115
+        Me.dgvStaffAppointmentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvStaffAppointmentTable.Location = New System.Drawing.Point(325, 92)
+        Me.dgvStaffAppointmentTable.Name = "dgvStaffAppointmentTable"
+        Me.dgvStaffAppointmentTable.Size = New System.Drawing.Size(660, 425)
+        Me.dgvStaffAppointmentTable.TabIndex = 115
         '
         'Label103
         '
@@ -2949,14 +2871,14 @@ Partial Class AdminPanel
         Me.Label103.TabIndex = 117
         Me.Label103.Text = "No. of Appointments: "
         '
-        'Button62
+        'btnSAReports
         '
-        Me.Button62.Location = New System.Drawing.Point(101, 466)
-        Me.Button62.Name = "Button62"
-        Me.Button62.Size = New System.Drawing.Size(180, 51)
-        Me.Button62.TabIndex = 118
-        Me.Button62.Text = "Load Reports"
-        Me.Button62.UseVisualStyleBackColor = True
+        Me.btnSAReports.Location = New System.Drawing.Point(70, 459)
+        Me.btnSAReports.Name = "btnSAReports"
+        Me.btnSAReports.Size = New System.Drawing.Size(180, 51)
+        Me.btnSAReports.TabIndex = 118
+        Me.btnSAReports.Text = "Load Reports"
+        Me.btnSAReports.UseVisualStyleBackColor = True
         '
         'Label102
         '
@@ -2971,81 +2893,93 @@ Partial Class AdminPanel
         'pnlStaffAppointment
         '
         Me.pnlStaffAppointment.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pnlStaffAppointment.Controls.Add(Me.RadioButton10)
-        Me.pnlStaffAppointment.Controls.Add(Me.RadioButton9)
-        Me.pnlStaffAppointment.Controls.Add(Me.RadioButton1)
+        Me.pnlStaffAppointment.Controls.Add(Me.rbtnFinished)
+        Me.pnlStaffAppointment.Controls.Add(Me.rbtnOngoing)
+        Me.pnlStaffAppointment.Controls.Add(Me.rbtnPending)
         Me.pnlStaffAppointment.Controls.Add(Me.Panel14)
         Me.pnlStaffAppointment.Controls.Add(Me.Label102)
-        Me.pnlStaffAppointment.Controls.Add(Me.Button61)
-        Me.pnlStaffAppointment.Controls.Add(Me.Button62)
+        Me.pnlStaffAppointment.Controls.Add(Me.btnSAReports)
         Me.pnlStaffAppointment.Controls.Add(Me.Label103)
-        Me.pnlStaffAppointment.Controls.Add(Me.PictureBox10)
-        Me.pnlStaffAppointment.Controls.Add(Me.DataGridView10)
+        Me.pnlStaffAppointment.Controls.Add(Me.pcbStaffAppointmentProfile)
+        Me.pnlStaffAppointment.Controls.Add(Me.dgvStaffAppointmentTable)
         Me.pnlStaffAppointment.Location = New System.Drawing.Point(0, 0)
         Me.pnlStaffAppointment.Name = "pnlStaffAppointment"
         Me.pnlStaffAppointment.Size = New System.Drawing.Size(1004, 538)
         Me.pnlStaffAppointment.TabIndex = 49
         '
-        'RadioButton10
+        'rbtnFinished
         '
-        Me.RadioButton10.AutoSize = True
-        Me.RadioButton10.Location = New System.Drawing.Point(855, 43)
-        Me.RadioButton10.Name = "RadioButton10"
-        Me.RadioButton10.Size = New System.Drawing.Size(64, 17)
-        Me.RadioButton10.TabIndex = 127
-        Me.RadioButton10.TabStop = True
-        Me.RadioButton10.Text = "Finished"
-        Me.RadioButton10.UseVisualStyleBackColor = True
+        Me.rbtnFinished.AutoSize = True
+        Me.rbtnFinished.Location = New System.Drawing.Point(855, 43)
+        Me.rbtnFinished.Name = "rbtnFinished"
+        Me.rbtnFinished.Size = New System.Drawing.Size(64, 17)
+        Me.rbtnFinished.TabIndex = 127
+        Me.rbtnFinished.TabStop = True
+        Me.rbtnFinished.Text = "Finished"
+        Me.rbtnFinished.UseVisualStyleBackColor = True
         '
-        'RadioButton9
+        'rbtnOngoing
         '
-        Me.RadioButton9.AutoSize = True
-        Me.RadioButton9.Location = New System.Drawing.Point(626, 43)
-        Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(65, 17)
-        Me.RadioButton9.TabIndex = 126
-        Me.RadioButton9.TabStop = True
-        Me.RadioButton9.Text = "Ongoing"
-        Me.RadioButton9.UseVisualStyleBackColor = True
+        Me.rbtnOngoing.AutoSize = True
+        Me.rbtnOngoing.Location = New System.Drawing.Point(626, 42)
+        Me.rbtnOngoing.Name = "rbtnOngoing"
+        Me.rbtnOngoing.Size = New System.Drawing.Size(65, 17)
+        Me.rbtnOngoing.TabIndex = 126
+        Me.rbtnOngoing.TabStop = True
+        Me.rbtnOngoing.Text = "Ongoing"
+        Me.rbtnOngoing.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'rbtnPending
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(386, 43)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(64, 17)
-        Me.RadioButton1.TabIndex = 125
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Pending"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.rbtnPending.AutoSize = True
+        Me.rbtnPending.Location = New System.Drawing.Point(386, 43)
+        Me.rbtnPending.Name = "rbtnPending"
+        Me.rbtnPending.Size = New System.Drawing.Size(64, 17)
+        Me.rbtnPending.TabIndex = 125
+        Me.rbtnPending.TabStop = True
+        Me.rbtnPending.Text = "Pending"
+        Me.rbtnPending.UseVisualStyleBackColor = True
         '
         'Panel14
         '
         Me.Panel14.AutoScroll = True
-        Me.Panel14.Controls.Add(Me.TextBox41)
+        Me.Panel14.Controls.Add(Me.txtSAPreferredAppo)
+        Me.Panel14.Controls.Add(Me.txtSAAppoType)
+        Me.Panel14.Controls.Add(Me.txtSAClientName)
         Me.Panel14.Controls.Add(Me.Label81)
-        Me.Panel14.Controls.Add(Me.ComboBox5)
-        Me.Panel14.Controls.Add(Me.TextBox49)
+        Me.Panel14.Controls.Add(Me.txtSAPetName)
         Me.Panel14.Controls.Add(Me.Label96)
-        Me.Panel14.Controls.Add(Me.Button57)
-        Me.Panel14.Controls.Add(Me.DateTimePicker8)
         Me.Panel14.Controls.Add(Me.Label97)
         Me.Panel14.Controls.Add(Me.Label98)
         Me.Panel14.Controls.Add(Me.Label99)
         Me.Panel14.Controls.Add(Me.Label100)
-        Me.Panel14.Controls.Add(Me.TextBox50)
+        Me.Panel14.Controls.Add(Me.txtStaffAppointmentID)
         Me.Panel14.Controls.Add(Me.Label101)
         Me.Panel14.Location = New System.Drawing.Point(17, 280)
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(295, 161)
         Me.Panel14.TabIndex = 124
         '
-        'TextBox41
+        'txtSAPreferredAppo
         '
-        Me.TextBox41.Location = New System.Drawing.Point(86, 87)
-        Me.TextBox41.Name = "TextBox41"
-        Me.TextBox41.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox41.TabIndex = 59
+        Me.txtSAPreferredAppo.Location = New System.Drawing.Point(87, 201)
+        Me.txtSAPreferredAppo.Name = "txtSAPreferredAppo"
+        Me.txtSAPreferredAppo.Size = New System.Drawing.Size(176, 20)
+        Me.txtSAPreferredAppo.TabIndex = 61
+        '
+        'txtSAAppoType
+        '
+        Me.txtSAAppoType.Location = New System.Drawing.Point(87, 161)
+        Me.txtSAAppoType.Name = "txtSAAppoType"
+        Me.txtSAAppoType.Size = New System.Drawing.Size(176, 20)
+        Me.txtSAAppoType.TabIndex = 60
+        '
+        'txtSAClientName
+        '
+        Me.txtSAClientName.Location = New System.Drawing.Point(86, 87)
+        Me.txtSAClientName.Name = "txtSAClientName"
+        Me.txtSAClientName.Size = New System.Drawing.Size(177, 20)
+        Me.txtSAClientName.TabIndex = 59
         '
         'Label81
         '
@@ -3057,20 +2991,12 @@ Partial Class AdminPanel
         Me.Label81.TabIndex = 58
         Me.Label81.Text = "Client Name:"
         '
-        'ComboBox5
+        'txtSAPetName
         '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(86, 160)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(176, 21)
-        Me.ComboBox5.TabIndex = 55
-        '
-        'TextBox49
-        '
-        Me.TextBox49.Location = New System.Drawing.Point(87, 125)
-        Me.TextBox49.Name = "TextBox49"
-        Me.TextBox49.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox49.TabIndex = 54
+        Me.txtSAPetName.Location = New System.Drawing.Point(87, 125)
+        Me.txtSAPetName.Name = "txtSAPetName"
+        Me.txtSAPetName.Size = New System.Drawing.Size(176, 20)
+        Me.txtSAPetName.TabIndex = 54
         '
         'Label96
         '
@@ -3081,22 +3007,6 @@ Partial Class AdminPanel
         Me.Label96.Size = New System.Drawing.Size(68, 16)
         Me.Label96.TabIndex = 53
         Me.Label96.Text = "Pet Name:"
-        '
-        'Button57
-        '
-        Me.Button57.Location = New System.Drawing.Point(96, 298)
-        Me.Button57.Name = "Button57"
-        Me.Button57.Size = New System.Drawing.Size(94, 33)
-        Me.Button57.TabIndex = 52
-        Me.Button57.Text = "Search"
-        Me.Button57.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker8
-        '
-        Me.DateTimePicker8.Location = New System.Drawing.Point(88, 207)
-        Me.DateTimePicker8.Name = "DateTimePicker8"
-        Me.DateTimePicker8.Size = New System.Drawing.Size(174, 20)
-        Me.DateTimePicker8.TabIndex = 51
         '
         'Label97
         '
@@ -3139,12 +3049,12 @@ Partial Class AdminPanel
         Me.Label100.Size = New System.Drawing.Size(0, 16)
         Me.Label100.TabIndex = 37
         '
-        'TextBox50
+        'txtStaffAppointmentID
         '
-        Me.TextBox50.Location = New System.Drawing.Point(86, 48)
-        Me.TextBox50.Name = "TextBox50"
-        Me.TextBox50.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox50.TabIndex = 27
+        Me.txtStaffAppointmentID.Location = New System.Drawing.Point(86, 48)
+        Me.txtStaffAppointmentID.Name = "txtStaffAppointmentID"
+        Me.txtStaffAppointmentID.Size = New System.Drawing.Size(177, 20)
+        Me.txtStaffAppointmentID.TabIndex = 27
         '
         'Label101
         '
@@ -3156,37 +3066,27 @@ Partial Class AdminPanel
         Me.Label101.TabIndex = 24
         Me.Label101.Text = "ID: "
         '
-        'Button61
+        'pcbStaffAppointmentProfile
         '
-        Me.Button61.Image = CType(resources.GetObject("Button61.Image"), System.Drawing.Image)
-        Me.Button61.Location = New System.Drawing.Point(33, 466)
-        Me.Button61.Name = "Button61"
-        Me.Button61.Size = New System.Drawing.Size(51, 51)
-        Me.Button61.TabIndex = 119
-        Me.Button61.UseVisualStyleBackColor = True
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.BackColor = System.Drawing.Color.DimGray
-        Me.PictureBox10.Location = New System.Drawing.Point(83, 92)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(151, 141)
-        Me.PictureBox10.TabIndex = 116
-        Me.PictureBox10.TabStop = False
+        Me.pcbStaffAppointmentProfile.BackColor = System.Drawing.Color.DimGray
+        Me.pcbStaffAppointmentProfile.Location = New System.Drawing.Point(83, 92)
+        Me.pcbStaffAppointmentProfile.Name = "pcbStaffAppointmentProfile"
+        Me.pcbStaffAppointmentProfile.Size = New System.Drawing.Size(151, 141)
+        Me.pcbStaffAppointmentProfile.TabIndex = 116
+        Me.pcbStaffAppointmentProfile.TabStop = False
         '
         'pnlStaffMedicines
         '
         Me.pnlStaffMedicines.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.pnlStaffMedicines.Controls.Add(Me.Panel16)
-        Me.pnlStaffMedicines.Controls.Add(Me.Button59)
-        Me.pnlStaffMedicines.Controls.Add(Me.Button60)
-        Me.pnlStaffMedicines.Controls.Add(Me.Button63)
-        Me.pnlStaffMedicines.Controls.Add(Me.Label111)
-        Me.pnlStaffMedicines.Controls.Add(Me.Button64)
-        Me.pnlStaffMedicines.Controls.Add(Me.Button65)
+        Me.pnlStaffMedicines.Controls.Add(Me.btnDeleteMedicine)
+        Me.pnlStaffMedicines.Controls.Add(Me.btnUpdateMedicine)
+        Me.pnlStaffMedicines.Controls.Add(Me.btnAddMedicine)
+        Me.pnlStaffMedicines.Controls.Add(Me.lblMedicineTotal)
+        Me.pnlStaffMedicines.Controls.Add(Me.btnMedineReports)
         Me.pnlStaffMedicines.Controls.Add(Me.Label112)
-        Me.pnlStaffMedicines.Controls.Add(Me.PictureBox11)
-        Me.pnlStaffMedicines.Controls.Add(Me.DataGridView11)
+        Me.pnlStaffMedicines.Controls.Add(Me.pcbMedicineProfile)
+        Me.pnlStaffMedicines.Controls.Add(Me.dgvMedicineTable)
         Me.pnlStaffMedicines.Location = New System.Drawing.Point(0, 0)
         Me.pnlStaffMedicines.Name = "pnlStaffMedicines"
         Me.pnlStaffMedicines.Size = New System.Drawing.Size(1004, 538)
@@ -3195,32 +3095,22 @@ Partial Class AdminPanel
         'Panel16
         '
         Me.Panel16.AutoScroll = True
-        Me.Panel16.Controls.Add(Me.DateTimePicker10)
         Me.Panel16.Controls.Add(Me.Label88)
         Me.Panel16.Controls.Add(Me.Label104)
-        Me.Panel16.Controls.Add(Me.Label105)
         Me.Panel16.Controls.Add(Me.Label106)
-        Me.Panel16.Controls.Add(Me.TextBox52)
-        Me.Panel16.Controls.Add(Me.TextBox53)
-        Me.Panel16.Controls.Add(Me.TextBox54)
-        Me.Panel16.Controls.Add(Me.TextBox55)
+        Me.Panel16.Controls.Add(Me.txtMedicineManufacturer)
+        Me.Panel16.Controls.Add(Me.txtBrandName)
+        Me.Panel16.Controls.Add(Me.txtMedicineName)
+        Me.Panel16.Controls.Add(Me.txtGenericName)
         Me.Panel16.Controls.Add(Me.Label107)
-        Me.Panel16.Controls.Add(Me.Button58)
         Me.Panel16.Controls.Add(Me.Label108)
         Me.Panel16.Controls.Add(Me.Label109)
-        Me.Panel16.Controls.Add(Me.TextBox56)
+        Me.Panel16.Controls.Add(Me.txtMedicineID)
         Me.Panel16.Controls.Add(Me.Label110)
         Me.Panel16.Location = New System.Drawing.Point(20, 273)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(295, 161)
         Me.Panel16.TabIndex = 124
-        '
-        'DateTimePicker10
-        '
-        Me.DateTimePicker10.Location = New System.Drawing.Point(97, 253)
-        Me.DateTimePicker10.Name = "DateTimePicker10"
-        Me.DateTimePicker10.Size = New System.Drawing.Size(166, 20)
-        Me.DateTimePicker10.TabIndex = 76
         '
         'Label88
         '
@@ -3244,17 +3134,6 @@ Partial Class AdminPanel
         Me.Label104.Text = "Medicine " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Name:"
         Me.Label104.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label105
-        '
-        Me.Label105.AutoSize = True
-        Me.Label105.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label105.Location = New System.Drawing.Point(18, 254)
-        Me.Label105.Name = "Label105"
-        Me.Label105.Size = New System.Drawing.Size(77, 16)
-        Me.Label105.TabIndex = 71
-        Me.Label105.Text = "Expiry Date:"
-        Me.Label105.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Label106
         '
         Me.Label106.AutoSize = True
@@ -3265,53 +3144,44 @@ Partial Class AdminPanel
         Me.Label106.TabIndex = 69
         Me.Label106.Text = "Manufacturer:"
         '
-        'TextBox52
+        'txtMedicineManufacturer
         '
-        Me.TextBox52.Location = New System.Drawing.Point(97, 212)
-        Me.TextBox52.Name = "TextBox52"
-        Me.TextBox52.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox52.TabIndex = 67
+        Me.txtMedicineManufacturer.Location = New System.Drawing.Point(97, 212)
+        Me.txtMedicineManufacturer.Name = "txtMedicineManufacturer"
+        Me.txtMedicineManufacturer.Size = New System.Drawing.Size(166, 20)
+        Me.txtMedicineManufacturer.TabIndex = 67
         '
-        'TextBox53
+        'txtBrandName
         '
-        Me.TextBox53.Location = New System.Drawing.Point(97, 169)
-        Me.TextBox53.Name = "TextBox53"
-        Me.TextBox53.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox53.TabIndex = 66
+        Me.txtBrandName.Location = New System.Drawing.Point(97, 169)
+        Me.txtBrandName.Name = "txtBrandName"
+        Me.txtBrandName.Size = New System.Drawing.Size(166, 20)
+        Me.txtBrandName.TabIndex = 66
         '
-        'TextBox54
+        'txtMedicineName
         '
-        Me.TextBox54.Location = New System.Drawing.Point(86, 85)
-        Me.TextBox54.Name = "TextBox54"
-        Me.TextBox54.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox54.TabIndex = 63
+        Me.txtMedicineName.Location = New System.Drawing.Point(86, 85)
+        Me.txtMedicineName.Name = "txtMedicineName"
+        Me.txtMedicineName.Size = New System.Drawing.Size(177, 20)
+        Me.txtMedicineName.TabIndex = 63
         '
-        'TextBox55
+        'txtGenericName
         '
-        Me.TextBox55.Location = New System.Drawing.Point(97, 125)
-        Me.TextBox55.Name = "TextBox55"
-        Me.TextBox55.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox55.TabIndex = 61
+        Me.txtGenericName.Location = New System.Drawing.Point(87, 125)
+        Me.txtGenericName.Name = "txtGenericName"
+        Me.txtGenericName.Size = New System.Drawing.Size(176, 20)
+        Me.txtGenericName.TabIndex = 61
         '
         'Label107
         '
         Me.Label107.AutoSize = True
         Me.Label107.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label107.Location = New System.Drawing.Point(17, 171)
+        Me.Label107.Location = New System.Drawing.Point(30, 171)
         Me.Label107.Name = "Label107"
-        Me.Label107.Size = New System.Drawing.Size(78, 32)
+        Me.Label107.Size = New System.Drawing.Size(46, 32)
         Me.Label107.TabIndex = 60
-        Me.Label107.Text = "Brand Name" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Name:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label107.Text = "Brand " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Name:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button58
-        '
-        Me.Button58.Location = New System.Drawing.Point(93, 300)
-        Me.Button58.Name = "Button58"
-        Me.Button58.Size = New System.Drawing.Size(94, 33)
-        Me.Button58.TabIndex = 52
-        Me.Button58.Text = "Search"
-        Me.Button58.UseVisualStyleBackColor = True
         '
         'Label108
         '
@@ -3332,12 +3202,12 @@ Partial Class AdminPanel
         Me.Label109.Size = New System.Drawing.Size(0, 16)
         Me.Label109.TabIndex = 37
         '
-        'TextBox56
+        'txtMedicineID
         '
-        Me.TextBox56.Location = New System.Drawing.Point(86, 48)
-        Me.TextBox56.Name = "TextBox56"
-        Me.TextBox56.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox56.TabIndex = 27
+        Me.txtMedicineID.Location = New System.Drawing.Point(86, 48)
+        Me.txtMedicineID.Name = "txtMedicineID"
+        Me.txtMedicineID.Size = New System.Drawing.Size(177, 20)
+        Me.txtMedicineID.TabIndex = 27
         '
         'Label110
         '
@@ -3349,60 +3219,51 @@ Partial Class AdminPanel
         Me.Label110.TabIndex = 24
         Me.Label110.Text = "ID: "
         '
-        'Button59
+        'btnDeleteMedicine
         '
-        Me.Button59.Location = New System.Drawing.Point(777, 22)
-        Me.Button59.Name = "Button59"
-        Me.Button59.Size = New System.Drawing.Size(180, 51)
-        Me.Button59.TabIndex = 123
-        Me.Button59.Text = "Delete Medicine"
-        Me.Button59.UseVisualStyleBackColor = True
+        Me.btnDeleteMedicine.Location = New System.Drawing.Point(777, 22)
+        Me.btnDeleteMedicine.Name = "btnDeleteMedicine"
+        Me.btnDeleteMedicine.Size = New System.Drawing.Size(180, 51)
+        Me.btnDeleteMedicine.TabIndex = 123
+        Me.btnDeleteMedicine.Text = "Delete Medicine"
+        Me.btnDeleteMedicine.UseVisualStyleBackColor = True
         '
-        'Button60
+        'btnUpdateMedicine
         '
-        Me.Button60.Location = New System.Drawing.Point(562, 22)
-        Me.Button60.Name = "Button60"
-        Me.Button60.Size = New System.Drawing.Size(180, 51)
-        Me.Button60.TabIndex = 122
-        Me.Button60.Text = "Update Medicine Info"
-        Me.Button60.UseVisualStyleBackColor = True
+        Me.btnUpdateMedicine.Location = New System.Drawing.Point(562, 22)
+        Me.btnUpdateMedicine.Name = "btnUpdateMedicine"
+        Me.btnUpdateMedicine.Size = New System.Drawing.Size(180, 51)
+        Me.btnUpdateMedicine.TabIndex = 122
+        Me.btnUpdateMedicine.Text = "Update Medicine Info"
+        Me.btnUpdateMedicine.UseVisualStyleBackColor = True
         '
-        'Button63
+        'btnAddMedicine
         '
-        Me.Button63.Location = New System.Drawing.Point(338, 22)
-        Me.Button63.Name = "Button63"
-        Me.Button63.Size = New System.Drawing.Size(180, 51)
-        Me.Button63.TabIndex = 121
-        Me.Button63.Text = "Add Medicine"
-        Me.Button63.UseVisualStyleBackColor = True
+        Me.btnAddMedicine.Location = New System.Drawing.Point(338, 22)
+        Me.btnAddMedicine.Name = "btnAddMedicine"
+        Me.btnAddMedicine.Size = New System.Drawing.Size(180, 51)
+        Me.btnAddMedicine.TabIndex = 121
+        Me.btnAddMedicine.Text = "Add Medicine"
+        Me.btnAddMedicine.UseVisualStyleBackColor = True
         '
-        'Label111
+        'lblMedicineTotal
         '
-        Me.Label111.AutoSize = True
-        Me.Label111.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label111.Location = New System.Drawing.Point(168, 43)
-        Me.Label111.Name = "Label111"
-        Me.Label111.Size = New System.Drawing.Size(15, 16)
-        Me.Label111.TabIndex = 120
-        Me.Label111.Text = "0"
+        Me.lblMedicineTotal.AutoSize = True
+        Me.lblMedicineTotal.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMedicineTotal.Location = New System.Drawing.Point(168, 43)
+        Me.lblMedicineTotal.Name = "lblMedicineTotal"
+        Me.lblMedicineTotal.Size = New System.Drawing.Size(15, 16)
+        Me.lblMedicineTotal.TabIndex = 120
+        Me.lblMedicineTotal.Text = "0"
         '
-        'Button64
+        'btnMedineReports
         '
-        Me.Button64.Image = CType(resources.GetObject("Button64.Image"), System.Drawing.Image)
-        Me.Button64.Location = New System.Drawing.Point(33, 466)
-        Me.Button64.Name = "Button64"
-        Me.Button64.Size = New System.Drawing.Size(51, 51)
-        Me.Button64.TabIndex = 119
-        Me.Button64.UseVisualStyleBackColor = True
-        '
-        'Button65
-        '
-        Me.Button65.Location = New System.Drawing.Point(101, 466)
-        Me.Button65.Name = "Button65"
-        Me.Button65.Size = New System.Drawing.Size(180, 51)
-        Me.Button65.TabIndex = 118
-        Me.Button65.Text = "Load Reports"
-        Me.Button65.UseVisualStyleBackColor = True
+        Me.btnMedineReports.Location = New System.Drawing.Point(67, 466)
+        Me.btnMedineReports.Name = "btnMedineReports"
+        Me.btnMedineReports.Size = New System.Drawing.Size(180, 51)
+        Me.btnMedineReports.TabIndex = 118
+        Me.btnMedineReports.Text = "Load Reports"
+        Me.btnMedineReports.UseVisualStyleBackColor = True
         '
         'Label112
         '
@@ -3414,37 +3275,37 @@ Partial Class AdminPanel
         Me.Label112.TabIndex = 117
         Me.Label112.Text = "No. of Medicines: "
         '
-        'PictureBox11
+        'pcbMedicineProfile
         '
-        Me.PictureBox11.BackColor = System.Drawing.Color.DimGray
-        Me.PictureBox11.Location = New System.Drawing.Point(83, 92)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(151, 141)
-        Me.PictureBox11.TabIndex = 116
-        Me.PictureBox11.TabStop = False
+        Me.pcbMedicineProfile.BackColor = System.Drawing.Color.DimGray
+        Me.pcbMedicineProfile.Location = New System.Drawing.Point(83, 92)
+        Me.pcbMedicineProfile.Name = "pcbMedicineProfile"
+        Me.pcbMedicineProfile.Size = New System.Drawing.Size(151, 141)
+        Me.pcbMedicineProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbMedicineProfile.TabIndex = 116
+        Me.pcbMedicineProfile.TabStop = False
         '
-        'DataGridView11
+        'dgvMedicineTable
         '
-        Me.DataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView11.Location = New System.Drawing.Point(325, 92)
-        Me.DataGridView11.Name = "DataGridView11"
-        Me.DataGridView11.Size = New System.Drawing.Size(660, 425)
-        Me.DataGridView11.TabIndex = 115
+        Me.dgvMedicineTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvMedicineTable.Location = New System.Drawing.Point(325, 92)
+        Me.dgvMedicineTable.Name = "dgvMedicineTable"
+        Me.dgvMedicineTable.Size = New System.Drawing.Size(660, 425)
+        Me.dgvMedicineTable.TabIndex = 115
         '
         'pnlStaffPetMonitoring
         '
         Me.pnlStaffPetMonitoring.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.pnlStaffPetMonitoring.Controls.Add(Me.Button72)
-        Me.pnlStaffPetMonitoring.Controls.Add(Me.Button68)
+        Me.pnlStaffPetMonitoring.Controls.Add(Me.btnUpdatePetMonitoring)
         Me.pnlStaffPetMonitoring.Controls.Add(Me.Panel18)
-        Me.pnlStaffPetMonitoring.Controls.Add(Me.Button67)
-        Me.pnlStaffPetMonitoring.Controls.Add(Me.Button69)
-        Me.pnlStaffPetMonitoring.Controls.Add(Me.Label121)
-        Me.pnlStaffPetMonitoring.Controls.Add(Me.Button70)
+        Me.pnlStaffPetMonitoring.Controls.Add(Me.btnDeletePetMonitoring)
+        Me.pnlStaffPetMonitoring.Controls.Add(Me.btnAddPetMonitoring)
+        Me.pnlStaffPetMonitoring.Controls.Add(Me.lblPetMonitoringTotal)
         Me.pnlStaffPetMonitoring.Controls.Add(Me.Button71)
         Me.pnlStaffPetMonitoring.Controls.Add(Me.Label122)
-        Me.pnlStaffPetMonitoring.Controls.Add(Me.PictureBox12)
-        Me.pnlStaffPetMonitoring.Controls.Add(Me.DataGridView12)
+        Me.pnlStaffPetMonitoring.Controls.Add(Me.pcbSPMProfile)
+        Me.pnlStaffPetMonitoring.Controls.Add(Me.dgvPetMonitoringTable)
         Me.pnlStaffPetMonitoring.Location = New System.Drawing.Point(0, 0)
         Me.pnlStaffPetMonitoring.Name = "pnlStaffPetMonitoring"
         Me.pnlStaffPetMonitoring.Size = New System.Drawing.Size(1004, 538)
@@ -3459,28 +3320,27 @@ Partial Class AdminPanel
         Me.Button72.Text = "Monitor Pets"
         Me.Button72.UseVisualStyleBackColor = True
         '
-        'Button68
+        'btnUpdatePetMonitoring
         '
-        Me.Button68.Location = New System.Drawing.Point(697, 22)
-        Me.Button68.Name = "Button68"
-        Me.Button68.Size = New System.Drawing.Size(120, 51)
-        Me.Button68.TabIndex = 135
-        Me.Button68.Text = "Update Pet Monitoring Info"
-        Me.Button68.UseVisualStyleBackColor = True
+        Me.btnUpdatePetMonitoring.Location = New System.Drawing.Point(697, 22)
+        Me.btnUpdatePetMonitoring.Name = "btnUpdatePetMonitoring"
+        Me.btnUpdatePetMonitoring.Size = New System.Drawing.Size(120, 51)
+        Me.btnUpdatePetMonitoring.TabIndex = 135
+        Me.btnUpdatePetMonitoring.Text = "Update Pet Monitoring Info"
+        Me.btnUpdatePetMonitoring.UseVisualStyleBackColor = True
         '
         'Panel18
         '
         Me.Panel18.AutoScroll = True
         Me.Panel18.Controls.Add(Me.Label113)
         Me.Panel18.Controls.Add(Me.Label114)
-        Me.Panel18.Controls.Add(Me.TextBox57)
-        Me.Panel18.Controls.Add(Me.TextBox58)
-        Me.Panel18.Controls.Add(Me.TextBox59)
+        Me.Panel18.Controls.Add(Me.txtPMVetAssigned)
+        Me.Panel18.Controls.Add(Me.txtPMPetName)
+        Me.Panel18.Controls.Add(Me.txtPMOwner)
         Me.Panel18.Controls.Add(Me.Label117)
-        Me.Panel18.Controls.Add(Me.Button66)
         Me.Panel18.Controls.Add(Me.Label118)
         Me.Panel18.Controls.Add(Me.Label119)
-        Me.Panel18.Controls.Add(Me.TextBox60)
+        Me.Panel18.Controls.Add(Me.txtPMID)
         Me.Panel18.Controls.Add(Me.Label120)
         Me.Panel18.Location = New System.Drawing.Point(20, 273)
         Me.Panel18.Name = "Panel18"
@@ -3509,26 +3369,26 @@ Partial Class AdminPanel
         Me.Label114.Text = "Pet Name:"
         Me.Label114.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'TextBox57
+        'txtPMVetAssigned
         '
-        Me.TextBox57.Location = New System.Drawing.Point(97, 163)
-        Me.TextBox57.Name = "TextBox57"
-        Me.TextBox57.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox57.TabIndex = 66
+        Me.txtPMVetAssigned.Location = New System.Drawing.Point(97, 163)
+        Me.txtPMVetAssigned.Name = "txtPMVetAssigned"
+        Me.txtPMVetAssigned.Size = New System.Drawing.Size(166, 20)
+        Me.txtPMVetAssigned.TabIndex = 66
         '
-        'TextBox58
+        'txtPMPetName
         '
-        Me.TextBox58.Location = New System.Drawing.Point(86, 85)
-        Me.TextBox58.Name = "TextBox58"
-        Me.TextBox58.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox58.TabIndex = 63
+        Me.txtPMPetName.Location = New System.Drawing.Point(86, 85)
+        Me.txtPMPetName.Name = "txtPMPetName"
+        Me.txtPMPetName.Size = New System.Drawing.Size(177, 20)
+        Me.txtPMPetName.TabIndex = 63
         '
-        'TextBox59
+        'txtPMOwner
         '
-        Me.TextBox59.Location = New System.Drawing.Point(97, 125)
-        Me.TextBox59.Name = "TextBox59"
-        Me.TextBox59.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox59.TabIndex = 61
+        Me.txtPMOwner.Location = New System.Drawing.Point(97, 125)
+        Me.txtPMOwner.Name = "txtPMOwner"
+        Me.txtPMOwner.Size = New System.Drawing.Size(166, 20)
+        Me.txtPMOwner.TabIndex = 61
         '
         'Label117
         '
@@ -3540,15 +3400,6 @@ Partial Class AdminPanel
         Me.Label117.TabIndex = 60
         Me.Label117.Text = "Vet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Associate:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button66
-        '
-        Me.Button66.Location = New System.Drawing.Point(97, 207)
-        Me.Button66.Name = "Button66"
-        Me.Button66.Size = New System.Drawing.Size(94, 33)
-        Me.Button66.TabIndex = 52
-        Me.Button66.Text = "Search"
-        Me.Button66.UseVisualStyleBackColor = True
         '
         'Label118
         '
@@ -3569,12 +3420,12 @@ Partial Class AdminPanel
         Me.Label119.Size = New System.Drawing.Size(0, 16)
         Me.Label119.TabIndex = 37
         '
-        'TextBox60
+        'txtPMID
         '
-        Me.TextBox60.Location = New System.Drawing.Point(86, 48)
-        Me.TextBox60.Name = "TextBox60"
-        Me.TextBox60.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox60.TabIndex = 27
+        Me.txtPMID.Location = New System.Drawing.Point(86, 48)
+        Me.txtPMID.Name = "txtPMID"
+        Me.txtPMID.Size = New System.Drawing.Size(177, 20)
+        Me.txtPMID.TabIndex = 27
         '
         'Label120
         '
@@ -3586,46 +3437,37 @@ Partial Class AdminPanel
         Me.Label120.TabIndex = 24
         Me.Label120.Text = "ID: "
         '
-        'Button67
+        'btnDeletePetMonitoring
         '
-        Me.Button67.Location = New System.Drawing.Point(837, 22)
-        Me.Button67.Name = "Button67"
-        Me.Button67.Size = New System.Drawing.Size(120, 51)
-        Me.Button67.TabIndex = 133
-        Me.Button67.Text = "Delete Pet Monitoring"
-        Me.Button67.UseVisualStyleBackColor = True
+        Me.btnDeletePetMonitoring.Location = New System.Drawing.Point(837, 22)
+        Me.btnDeletePetMonitoring.Name = "btnDeletePetMonitoring"
+        Me.btnDeletePetMonitoring.Size = New System.Drawing.Size(120, 51)
+        Me.btnDeletePetMonitoring.TabIndex = 133
+        Me.btnDeletePetMonitoring.Text = "Delete Pet Monitoring"
+        Me.btnDeletePetMonitoring.UseVisualStyleBackColor = True
         '
-        'Button69
+        'btnAddPetMonitoring
         '
-        Me.Button69.Location = New System.Drawing.Point(559, 22)
-        Me.Button69.Name = "Button69"
-        Me.Button69.Size = New System.Drawing.Size(120, 51)
-        Me.Button69.TabIndex = 131
-        Me.Button69.Text = "Add Pet Monitoring"
-        Me.Button69.UseVisualStyleBackColor = True
+        Me.btnAddPetMonitoring.Location = New System.Drawing.Point(559, 22)
+        Me.btnAddPetMonitoring.Name = "btnAddPetMonitoring"
+        Me.btnAddPetMonitoring.Size = New System.Drawing.Size(120, 51)
+        Me.btnAddPetMonitoring.TabIndex = 131
+        Me.btnAddPetMonitoring.Text = "Add Pet Monitoring"
+        Me.btnAddPetMonitoring.UseVisualStyleBackColor = True
         '
-        'Label121
+        'lblPetMonitoringTotal
         '
-        Me.Label121.AutoSize = True
-        Me.Label121.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label121.Location = New System.Drawing.Point(186, 43)
-        Me.Label121.Name = "Label121"
-        Me.Label121.Size = New System.Drawing.Size(15, 16)
-        Me.Label121.TabIndex = 130
-        Me.Label121.Text = "0"
-        '
-        'Button70
-        '
-        Me.Button70.Image = CType(resources.GetObject("Button70.Image"), System.Drawing.Image)
-        Me.Button70.Location = New System.Drawing.Point(33, 466)
-        Me.Button70.Name = "Button70"
-        Me.Button70.Size = New System.Drawing.Size(51, 51)
-        Me.Button70.TabIndex = 129
-        Me.Button70.UseVisualStyleBackColor = True
+        Me.lblPetMonitoringTotal.AutoSize = True
+        Me.lblPetMonitoringTotal.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPetMonitoringTotal.Location = New System.Drawing.Point(186, 43)
+        Me.lblPetMonitoringTotal.Name = "lblPetMonitoringTotal"
+        Me.lblPetMonitoringTotal.Size = New System.Drawing.Size(15, 16)
+        Me.lblPetMonitoringTotal.TabIndex = 130
+        Me.lblPetMonitoringTotal.Text = "0"
         '
         'Button71
         '
-        Me.Button71.Location = New System.Drawing.Point(101, 466)
+        Me.Button71.Location = New System.Drawing.Point(67, 462)
         Me.Button71.Name = "Button71"
         Me.Button71.Size = New System.Drawing.Size(180, 51)
         Me.Button71.TabIndex = 128
@@ -3642,22 +3484,22 @@ Partial Class AdminPanel
         Me.Label122.TabIndex = 127
         Me.Label122.Text = "No. of Pet Monitoring: "
         '
-        'PictureBox12
+        'pcbSPMProfile
         '
-        Me.PictureBox12.BackColor = System.Drawing.Color.DimGray
-        Me.PictureBox12.Location = New System.Drawing.Point(83, 92)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(151, 141)
-        Me.PictureBox12.TabIndex = 126
-        Me.PictureBox12.TabStop = False
+        Me.pcbSPMProfile.BackColor = System.Drawing.Color.DimGray
+        Me.pcbSPMProfile.Location = New System.Drawing.Point(83, 92)
+        Me.pcbSPMProfile.Name = "pcbSPMProfile"
+        Me.pcbSPMProfile.Size = New System.Drawing.Size(151, 141)
+        Me.pcbSPMProfile.TabIndex = 126
+        Me.pcbSPMProfile.TabStop = False
         '
-        'DataGridView12
+        'dgvPetMonitoringTable
         '
-        Me.DataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView12.Location = New System.Drawing.Point(325, 92)
-        Me.DataGridView12.Name = "DataGridView12"
-        Me.DataGridView12.Size = New System.Drawing.Size(660, 425)
-        Me.DataGridView12.TabIndex = 125
+        Me.dgvPetMonitoringTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPetMonitoringTable.Location = New System.Drawing.Point(325, 92)
+        Me.dgvPetMonitoringTable.Name = "dgvPetMonitoringTable"
+        Me.dgvPetMonitoringTable.Size = New System.Drawing.Size(660, 425)
+        Me.dgvPetMonitoringTable.TabIndex = 125
         '
         'pnlStaffPhysical
         '
@@ -4581,6 +4423,10 @@ Partial Class AdminPanel
         Me.ClientSize = New System.Drawing.Size(1136, 653)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.pnlStaffPetMonitoring)
+        Me.Controls.Add(Me.pnlStaffMedicines)
+        Me.Controls.Add(Me.pnlStaffAppointment)
+        Me.Controls.Add(Me.pnlStaffVaccine)
         Me.Controls.Add(Me.pnlStaffs)
         Me.Controls.Add(Me.pnlUserReport)
         Me.Controls.Add(Me.pnlUserInbox)
@@ -4593,10 +4439,6 @@ Partial Class AdminPanel
         Me.Controls.Add(Me.pnlStaffKennel)
         Me.Controls.Add(Me.pnlLabResults)
         Me.Controls.Add(Me.pnlStaffPhysical)
-        Me.Controls.Add(Me.pnlStaffPetMonitoring)
-        Me.Controls.Add(Me.pnlStaffMedicines)
-        Me.Controls.Add(Me.pnlStaffAppointment)
-        Me.Controls.Add(Me.pnlStaffVaccine)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "AdminPanel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -4624,8 +4466,8 @@ Partial Class AdminPanel
         Me.pnlUserAppointment.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbUserAppointmentProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvUserAppointment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlUserNotifications.ResumeLayout(False)
         Me.pnlUserNotifications.PerformLayout()
         Me.Panel7.ResumeLayout(False)
@@ -4654,26 +4496,26 @@ Partial Class AdminPanel
         Me.pnlStaffVaccine.PerformLayout()
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbStaffVaccine, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvVaccineTable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvStaffAppointmentTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStaffAppointment.ResumeLayout(False)
         Me.pnlStaffAppointment.PerformLayout()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbStaffAppointmentProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStaffMedicines.ResumeLayout(False)
         Me.pnlStaffMedicines.PerformLayout()
         Me.Panel16.ResumeLayout(False)
         Me.Panel16.PerformLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbMedicineProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvMedicineTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStaffPetMonitoring.ResumeLayout(False)
         Me.pnlStaffPetMonitoring.PerformLayout()
         Me.Panel18.ResumeLayout(False)
         Me.Panel18.PerformLayout()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbSPMProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvPetMonitoringTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStaffPhysical.ResumeLayout(False)
         Me.pnlStaffPhysical.PerformLayout()
         Me.Panel20.ResumeLayout(False)
@@ -4769,31 +4611,25 @@ Partial Class AdminPanel
     Friend WithEvents Label29 As Label
     Friend WithEvents lblPetCount As Label
     Friend WithEvents pnlUserAppointment As Panel
-    Friend WithEvents Label37 As Label
+    Friend WithEvents lblUserAppointmentTotal As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button36 As Button
-    Friend WithEvents DateTimePicker3 As DateTimePicker
     Friend WithEvents Label26 As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents Label33 As Label
     Friend WithEvents Label34 As Label
-    Friend WithEvents TextBox21 As TextBox
+    Friend WithEvents txtAppointmentID As TextBox
     Friend WithEvents Label35 As Label
-    Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents Button37 As Button
-    Friend WithEvents Button38 As Button
-    Friend WithEvents Button39 As Button
-    Friend WithEvents Button40 As Button
-    Friend WithEvents Button41 As Button
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents btnCancelAppointment As Button
+    Friend WithEvents btnUpdateAppointment As Button
+    Friend WithEvents btnScheduleAppointment As Button
+    Friend WithEvents txtULoadAppointment As Button
+    Friend WithEvents pcbUserAppointmentProfile As PictureBox
+    Friend WithEvents dgvUserAppointment As DataGridView
     Friend WithEvents Label36 As Label
-    Friend WithEvents TextBox17 As TextBox
+    Friend WithEvents txtUAClientName As TextBox
     Friend WithEvents Label31 As Label
     Friend WithEvents Label27 As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox16 As TextBox
+    Friend WithEvents txtUAPetName As TextBox
     Friend WithEvents Label25 As Label
     Friend WithEvents pnlUserNotifications As Panel
     Friend WithEvents Label38 As Label
@@ -4901,87 +4737,76 @@ Partial Class AdminPanel
     Friend WithEvents Label79 As Label
     Friend WithEvents txtStaffPosition As TextBox
     Friend WithEvents pnlStaffVaccine As Panel
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button14 As Button
-    Friend WithEvents Button54 As Button
-    Friend WithEvents Label94 As Label
-    Friend WithEvents Button55 As Button
+    Friend WithEvents btnDeleteVaccine As Button
+    Friend WithEvents btnUpdateVaccine As Button
+    Friend WithEvents btnAddVaccine As Button
+    Friend WithEvents lblVaccineTotal As Label
     Friend WithEvents Label95 As Label
-    Friend WithEvents PictureBox9 As PictureBox
-    Friend WithEvents DataGridView9 As DataGridView
-    Friend WithEvents DataGridView10 As DataGridView
-    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents pcbStaffVaccine As PictureBox
+    Friend WithEvents dgvVaccineTable As DataGridView
+    Friend WithEvents dgvStaffAppointmentTable As DataGridView
+    Friend WithEvents pcbStaffAppointmentProfile As PictureBox
     Friend WithEvents Label103 As Label
-    Friend WithEvents Button62 As Button
-    Friend WithEvents Button61 As Button
+    Friend WithEvents btnSAReports As Button
     Friend WithEvents Label102 As Label
     Friend WithEvents pnlStaffAppointment As Panel
-    Friend WithEvents RadioButton10 As RadioButton
-    Friend WithEvents RadioButton9 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents rbtnFinished As RadioButton
+    Friend WithEvents rbtnOngoing As RadioButton
+    Friend WithEvents rbtnPending As RadioButton
     Friend WithEvents Panel14 As Panel
-    Friend WithEvents TextBox41 As TextBox
+    Friend WithEvents txtSAClientName As TextBox
     Friend WithEvents Label81 As Label
-    Friend WithEvents ComboBox5 As ComboBox
-    Friend WithEvents TextBox49 As TextBox
+    Friend WithEvents txtSAPetName As TextBox
     Friend WithEvents Label96 As Label
-    Friend WithEvents Button57 As Button
-    Friend WithEvents DateTimePicker8 As DateTimePicker
     Friend WithEvents Label97 As Label
     Friend WithEvents Label98 As Label
     Friend WithEvents Label99 As Label
     Friend WithEvents Label100 As Label
-    Friend WithEvents TextBox50 As TextBox
+    Friend WithEvents txtStaffAppointmentID As TextBox
     Friend WithEvents Label101 As Label
     Friend WithEvents pnlStaffMedicines As Panel
     Friend WithEvents Panel16 As Panel
-    Friend WithEvents DateTimePicker10 As DateTimePicker
     Friend WithEvents Label88 As Label
     Friend WithEvents Label104 As Label
-    Friend WithEvents Label105 As Label
     Friend WithEvents Label106 As Label
-    Friend WithEvents TextBox52 As TextBox
-    Friend WithEvents TextBox53 As TextBox
-    Friend WithEvents TextBox54 As TextBox
-    Friend WithEvents TextBox55 As TextBox
+    Friend WithEvents txtMedicineManufacturer As TextBox
+    Friend WithEvents txtBrandName As TextBox
+    Friend WithEvents txtMedicineName As TextBox
+    Friend WithEvents txtGenericName As TextBox
     Friend WithEvents Label107 As Label
-    Friend WithEvents Button58 As Button
     Friend WithEvents Label108 As Label
     Friend WithEvents Label109 As Label
-    Friend WithEvents TextBox56 As TextBox
+    Friend WithEvents txtMedicineID As TextBox
     Friend WithEvents Label110 As Label
-    Friend WithEvents Button59 As Button
-    Friend WithEvents Button60 As Button
-    Friend WithEvents Button63 As Button
-    Friend WithEvents Label111 As Label
-    Friend WithEvents Button64 As Button
-    Friend WithEvents Button65 As Button
+    Friend WithEvents btnDeleteMedicine As Button
+    Friend WithEvents btnUpdateMedicine As Button
+    Friend WithEvents btnAddMedicine As Button
+    Friend WithEvents lblMedicineTotal As Label
+    Friend WithEvents btnMedineReports As Button
     Friend WithEvents Label112 As Label
-    Friend WithEvents PictureBox11 As PictureBox
-    Friend WithEvents DataGridView11 As DataGridView
+    Friend WithEvents pcbMedicineProfile As PictureBox
+    Friend WithEvents dgvMedicineTable As DataGridView
     Friend WithEvents pnlStaffPetMonitoring As Panel
     Friend WithEvents Button72 As Button
-    Friend WithEvents Button68 As Button
+    Friend WithEvents btnUpdatePetMonitoring As Button
     Friend WithEvents Panel18 As Panel
     Friend WithEvents Label113 As Label
     Friend WithEvents Label114 As Label
-    Friend WithEvents TextBox57 As TextBox
-    Friend WithEvents TextBox58 As TextBox
-    Friend WithEvents TextBox59 As TextBox
+    Friend WithEvents txtPMVetAssigned As TextBox
+    Friend WithEvents txtPMPetName As TextBox
+    Friend WithEvents txtPMOwner As TextBox
     Friend WithEvents Label117 As Label
-    Friend WithEvents Button66 As Button
     Friend WithEvents Label118 As Label
     Friend WithEvents Label119 As Label
-    Friend WithEvents TextBox60 As TextBox
+    Friend WithEvents txtPMID As TextBox
     Friend WithEvents Label120 As Label
-    Friend WithEvents Button67 As Button
-    Friend WithEvents Button69 As Button
-    Friend WithEvents Label121 As Label
-    Friend WithEvents Button70 As Button
+    Friend WithEvents btnDeletePetMonitoring As Button
+    Friend WithEvents btnAddPetMonitoring As Button
+    Friend WithEvents lblPetMonitoringTotal As Label
     Friend WithEvents Button71 As Button
     Friend WithEvents Label122 As Label
-    Friend WithEvents PictureBox12 As PictureBox
-    Friend WithEvents DataGridView12 As DataGridView
+    Friend WithEvents pcbSPMProfile As PictureBox
+    Friend WithEvents dgvPetMonitoringTable As DataGridView
     Friend WithEvents pnlStaffPhysical As Panel
     Friend WithEvents Button73 As Button
     Friend WithEvents Button74 As Button
@@ -5058,20 +4883,17 @@ Partial Class AdminPanel
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Label87 As Label
     Friend WithEvents Label89 As Label
-    Friend WithEvents Label85 As Label
-    Friend WithEvents TextBox43 As TextBox
     Friend WithEvents Label86 As Label
-    Friend WithEvents TextBox44 As TextBox
-    Friend WithEvents TextBox45 As TextBox
-    Friend WithEvents TextBox46 As TextBox
-    Friend WithEvents TextBox47 As TextBox
+    Friend WithEvents txtVManufacturer As TextBox
+    Friend WithEvents txtVRecSpecies As TextBox
+    Friend WithEvents txtVaccineName As TextBox
+    Friend WithEvents txtVaccineType As TextBox
     Friend WithEvents Label90 As Label
-    Friend WithEvents Button10 As Button
     Friend WithEvents Label91 As Label
     Friend WithEvents Label92 As Label
-    Friend WithEvents TextBox48 As TextBox
+    Friend WithEvents txtVaccineID As TextBox
     Friend WithEvents Label93 As Label
-    Friend WithEvents Button56 As Button
+    Friend WithEvents btnVaccineLoadReports As Button
     Friend WithEvents Button101 As Button
     Friend WithEvents Panel23 As Panel
     Friend WithEvents ComboBox6 As ComboBox
@@ -5096,4 +4918,10 @@ Partial Class AdminPanel
     Friend WithEvents DataGridView17 As DataGridView
     Friend WithEvents btnStaffInbox As Button
     Friend WithEvents btnStaffMessage As Button
+    Friend WithEvents txtUAppointmentDate As TextBox
+    Friend WithEvents txtUAStatus As TextBox
+    Friend WithEvents txtUAppointmentType As TextBox
+    Friend WithEvents btnAppointmentView As Button
+    Friend WithEvents txtSAPreferredAppo As TextBox
+    Friend WithEvents txtSAAppoType As TextBox
 End Class

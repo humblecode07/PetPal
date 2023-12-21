@@ -34,11 +34,9 @@ Partial Class Appointment
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.cmbPets = New System.Windows.Forms.ComboBox()
         Me.txtBreed = New System.Windows.Forms.TextBox()
         Me.txtSpecies = New System.Windows.Forms.TextBox()
         Me.txtGender = New System.Windows.Forms.TextBox()
-        Me.txtBirth = New System.Windows.Forms.TextBox()
         Me.txtNotes = New System.Windows.Forms.TextBox()
         Me.pcbDisplay = New System.Windows.Forms.PictureBox()
         Me.dtpDateAppo = New System.Windows.Forms.DateTimePicker()
@@ -47,15 +45,26 @@ Partial Class Appointment
         Me.btnSchedule = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtPetID = New System.Windows.Forms.TextBox()
+        Me.txtPetName = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.dtpTimeAppo = New System.Windows.Forms.DateTimePicker()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.txtAppointmentId = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtUserID = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
+        Me.US = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtPetID = New System.Windows.Forms.TextBox()
+        Me.btnPetSearch = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnStaffSearch = New System.Windows.Forms.Button()
+        Me.txtAssignedStaff = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.dtpBirthDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txtStaffID = New System.Windows.Forms.TextBox()
         CType(Me.pcbDisplay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -104,9 +113,9 @@ Partial Class Appointment
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label7.Location = New System.Drawing.Point(387, 76)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(30, 16)
+        Me.Label7.Size = New System.Drawing.Size(48, 16)
         Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Pet"
+        Me.Label7.Text = "Pet ID"
         '
         'Label5
         '
@@ -132,7 +141,7 @@ Partial Class Appointment
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label10.Location = New System.Drawing.Point(385, 643)
+        Me.Label10.Location = New System.Drawing.Point(386, 557)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(144, 16)
         Me.Label10.TabIndex = 11
@@ -142,7 +151,7 @@ Partial Class Appointment
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label12.Location = New System.Drawing.Point(387, 559)
+        Me.Label12.Location = New System.Drawing.Point(633, 483)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(167, 16)
         Me.Label12.TabIndex = 13
@@ -167,15 +176,6 @@ Partial Class Appointment
         Me.Label6.Size = New System.Drawing.Size(54, 16)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "Gender"
-        '
-        'cmbPets
-        '
-        Me.cmbPets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbPets.FormattingEnabled = True
-        Me.cmbPets.Location = New System.Drawing.Point(390, 106)
-        Me.cmbPets.Name = "cmbPets"
-        Me.cmbPets.Size = New System.Drawing.Size(204, 21)
-        Me.cmbPets.TabIndex = 16
         '
         'txtBreed
         '
@@ -204,14 +204,6 @@ Partial Class Appointment
         Me.txtGender.Size = New System.Drawing.Size(204, 20)
         Me.txtGender.TabIndex = 19
         '
-        'txtBirth
-        '
-        Me.txtBirth.Location = New System.Drawing.Point(388, 247)
-        Me.txtBirth.Name = "txtBirth"
-        Me.txtBirth.ReadOnly = True
-        Me.txtBirth.Size = New System.Drawing.Size(204, 20)
-        Me.txtBirth.TabIndex = 20
-        '
         'txtNotes
         '
         Me.txtNotes.Location = New System.Drawing.Point(388, 316)
@@ -223,17 +215,17 @@ Partial Class Appointment
         'pcbDisplay
         '
         Me.pcbDisplay.Image = CType(resources.GetObject("pcbDisplay.Image"), System.Drawing.Image)
-        Me.pcbDisplay.Location = New System.Drawing.Point(70, 74)
+        Me.pcbDisplay.Location = New System.Drawing.Point(103, 76)
         Me.pcbDisplay.Name = "pcbDisplay"
-        Me.pcbDisplay.Size = New System.Drawing.Size(193, 193)
-        Me.pcbDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pcbDisplay.Size = New System.Drawing.Size(128, 131)
+        Me.pcbDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pcbDisplay.TabIndex = 9
         Me.pcbDisplay.TabStop = False
         '
         'dtpDateAppo
         '
-        Me.dtpDateAppo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDateAppo.Location = New System.Drawing.Point(388, 591)
+        Me.dtpDateAppo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpDateAppo.Location = New System.Drawing.Point(633, 515)
         Me.dtpDateAppo.Name = "dtpDateAppo"
         Me.dtpDateAppo.Size = New System.Drawing.Size(200, 20)
         Me.dtpDateAppo.TabIndex = 22
@@ -250,7 +242,7 @@ Partial Class Appointment
         '
         'txtReason
         '
-        Me.txtReason.Location = New System.Drawing.Point(388, 672)
+        Me.txtReason.Location = New System.Drawing.Point(389, 586)
         Me.txtReason.Multiline = True
         Me.txtReason.Name = "txtReason"
         Me.txtReason.Size = New System.Drawing.Size(466, 74)
@@ -278,20 +270,20 @@ Partial Class Appointment
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(56, 283)
+        Me.Label8.Location = New System.Drawing.Point(62, 226)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(224, 19)
         Me.Label8.TabIndex = 27
         Me.Label8.Text = "Your Pet Will Appear Here"
         '
-        'txtPetID
+        'txtPetName
         '
-        Me.txtPetID.Enabled = False
-        Me.txtPetID.Location = New System.Drawing.Point(635, 106)
-        Me.txtPetID.Name = "txtPetID"
-        Me.txtPetID.ReadOnly = True
-        Me.txtPetID.Size = New System.Drawing.Size(204, 20)
-        Me.txtPetID.TabIndex = 28
+        Me.txtPetName.Enabled = False
+        Me.txtPetName.Location = New System.Drawing.Point(635, 106)
+        Me.txtPetName.Name = "txtPetName"
+        Me.txtPetName.ReadOnly = True
+        Me.txtPetName.Size = New System.Drawing.Size(145, 20)
+        Me.txtPetName.TabIndex = 28
         '
         'Label11
         '
@@ -299,17 +291,54 @@ Partial Class Appointment
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label11.Location = New System.Drawing.Point(632, 76)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(48, 16)
+        Me.Label11.Size = New System.Drawing.Size(69, 16)
         Me.Label11.TabIndex = 29
-        Me.Label11.Text = "Pet ID"
+        Me.Label11.Text = "Pet Name"
         '
-        'dtpTimeAppo
+        'txtAppointmentId
         '
-        Me.dtpTimeAppo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpTimeAppo.Location = New System.Drawing.Point(635, 591)
-        Me.dtpTimeAppo.Name = "dtpTimeAppo"
-        Me.dtpTimeAppo.Size = New System.Drawing.Size(200, 20)
-        Me.dtpTimeAppo.TabIndex = 31
+        Me.txtAppointmentId.Location = New System.Drawing.Point(3, 48)
+        Me.txtAppointmentId.Name = "txtAppointmentId"
+        Me.txtAppointmentId.Size = New System.Drawing.Size(204, 20)
+        Me.txtAppointmentId.TabIndex = 34
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.txtUserID)
+        Me.Panel1.Controls.Add(Me.btnSearch)
+        Me.Panel1.Controls.Add(Me.US)
+        Me.Panel1.Controls.Add(Me.txtAppointmentId)
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Location = New System.Drawing.Point(66, 286)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(220, 213)
+        Me.Panel1.TabIndex = 35
+        '
+        'txtUserID
+        '
+        Me.txtUserID.Location = New System.Drawing.Point(3, 113)
+        Me.txtUserID.Name = "txtUserID"
+        Me.txtUserID.Size = New System.Drawing.Size(204, 20)
+        Me.txtUserID.TabIndex = 34
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Location = New System.Drawing.Point(37, 147)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(128, 38)
+        Me.btnSearch.TabIndex = 35
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'US
+        '
+        Me.US.AutoSize = True
+        Me.US.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.US.Location = New System.Drawing.Point(0, 88)
+        Me.US.Name = "US"
+        Me.US.Size = New System.Drawing.Size(60, 16)
+        Me.US.TabIndex = 33
+        Me.US.Text = "User ID:"
         '
         'Label15
         '
@@ -321,31 +350,84 @@ Partial Class Appointment
         Me.Label15.TabIndex = 33
         Me.Label15.Text = "Appointment ID"
         '
-        'txtAppointmentId
+        'txtPetID
         '
-        Me.txtAppointmentId.Location = New System.Drawing.Point(3, 48)
-        Me.txtAppointmentId.Name = "txtAppointmentId"
-        Me.txtAppointmentId.Size = New System.Drawing.Size(204, 20)
-        Me.txtAppointmentId.TabIndex = 34
+        Me.txtPetID.Location = New System.Drawing.Point(390, 106)
+        Me.txtPetID.Name = "txtPetID"
+        Me.txtPetID.Size = New System.Drawing.Size(112, 20)
+        Me.txtPetID.TabIndex = 36
         '
-        'Panel1
+        'btnPetSearch
         '
-        Me.Panel1.Controls.Add(Me.btnSearch)
-        Me.Panel1.Controls.Add(Me.txtAppointmentId)
-        Me.Panel1.Controls.Add(Me.Label15)
-        Me.Panel1.Location = New System.Drawing.Point(60, 381)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(220, 118)
-        Me.Panel1.TabIndex = 35
+        Me.btnPetSearch.Location = New System.Drawing.Point(517, 103)
+        Me.btnPetSearch.Name = "btnPetSearch"
+        Me.btnPetSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnPetSearch.TabIndex = 37
+        Me.btnPetSearch.Text = "Search"
+        Me.btnPetSearch.UseVisualStyleBackColor = True
         '
-        'btnSearch
+        'Panel2
         '
-        Me.btnSearch.Location = New System.Drawing.Point(3, 83)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch.TabIndex = 35
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
+        Me.Panel2.Controls.Add(Me.txtStaffID)
+        Me.Panel2.Controls.Add(Me.Label16)
+        Me.Panel2.Controls.Add(Me.btnStaffSearch)
+        Me.Panel2.Controls.Add(Me.txtAssignedStaff)
+        Me.Panel2.Controls.Add(Me.Label14)
+        Me.Panel2.Location = New System.Drawing.Point(66, 520)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(223, 140)
+        Me.Panel2.TabIndex = 38
+        '
+        'btnStaffSearch
+        '
+        Me.btnStaffSearch.Location = New System.Drawing.Point(132, 6)
+        Me.btnStaffSearch.Name = "btnStaffSearch"
+        Me.btnStaffSearch.Size = New System.Drawing.Size(78, 27)
+        Me.btnStaffSearch.TabIndex = 38
+        Me.btnStaffSearch.Text = "Staff Search"
+        Me.btnStaffSearch.UseVisualStyleBackColor = True
+        '
+        'txtAssignedStaff
+        '
+        Me.txtAssignedStaff.Location = New System.Drawing.Point(1, 88)
+        Me.txtAssignedStaff.Name = "txtAssignedStaff"
+        Me.txtAssignedStaff.Size = New System.Drawing.Size(204, 20)
+        Me.txtAssignedStaff.TabIndex = 37
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label14.Location = New System.Drawing.Point(-3, 11)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(63, 16)
+        Me.Label14.TabIndex = 36
+        Me.Label14.Text = "Staff ID:"
+        '
+        'dtpBirthDate
+        '
+        Me.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpBirthDate.Location = New System.Drawing.Point(389, 244)
+        Me.dtpBirthDate.Name = "dtpBirthDate"
+        Me.dtpBirthDate.Size = New System.Drawing.Size(200, 20)
+        Me.dtpBirthDate.TabIndex = 39
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label16.Location = New System.Drawing.Point(-2, 57)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(108, 16)
+        Me.Label16.TabIndex = 39
+        Me.Label16.Text = "Staff Assigned:"
+        '
+        'txtStaffID
+        '
+        Me.txtStaffID.Location = New System.Drawing.Point(66, 10)
+        Me.txtStaffID.Name = "txtStaffID"
+        Me.txtStaffID.Size = New System.Drawing.Size(60, 20)
+        Me.txtStaffID.TabIndex = 36
         '
         'Appointment
         '
@@ -353,10 +435,13 @@ Partial Class Appointment
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(166, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(922, 877)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.dtpTimeAppo)
-        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.dtpBirthDate)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.btnPetSearch)
         Me.Controls.Add(Me.txtPetID)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.txtPetName)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSchedule)
@@ -364,11 +449,9 @@ Partial Class Appointment
         Me.Controls.Add(Me.cmbAppointment)
         Me.Controls.Add(Me.dtpDateAppo)
         Me.Controls.Add(Me.txtNotes)
-        Me.Controls.Add(Me.txtBirth)
         Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.txtSpecies)
         Me.Controls.Add(Me.txtBreed)
-        Me.Controls.Add(Me.cmbPets)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
@@ -388,6 +471,8 @@ Partial Class Appointment
         CType(Me.pcbDisplay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -404,11 +489,9 @@ Partial Class Appointment
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents cmbPets As ComboBox
     Friend WithEvents txtBreed As TextBox
     Friend WithEvents txtSpecies As TextBox
     Friend WithEvents txtGender As TextBox
-    Friend WithEvents txtBirth As TextBox
     Friend WithEvents txtNotes As TextBox
     Friend WithEvents pcbDisplay As PictureBox
     Friend WithEvents dtpDateAppo As DateTimePicker
@@ -417,11 +500,21 @@ Partial Class Appointment
     Friend WithEvents btnSchedule As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtPetID As TextBox
+    Friend WithEvents txtPetName As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents dtpTimeAppo As DateTimePicker
-    Friend WithEvents Label15 As Label
     Friend WithEvents txtAppointmentId As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnSearch As Button
+    Friend WithEvents txtPetID As TextBox
+    Friend WithEvents btnPetSearch As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents txtAssignedStaff As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents dtpBirthDate As DateTimePicker
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtUserID As TextBox
+    Friend WithEvents US As Label
+    Friend WithEvents btnStaffSearch As Button
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txtStaffID As TextBox
 End Class

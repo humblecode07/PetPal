@@ -57,15 +57,15 @@ Public Class Pet
 
         If type = "Add" And role = "Admin" Then
             AddPet(user_number, imageData)
-            AdminModule.LoadUsers()
+            AdminModule.LoadUserPets()
             AdminModule.GetTotal("user_info")
         ElseIf type = "Edit" And role = "Admin" Then
             UpdatePetInfo(user_number, imageData, "Admin")
-            AdminModule.LoadUsers()
+            AdminModule.LoadUserPets()
             AdminModule.GetTotal("user_info")
         ElseIf type = "Delete" And role = "Admin" Then
             DeletePetInfo(user_number, "Admin")
-            AdminModule.LoadUsers()
+            AdminModule.LoadUserPets()
             AdminModule.GetTotal("user_info")
         ElseIf type = "Add" Then
             AddPet(user_number, imageData)
